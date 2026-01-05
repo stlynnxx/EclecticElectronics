@@ -1,0 +1,67 @@
+/* This is the navbar */
+ul {
+
+list-style-type: none;
+margin: 0;
+padding: 0;
+    width: 130px;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+
+background-color: bisque;
+}
+.active {
+    background-color: bisque;
+    color: darkmagenta;
+}
+li a {
+
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+li a:hover {
+    background-color: #555555;
+    color: white;
+    block-size: inherit;
+}
+
+
+
+.content-block {
+    background-color: bisque;
+    padding: 16px 128px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+
+body {
+    text-align: center;
+    background-color:rgb(229,219,240) ;
+
+}
+h1 {
+
+
+
+}
+h2 {
+    text-shadow: 2px 2px 5px fuchsia;
+    background-color: bisque;
+
+}
+h3 {
+    text-shadow: 2px 2px 5px fuchsia;
+    background-color: bisque;
+}
+
+.headers {
+    text-shadow: 2px 2px 5px fuchsia;
+    background-color: bisque;
+}

@@ -1,0 +1,33 @@
+12/31/2025-
+
+This all started as a Flask sandbox I was playing around in and has grown to a site
+I plan to eventually host so I figured I'd take the project a bit more seriously and start
+keeping a journal like I do for EclecticAI. It's been a very helpful tool for that project!
+
+
+We eventually want to add a page about EclecticAI, and a repair estimate submission form,
+and of course the photo gallery. I suppose I could start off today by routing to under
+construction pages for those like the photo gallery, and maybe moving the nav bar to
+the left side.
+
+We moved the nav bar to the side and added some more options to and built the routing
+for those options, and now we need to actually build these other pages.
+
+The nav bar is currently exhibiting some strange behavior with the highlight size
+that we'll beed to figure out; it's out of sync with the text after "EclecticAI".
+But being as this is my first real adventure in web development, it's one thing at a time
+here!
+
+We fixed it! I had put my closing </a> tags in the wrong spot in the HTML file
+
+The goals moving foward should be building the pages I routed to today, and
+organizing the content on the home page a bit more properly.
+
+1/5/2026-
+
+My first entry of 2026!
+
+I've been busy with Eclectic Electronics reselling work to be here the last few days but
+I'm back with a little bit of action thus far!
+
+I added the github to the contact page!

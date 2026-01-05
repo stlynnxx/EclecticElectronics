@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+<body>
+<!-- This is the navbar -->
+    <ul>
+      <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+      <li><a class="active" href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li><a class="active" href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a class="active" target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+      <li><a class="active" href="{{ url_for('eclecticAI') }}">EclecticAI</a></li>
+        <li><a class="active" href="{{ url_for('about') }}">About Us!</a></li>
+        <li><a class="active" href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+    </ul>
+<h1 class="headers">How to contact us!</h1>
+<div class="content-block">
+<h2 class="headers"><strong>...By Email</strong></h2>
+<p class="content-block">stevie@eclecticelectronics.com</p>
+<h3 class="headers">...Or by Phone! (Call or Text)</h3>
+<p class="content-block">(217) 246-9915</p>
+    <h4 class="headers">You can also find us on Github!</h4>
+    <p class="content-block"><a target="_blank" rel="noopener noreferrer" href="https://www.github.com/stlynnxx">www.github.com/stlynnxx</a></p>
+
+    <p>We are located out of Charleston, Illinois, but will travel to you!</p>
+</div>
+
+
+</body>
+</html>

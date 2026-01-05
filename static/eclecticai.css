@@ -1,0 +1,36 @@
+/* This is the navbar */
+ul {
+
+list-style-type: none;
+margin: 0;
+padding: 0;
+    width: 130px;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+
+background-color: bisque;
+}
+.active {
+    background-color: bisque;
+    color: darkmagenta;
+}
+li a {
+
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+li a:hover {
+    background-color: #555555;
+    color: white;
+    block-size: inherit;
+}
+
+h1 {
+    text-align: center;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Submission Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='quote.css') }}">
+</head>
+<body>
+<!-- This is the navbar -->
+    <ul>
+      <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+      <li><a class="active" href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li><a class="active" href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a class="active" target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+      <li><a class="active" href="{{ url_for('eclecticAI') }}">EclecticAI</a></li>
+        <li><a class="active" href="{{ url_for('about') }}">About Us!</a></li>
+        <li><a class="active" href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+    </ul>
+<!--Submission Form-->
+<form>
+<label for="fname">First name:</label><br>
+<input class="input" type="text" id="fname" name="fname" placeholder="Your First Name.."><br>
+<label for="lname">Last name:</label><br>
+  <input class="input" type="text" id="lname" name="lname" placeholder="Your Last Name.."><br>
+ <label for="email">Enter your email:</label><br>
+  <input class="input" type="email" id="email" name="email" placeholder="Your Email.."><br>
+<label for="tel">Phone number:</label><br>
+<input class="input" type="tel" id="tel" name="tel" placeholder="Your phone number, with area code :)"><br>
+
+<label for="details">Give us a description of your device and your issue!</label><br>
+<input class="description" type="text" id="details" name="details"><br>
+<input class="submit" type="submit" value="Submit">
+</form>
+</body>
+</html>

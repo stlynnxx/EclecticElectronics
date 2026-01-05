@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Eclectic Electronics</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+
+ </head>
+
+    <body>
+    <!-- This is the navbar -->
+    <ul>
+      <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+      <li><a class="active" href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li><a class="active" href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a class="active" target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+      <li><a class="active" href="{{ url_for('eclecticAI') }}">EclecticAI</a></li>
+        <li><a class="active" href="{{ url_for('about') }}">About Us!</a></li>
+        <li><a class="active" href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+    </ul>
+
+    <h1>Eclectic Electronics</h1>
+
+
+    <p><i>All things hardware and software</i></p>
+
+    <p>More coming soon!</p>
+    <h2>Want a discount code for our ebay store?</h2>
+    <p>Here ya go!</p>
+    <!-- We'll add some sort of click to show or hover that gives a coupon code-->
+
+
+
+
+ <img src="{{ url_for('static', filename='photos/game.png') }}" alt="butt" width="300">
+    </body>
+</html>

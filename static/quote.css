@@ -1,0 +1,63 @@
+/* This is the navbar */
+ul {
+
+list-style-type: none;
+margin: 0;
+padding: 0;
+    width: 130px;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+
+background-color: bisque;
+}
+
+
+body {
+    text-align: center;
+    background-color:rgb(229,219,240) ;
+
+}
+.active {
+    background-color: bisque;
+    color: darkmagenta;
+}
+li a {
+
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+li a:hover {
+    background-color: #555555;
+    color: white;
+    block-size: inherit;
+}
+
+form {
+    text-align: center;
+}
+
+.description {
+    border: 2px solid black;
+    width: 35%;
+    padding: 100px;
+    box-sizing: border-box;
+    resize: none;
+    margin: 8px;
+}
+
+.input {
+    border: 2px solid black;
+    margin: 8px;
+}
+
+.submit {
+    margin: 8px;
+    color: darkmagenta;
+    background-color: bisque;
+}
