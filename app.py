@@ -28,6 +28,12 @@ def contact():
     return render_template('contact.html')
 @app.route('/password')
 def password():
+    adjs = ["Attractive", "Agreeable", "Angry", "Big",
+            "Bald", "Ambitious", "Bewildered", "Colossal",
+            "Beautiful", "Brave", "Clumsy", "Fat", "Chubby",
+            "Calm", "Defeated", "Gigantic", "Clean", "Delightful"]
+    nouns = ["Airplane", "Bell", "Belt", "Newspaper", "Owl","Lizard",
+             "Lunch", "Sun", "Slinky", "Sheep", "Kangaroo", "Hair", "Helicopter"  ]
     randoms = []
     alphabet = ["A","a","B","b","C","c","D","d","E","e"
                 "F","f","G","g","H","h","I","i","J","j"
