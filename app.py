@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template
 import random
 
@@ -53,4 +55,5 @@ def password():
 
 
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', debug=True)
