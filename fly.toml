@@ -21,3 +21,6 @@ primary_region = 'iad'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 1024
+
+[processes]
+app = "gunicorn app:app --bind 0.0.0.0:8080"
