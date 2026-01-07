@@ -10,16 +10,38 @@
  </head>
 
     <body>
-    <!-- This is the navbar -->
+     <!--mobile nav-->
+    <details class="mobile-nav">
+        <summary>Navigation</summary>
+
+    <nav class="mobile-menu">
     <ul>
-      <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
-      <li><a class="active" href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
-      <li><a class="active" href="{{ url_for('contact') }}">Contact</a></li>
-      <li><a class="active" target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
-      <li><a class="active" href="{{ url_for('eclecticAI') }}">EclecticAI</a></li>
-        <li><a class="active" href="{{ url_for('about') }}">About Us!</a></li>
-        <li><a class="active" href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+      <li><a  href="{{ url_for('home') }}">Home</a></li>
+      <li><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+      <li><a  href="{{ url_for('eclecticAI') }}">EclecticAI</a></li>
+        <li><a href="{{ url_for('about') }}">About Us!</a></li>
+        <li><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
     </ul>
+    </nav>
+    </details>
+
+    <!--desktop-->
+    <nav class="sidebar">
+
+    <ul class="active">
+      <li><a  href="{{ url_for('home') }}">Home</a></li>
+      <li><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+      <li><a  href="{{ url_for('eclecticAI') }}">EclecticAI</a></li>
+        <li><a href="{{ url_for('about') }}">About Us!</a></li>
+        <li><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+    </ul>
+
+    </nav>
+
 
     <h1>Eclectic Electronics</h1>
 
@@ -34,6 +56,6 @@
 
 
 
- <img src="{{ url_for('static', filename='photos/game.png') }}" alt="butt" width="300">
+ <img src="{{ url_for('static', filename='photos/game.png') }}" alt="asd" width="300">
     </body>
 </html>

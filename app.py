@@ -27,7 +27,7 @@ def gallery():
     return render_template('gallery.html')
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    return render_template('../Website_Test/templates/contact.html')
 @app.route('/password')
 def password():
     adjs = ["Attractive", "Agreeable", "Angry", "Big",

@@ -24,3 +24,6 @@ primary_region = 'ord'
 
 [processes]
 app = "gunicorn app:app --bind 0.0.0.0:8080"
+
+[http_service]
+internal_port = 8080
