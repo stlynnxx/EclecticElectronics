@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 import random
 
 
@@ -28,27 +28,26 @@ def gallery():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-@app.route('/password')
-def password():
+@app.route('/run-python', methods=['POST'])
+def run_python():
     adjs = ["Attractive", "Agreeable", "Angry", "Big",
             "Bald", "Ambitious", "Bewildered", "Colossal",
             "Beautiful", "Brave", "Clumsy", "Fat", "Chubby",
             "Calm", "Defeated", "Gigantic", "Clean", "Delightful"]
     nouns = ["Airplane", "Bell", "Belt", "Newspaper", "Owl","Lizard",
              "Lunch", "Sun", "Slinky", "Sheep", "Kangaroo", "Hair", "Helicopter"  ]
-    randoms = []
-    alphabet = ["A","a","B","b","C","c","D","d","E","e"
-                "F","f","G","g","H","h","I","i","J","j"
-                "K","k","L","l","M","m","N","n","O","o"
-                "P","p","Q","q","R","r","S","s"
-                "T","t","U","u","V","v","W","w"
-                "X","x","Y","y","Z","z"]
-    value_one = random.randint(1,9)
-    value_two = random.randint(1,9)
-    value_three = random.randint(1,9)
-    for i in value_three:
-       randoms = [random.choice(alphabet)]
-    
+
+
+    adj_pick = random.choice(adjs)
+    noun_pick = random.choice(nouns)
+    random_one = random.randint(0,9)
+    random_two = random.randint(0,9)
+    password = adj_pick + noun_pick + random_one + random_two
+    print(password)
+    return jsonify({'password': password})
+
+
+
 
 
 
@@ -56,4 +55,4 @@ def password():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')

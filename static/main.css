@@ -47,6 +47,17 @@ body {text-align: center;
 p {
     color: deeppink;
 }
+.logo {
+    max-width: 90vw;
+    width: 320px;
+    height: auto;
+    margin: 8px;
+
+}
+.paragraph {
+    color: black;
+}
+/* This is the mobile nav bar */
 .mobile-nav { display: none; }
 
 @media (max-width: 768px) {

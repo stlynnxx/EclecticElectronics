@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">
+
      <title>Eclectic Electronics</title>
       <link rel="stylesheet" href="{{ url_for('static', filename='main.css', v=1) }}">
      <link rel="icon" type="image/x-icon" href="static/favicon.ico">
@@ -23,6 +23,7 @@
       <li><a  href="{{ url_for('eclecticAI') }}">EclecticAI</a></li>
         <li><a href="{{ url_for('about') }}">About Us!</a></li>
         <li><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+        <!--<li><a href="{{ url_for('run_python') }}">Password Generator</a></li>-->
     </ul>
     </nav>
     </details>
@@ -48,14 +49,30 @@
 
     <p><i>All things hardware and software</i></p>
 
-    <p>More coming soon!</p>
+     <p><strong>Hello!</strong></p>
+     <p class="paragraph">Eclectic Electronics is an independently owned and operated small business out of
+     Charleston, Illinois. Our umbrella is broad but we do have a few specialties- Repairing Tech of all kinds,
+     Restoring Vintage Tech, Software/Web Development, and Cybersecurity.</p>
+     <p class="paragraph">If you'd like to reach out to us about any of our services, there's an entire page of
+     contact information for you in the nav bar! Just choose whichever is best for you.</p>
+     <p class="paragraph">If you are in need of a repair, I ask that you provide as much information about the
+     device as possible, and include pictures of whatever symptoms/issues you are experiencing. :)</p>
+     <p class="paragraph">In the coming future the site will feature an automated system for submitting your device
+         for a repair quote that will streamline the process.</p>
+     <p class="paragraph">This site is 100% human made and hand coded in house and is a constant work in progress. If you have any suggestions or
+     experience any issues, please reach out and let us know!</p><br>
+
     <h2>Want a discount code for our ebay store?</h2>
-    <p>Here ya go!</p>
+    <a href="https://ebay.us/m/Pk8Xo1" target="_blank" rel="noopener noreferrer">Here ya go!</a>
+     <img src="{{ url_for('static', filename='photos/game.png') }}" alt="asd" class="logo">
+
+    <!-- https://ebay.us/m/Pk8Xo1-->
+
     <!-- We'll add some sort of click to show or hover that gives a coupon code-->
 
 
 
 
- <img src="{{ url_for('static', filename='photos/game.png') }}" alt="asd" width="300">
+
     </body>
 </html>
