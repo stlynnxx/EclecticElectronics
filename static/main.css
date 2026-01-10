@@ -1,17 +1,15 @@
 /* This is the navbar */
 .sidebar ul {
-
-
 list-style-type: none;
 margin: 0;
 padding: 0;
-    width: 120px;
-    text-align: center;
-    height: 100vh;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    position: fixed;
+width: 120px;
+text-align: center;
+height: 100vh;
+left: 0;
+right: 0;
+overflow: hidden;
+position: fixed;
 
 background-color: bisque;
 }
@@ -57,7 +55,16 @@ background-color: bisque;
     }
 }
 
-
+.title {
+    text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(237,187,220);
+    display: inline-grid;
+}
 .active {
     background-color: bisque;
     color: darkmagenta;
@@ -77,21 +84,18 @@ li a:hover {
     block-size: inherit;
 }
 
-h1 {
-    text-align: center;
-    text-decoration-line: underline;
-    text-decoration-color: black;
-    text-decoration-style: dotted;
-    text-box: normal;
-    text-shadow: 2px 2px 5px darkmagenta;
 
-}
+
+
 body {text-align: center;
         background-color:rgb(229,219,240) ;
         color: black;
         }
 p {
     color: deeppink;
+    margin-left: 25px;
+    margin-right: 25px;
+
 }
 .paragraphs {
     text-align: center;
@@ -107,6 +111,7 @@ p {
 
 }
 .button {
+    border-radius: 25px;
     color: white;
     border: black solid 1px;
     background-color: darkmagenta;
@@ -115,6 +120,19 @@ p {
 
 }
 .paragraph {
+    text-align: center;
+
+    padding-left: 115px;
+    padding-right: 115px;
     color: black;
 
+}
+.footer {
+    text-align: center;
+    background-color: bisque;
+    height: 170px;
+}
+
+.toe {
+    padding-top: 50px;
 }
