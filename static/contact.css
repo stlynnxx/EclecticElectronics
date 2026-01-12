@@ -4,11 +4,12 @@
 
 .content-block {
     text-align: center;
-    background-color: bisque;
-    padding: 16px 128px;
+    color: black;
+
+    padding: 8px 64px;
     border-radius: 12px;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 
@@ -17,30 +18,50 @@ body {
     background-color:rgb(229,219,240) ;
 
 }
-h1 {
+.desktop-version {display: block}
+.mobile-version {display: none}
+
+.desktop-headers {
+
+    text-align: center;
+
+    text-box: auto;
+    display: inline-grid;
 
 
-
-}
-h2 {
-    text-shadow: 2px 2px 5px fuchsia;
-    background-color: bisque;
-
-}
-h3 {
-    text-shadow: 2px 2px 5px fuchsia;
-    background-color: bisque;
-}
-
-.headers {
-    text-shadow: 2px 2px 5px fuchsia;
-    background-color: bisque;
     font-size: 24px;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 10px;
+
+    background-color: rgb(237,187,220);
+
+
+}
+
+@media (max-width: 768px) {
+    .desktop-version {display: none}
+    .mobile-version {display: block}
+    .mobile-headers {
+        text-align: center;
+        text-box: auto;
+        display: inline-grid;
+        font-size: 24px;
+        text-decoration-style: solid;
+        text-decoration-color: black;
+        border-radius: 15px;
+        background-color: green;
+
+    }
+    .mobile-content .content-block {background-color: palegreen}
 
 }
 
 .div_one {
     text-align: center;
-    background-color: bisque;
+
+    margin-left: 200px;
+    margin-right: 100px;
 
 }

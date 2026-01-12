@@ -1,6 +1,10 @@
 
-
-
-h1 {
-    text-align: center;
+.desktop-paragraph {
+    max-width: 680;
+    width: 92%;
+    margin: 24px auto;
+    padding: 24px 22px;
+    border-radius: 18px;
 }
+
+

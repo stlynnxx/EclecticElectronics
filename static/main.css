@@ -46,7 +46,7 @@ background-color: bisque;
         background: bisque;
         border-radius: 10px;
         overflow: hidden;
-    }
+    } 65
 
     .mobile-menu a {
         display: block;
@@ -116,6 +116,7 @@ p {
     border: black solid 1px;
     background-color: darkmagenta;
     box-shadow: 2px 2px 5px darkmagenta;
+    margin-bottom: 25px;
 
 
 }
@@ -127,11 +128,37 @@ p {
     color: black;
 
 }
-.footer {
+.desktop-footer {display: block}
+.mobile-footer {display: none}
+
+.desktop-footer {
     text-align: center;
     background-color: bisque;
     height: 170px;
+    margin-left: 200px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    border-radius: 15px;
 }
+
+@media (max-width: 768px) {
+    .desktop-footer {display: none}
+    .mobile-footer {display: block}
+    .mobile-foot {
+        text-align: center;
+        text-box: auto;
+        display: inline-grid;
+        font-size: 12px;
+        border-radius: 15px;
+        background-color: bisque;
+
+    }
+
+
+}
+
+
 
 .toe {
     padding-top: 50px;
