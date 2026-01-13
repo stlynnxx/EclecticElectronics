@@ -28,24 +28,40 @@ def gallery():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-@app.route('/run-python', methods=['POST'])
-def run_python():
+@app.route('/password')
+def password():
+
+
+    return render_template('passwordgenerator.html')
+
+@app.route('/generator')
+def generator():
     adjs = ["Attractive", "Agreeable", "Angry", "Big",
             "Bald", "Ambitious", "Bewildered", "Colossal",
             "Beautiful", "Brave", "Clumsy", "Fat", "Chubby",
-            "Calm", "Defeated", "Gigantic", "Clean", "Delightful"]
-    nouns = ["Airplane", "Bell", "Belt", "Newspaper", "Owl","Lizard",
-             "Lunch", "Sun", "Slinky", "Sheep", "Kangaroo", "Hair", "Helicopter"  ]
-
+            "Calm", "Defeated", "Gigantic", "Clean", "Delightful", "Cold",
+            "Patient", "Serene", "Empty", "Soft", "Pink", "Purple", "Golden",
+            "Blue", "Aquamarine", "Lavender", "Green", "Teal", "Red", "Crimson",
+            "Purple", "Orange", "Sandy", "Silver", "Grey", "Cursed", "Forgotten",
+            "Forsaken", "Bitter", "Forlorn", "Wet","Warm", "Glassy", "Clicky", "Clacky",
+            "Salty", "Tidal", "Oceanic", "Sweet"]
+    nouns = ["Airplane", "Bell", "Belt", "Newspaper", "Owl", "Lizard",
+             "Lunch", "Sun", "Slinky", "Sheep", "Kangaroo", "Hair", "Helicopter", "Cup",
+             "Straw", "Torch", "Wood", "Tower", "Zygon", "Borg", "Tardis", "Dog", "Cat",
+             "Beagle", "Pudding", "Wall", "Desk", "Window", "Box", "Book", "Scarf","Jar",
+             "Screen", "Wrist", "Keyboard"]
+    specials = ["!","?","@","#","$", "%","^", "&","*","+"]
 
     adj_pick = random.choice(adjs)
     noun_pick = random.choice(nouns)
-    random_one = random.randint(0,9)
-    random_two = random.randint(0,9)
-    password = adj_pick + noun_pick + random_one + random_two
-    print(password)
-    return jsonify({'password': password})
-
+    special_pick = random.choice(specials)
+    random_one = random.randint(0, 9)
+    random_two = random.randint(0, 9)
+    proto_password = adj_pick + noun_pick
+    num_1 = str(random_one)
+    num_2 = str(random_two)
+    password = proto_password + num_1 + num_2 + special_pick
+    return render_template('passwordgenerator.html', password=password)
 
 
 

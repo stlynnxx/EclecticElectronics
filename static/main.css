@@ -120,6 +120,15 @@ p {
 
 
 }
+.button2 {
+
+    border-radius: 25px;
+    color: white;
+    border: black solid 1px;
+    background-color: darkmagenta;
+    box-shadow: 2px 2px 5px darkmagenta;
+    margin-bottom: 25px;
+}
 .paragraph {
     text-align: center;
 
@@ -162,4 +171,8 @@ p {
 
 .toe {
     padding-top: 50px;
+}
+.password {
+    color: black;
+    text-decoration-style: wavy;
 }
