@@ -97,3 +97,14 @@ It's pretty late after a jam packed day so I'm not doing much- I just fixed a fe
 links to the github and messed with the contact page a bit visually.
 
 Tomorrow will be more productive!
+
+1/15/2026-
+
+I keep a sandboxed version of the site so I can experiment on it without making
+a mess of this codebase and thus far that's where my work this morning has been
+done; I've been designing a crude review system. I've got a simple form made
+and the submission executed with the data saved to a .txt file on disk.
+
+Next we need to figure out how to pull those and display them on the home page,
+and of course clean up how it's being saved; the .txt file on disk is just a
+for now thing, really.
