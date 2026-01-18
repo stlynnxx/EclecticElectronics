@@ -108,3 +108,20 @@ and the submission executed with the data saved to a .txt file on disk.
 Next we need to figure out how to pull those and display them on the home page,
 and of course clean up how it's being saved; the .txt file on disk is just a
 for now thing, really.
+
+1/16/2026 & 1/17/2026-
+
+I worked on code for the site yesterday, but I forgot to journal anything.
+Whoops.
+
+All of my work yesterday was done in the sandbox version as I prepare features
+to be introduced into the prod version. I worked with capturing user input from
+the site for the quote page and saving it to a json file, and also reading json
+files for the review system I'd like to implement. Even though nothing got
+introduced into the prod codebase, yesterday was still a productive day!
+
+Today we've just changed the Github link on the contact page of the the prod
+site, so far.
+
+We ended up setting up the backend logic for the submissions! I need to make the page itself look a bit nicer,
+but the logic is there!

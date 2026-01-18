@@ -45,9 +45,12 @@ form {
 .description {
     border: 2px solid black;
     width: 35%;
-    padding: 100px;
+    padding: 8px;
+    height: 150px;
     box-sizing: border-box;
-    resize: none;
+    resize: vertical;
+    line-height: normal;
+    vertical-align: top;
     margin: 8px;
 }
 

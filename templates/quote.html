@@ -39,7 +39,11 @@
 
     </nav>
 <!--Submission Form-->
-<form>
+ <h1 class="title">Get a free quote!</h1>
+ <p class="paragraphs">Here you can get a free estimated quote on repairing a device.
+    Just fill out the form below and click the submit button and we'll
+    get to it!</p>
+<form method="POST" action="{{ url_for('quotesubmit') }}" enctype="multipart/form-data">
 <label for="fname">First name:</label><br>
 <input class="input" type="text" id="fname" name="fname" placeholder="Your First Name.."><br>
 <label for="lname">Last name:</label><br>
@@ -47,11 +51,26 @@
  <label for="email">Enter your email:</label><br>
   <input class="input" type="email" id="email" name="email" placeholder="Your Email.."><br>
 <label for="tel">Phone number:</label><br>
-<input class="input" type="tel" id="tel" name="tel" placeholder="Your phone number, with area code :)"><br>
+<input class="input" type="tel" id="tel" name="tel" placeholder="Don't forget the area code :)"><br>
+<label id="preferred" for="preferred">Choose your preferred contact method:</label><br>
+    <p><i>I'll only use whichever you select as your preferred and you can leave either blank!</i></p>
+    <input class="input" type="radio" id="preferred" name="preferred" value="Email"><br>
+    <label for="preferred">Email</label><br>
+    <input class="input" type="radio" id="preferred" name="preferred" value="Phone"><br>
 
+    <label for="preferred">Phone</label><br>
+<p></p>
 <label for="details">Give us a description of your device and your issue!</label><br>
-<input class="description" type="text" id="details" name="details"><br>
+<textarea class="description" id="details" name="details" placeholder="Describe your issue!"></textarea><br>
+   <input type="file" name="photo" accept="image/*" placeholder="Attach images!"><br>
+
+
 <input class="submit" type="submit" value="Submit">
 </form>
+
+<footer>
+    <p class="paragraphs"><i>All customer data is never sold and periodically purged from server storage.
+        I run, fund, and build this site entirely on my own and am dedicated to customer privacy.</i></p>
+</footer>
 </body>
 </html>
