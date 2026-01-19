@@ -10,13 +10,28 @@ left: 0;
 right: 0;
 overflow: hidden;
 position: fixed;
+    border: black solid 3px;
+
+
 
 background-color: bisque;
+}
+.nav-item {
+    border: black solid 1px;
 }
 /* This is the mobile nav bar */
 .mobile-nav { display: none; }
 
 @media (max-width: 768px) {
+    .mobile-div-1 {
+        border: black solid 2px;
+        border-radius: 25px;
+
+    }
+    .mobile-nav-item {
+        border: ButtonBorder 1px solid;
+        border-radius: 25px;
+    }
     .sidebar {
         display: none;
     }
