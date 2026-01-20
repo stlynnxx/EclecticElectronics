@@ -21,6 +21,7 @@ background-color:  rgb(228,219,238);
     border: black solid 1px;
     border-radius: 25px;
     background-color: bisque;
+    box-shadow: darkgray 5px 5px 5px;
 
 
 }
@@ -36,18 +37,18 @@ background-color:  rgb(228,219,238);
 
     .summary {
         font-family: "Lato", sans-serif;
+        border: black solid 0.5px;
+        box-shadow: darkgray 5.5px 5.5px 5.5px;
     }
     .mobile-div-1 {
         font-family: "Lato", sans-serif;
-
-
         background-color: rgb(228,219,238);
-
     }
     .mobile-nav-item {
         border: ButtonBorder 1px solid;
         border-radius: 25px;
         background-color: bisque;
+
     }
     .sidebar {
         display: none;
@@ -100,6 +101,8 @@ background-color:  rgb(228,219,238);
     padding: 10px;
     background-color: rgb(237,187,220);
     display: inline-grid;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+
 }
 .active {
     background-color: bisque;
@@ -144,19 +147,21 @@ p {
     width: 320px;
     height: auto;
     margin: 8px;
+    border: 2.5px solid black;
 
 }
 .button {
     border-radius: 25px;
     color: white;
-    border: black solid 1px;
+    border: black solid 2px;
     background-color: darkmagenta;
-    box-shadow: 2px 2px 5px darkmagenta;
+
     margin-bottom: 25px;
 
 
 }
 .gbimage {
+    border: black solid 2px;
 
 }
 .button2 {
@@ -189,6 +194,7 @@ p {
     margin-top: 50px;
     margin-bottom: 100px;
     border-radius: 15px;
+    border: black solid 1px;
 }
 
 @media (max-width: 768px) {
@@ -202,6 +208,8 @@ p {
         font-size: 12px;
         border-radius: 15px;
         background-color: bisque;
+        border: black solid 1.75px;
+        padding: 10px;
 
     }
 
