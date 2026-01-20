@@ -10,6 +10,7 @@ left: 0;
 right: 0;
 overflow: hidden;
 position: fixed;
+font-family: "Lato", sans-serif;
 
 
 
@@ -26,9 +27,18 @@ background-color:  rgb(228,219,238);
 
 /* This is the mobile nav bar */
 .mobile-nav { display: none; }
+.div_one {
+        font-family: "Lato", sans-serif;
+    }
+
 
 @media (max-width: 768px) {
+
+    .summary {
+        font-family: "Lato", sans-serif;
+    }
     .mobile-div-1 {
+        font-family: "Lato", sans-serif;
 
 
         background-color: rgb(228,219,238);
@@ -68,7 +78,7 @@ background-color:  rgb(228,219,238);
         background: bisque;
         border-radius: 10px;
         overflow: hidden;
-    } 65
+    }
 
     .mobile-menu a {
         display: block;
@@ -78,6 +88,10 @@ background-color:  rgb(228,219,238);
 }
 
 .title {
+    font-family: "Lato", sans-serif;
+
+    font-kerning: auto;
+
     text-align: center;
     text-box: auto;
     text-decoration-style: solid;
@@ -166,6 +180,7 @@ p {
 .mobile-footer {display: none}
 
 .desktop-footer {
+    font-family: "Lato", sans-serif;
     text-align: center;
     background-color: bisque;
     height: 170px;
@@ -180,6 +195,7 @@ p {
     .desktop-footer {display: none}
     .mobile-footer {display: block}
     .mobile-foot {
+        font-family: "Lato", sans-serif;
         text-align: center;
         text-box: auto;
         display: inline-grid;
