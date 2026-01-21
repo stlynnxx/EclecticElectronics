@@ -21,11 +21,11 @@
       <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
       <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
       <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
-      <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
-      <li class="mobile-nav-item"><a  href="{{ url_for('eclecticAI') }}">EclecticAI</a></li>
+      <li class="mobile-nav-item"><a  href="{{ url_for('eclecticAI') }}">Software</a></li>
         <li class="mobile-nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
         <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
             <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+            <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
         </div>
     </ul>
     </nav>
@@ -39,11 +39,11 @@
       <li class="nav-item"><a  href="{{ url_for('home') }}">Home!</a></li>
       <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
       <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
-      <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
-      <li class="nav-item"><a  href="{{ url_for('eclecticAI') }}">EclecticAI</a></li>
+      <li class="nav-item"><a  href="{{ url_for('eclecticAI') }}">Software</a></li>
         <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
         <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
         <li class="nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+        <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
     </ul>
         </div>
 
@@ -53,20 +53,23 @@
     <h1 class="title">Eclectic Electronics</h1>
 
 
-    <p><i>All things hardware and software</i></p>
+    <p><i>~All things hardware and software~</i></p><br>
 
-     <p><strong>Hello!</strong></p>
+
      <div class="div_one">
-     <p>Head on over to the <a href="{{ url_for('about') }}">about</a> page to read about us!</p>
-     <p>Go to the <a href="{{ url_for('quote') }}">quote</a> page to get a free repair estimate!</p>
-     </div>
+         <p>We are a small shop specializing in a few areas, including Personal Device Repair, Vintage Device
+         Restoration, Software Development, IT, and Cybersecurity.</p>
+     <p>You can go to the <a href="{{ url_for('about') }}">about</a> page to read more about us and our services.</p>
+     <p>You can also go to the <a href="{{ url_for('quote') }}">quote</a> page to get a free repair estimate!</p>
+     </div><br>
 
     <h2>Want a discount code for our ebay store?</h2>
 
 
  <form>
-   <button class="button" type="submit" formaction="https://ebay.us/m/Pk8Xo1">Get your ebay discount!</button>
+   <button class="button" type="submit" formaction="https://ebay.us/m/Pk8Xo1">Click here for your ebay discount!</button>
  </form>
+     <p>This discount code is good for 25% any itme in my store, and allows up to three uses per customer.</p>
 
      <div><img src="{{ url_for('static', filename='photos/game.png') }}" alt="oops!" class="logo" width=100%></div>
 
