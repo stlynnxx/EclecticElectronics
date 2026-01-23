@@ -1,6 +1,8 @@
 import os
 import uuid
 import json
+from xml.etree.ElementTree import QName
+
 from flask import Flask, render_template,request, redirect, url_for, current_app
 from werkzeug.utils import secure_filename
 
@@ -13,12 +15,20 @@ ALLOWED_EXTENSIONS = {"png", "webp", "jpg", "jpeg", "gif"}
 def allowed_file(filename: str) -> bool:
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 DATA_FILE = "Quotes.json"
-DATA_DIR = os.environ.get("DATA_DIR", "./data")
+DATA_FILE_TWO = "Reviews.json"
+
+STORAGE_ROOT = os.environ.get("STORAGE_ROOT", "./persist")
+UPLOAD_DIR = os.path.join(STORAGE_ROOT, "uploads")
+DATA_DIR = os.path.join(STORAGE_ROOT, "data")
+
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(DATA_DIR, exist_ok=True)
-QUOTES_FILE = os.path.join(DATA_DIR, DATA_FILE)
+
+QUOTES_FILE = os.path.join(DATA_DIR, "Quotes.json")
+REVIEWS_FILE = os.path.join(DATA_DIR, "Reviews.json")
 UPLOAD_FOLDER = os.path.join(DATA_DIR, "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
@@ -26,6 +36,47 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 def home():
 
     return render_template('home.html')
+@app.route('/review')
+def review():
+    return render_template('review.html')
+# @app.route('/review-submit', methods=['POST'])
+# def review_submit():
+@app.route('/review-submit' , methods=['POST'])
+def review_submit():
+    passer = []
+    name = request.form.get('name')
+    script= request.form.get('description')
+
+    # photo = request.files.get('photo')
+    # photo_url = None
+    # if photo and photo.filename:
+        # if not allowed_file(photo.filename):
+            # return "Unsupported file type", 400
+        # Sanitize
+        # original = secure_filename(photo.filename)
+        # ext = original.rsplit('.', 1)[1].lower()
+        # new_name = f"{uuid.uuid4().hex}.{ext}"
+        # save_path = os.path.join(app.config['UPLOAD_FOLDER'], new_name)
+        # photo.save(save_path)
+        # photo_url = f"/uploads/{new_name}"
+    entry = {
+        'name': name,
+        'Description': script,
+
+    }
+    if os.path.exists(REVIEWS_FILE):
+        with open(REVIEWS_FILE, 'r', encoding="utf-8") as f:
+            passer = json.load(f)
+    else:
+        passer = []
+
+    passer.append(entry)
+    with open(REVIEWS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(passer, f, indent=2)
+
+    return redirect(url_for('home'))
+
+
 @app.route('/eclecticAI')
 def eclecticAI():
     return render_template('eclecticAI.html')

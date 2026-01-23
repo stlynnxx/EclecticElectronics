@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css', v=1) }}">
+    <title>Review</title>
+</head>
+<body>
+<form method="POST" action="{{ url_for('review_submit') }}" enctype="multipart/form-data">
+    <h1 class="title">Submit a review!</h1><br>
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" id="name" placeholder="Type your name here"><br>
+    <label for="description">Description:</label><br>
+    <textarea class="description" name="description" id="description" placeholder="Describe your experience!"></textarea><br>
+    <input type="submit" class="submit" value="Submit">
+</form>
+</body>
+</html>

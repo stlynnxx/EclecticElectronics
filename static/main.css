@@ -160,6 +160,41 @@ p {
 
 
 }
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.container-item {
+    padding: 10px;
+}
+.container-item-img {
+ font-family: "Lato", sans-serif;
+
+    font-kerning: auto;
+
+    text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: bisque;
+    display: inline-grid;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+
+
+
+
+
+
+}
+
+
+
+
 .gbimage {
     border: black solid 2px;
 
