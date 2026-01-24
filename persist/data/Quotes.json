@@ -1,20 +1,11 @@
 [
   {
-    "fname": "Stevie",
-    "lname": "Test",
+    "fname": "[[",
+    "lname": "ll",
     "email": "stevie@eclecticelectronics.com",
-    "telephone": "217-246-9915",
+    "telephone": "217-273-5515",
     "preferred": "Email",
-    "details": "aaa",
-    "photo_url": "/uploads/6431e40b696c446aa45f250a231aebfc.webp"
-  },
-  {
-    "fname": "STOR",
-    "lname": "STOR",
-    "email": "stevie@eclecticelectronics.com",
-    "telephone": "217-246-9915",
-    "preferred": "Email",
-    "details": "SSSS",
-    "photo_url": "/uploads/179d971c00064158bed5bc9c07aa4611.webp"
+    "details": "ased",
+    "photo_url": null
   }
 ]
