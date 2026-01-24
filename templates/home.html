@@ -57,6 +57,8 @@
 
 
      <div class="div_one">
+         <!--<div><img src="{{ url_for('static', filename='photos/game.png')}}" alt="ruh-roh" width=100%>
+         </div>-->
          <p>We are a small shop specializing in a few areas, including Personal Device Repair, Vintage Device
          Restoration, Software Development, IT, and Cybersecurity.</p>
      <p>You can go to the <a href="{{ url_for('about') }}">about</a> page to read more about us and our services.</p>
@@ -73,9 +75,10 @@
 
      <div class="container">
          <div class="container-item-img">
+             <p><a href="{{ url_for('review') }}">Click here to leave us a review!</a></p>
      <div><img src="{{ url_for('static', filename='photos/game.png') }}" alt="oops!" width=100%></div>
          </div>
-     <div class="container-item"><p><a href="{{ url_for('review') }}">Click here to leave us a review!</a></p></div>
+
      </div>
     <!-- https://ebay.us/m/Pk8Xo1-->
 

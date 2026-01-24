@@ -189,7 +189,6 @@ p {
 
 
 
-
 }
 
 
@@ -198,6 +197,12 @@ p {
 .gbimage {
     border: black solid 2px;
 
+}
+.img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
 }
 .button2 {
 

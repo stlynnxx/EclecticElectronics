@@ -1,0 +1,28 @@
+.review-form {
+
+    border-radius: 25px;
+    font-family: "Lato", sans-serif;
+
+    font-kerning: auto;
+
+    text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+
+    padding: 20px;
+    background-color: bisque;
+    display: inline-grid;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+}
+
+.name {
+    margin: 20px;
+}
+
+.attach {
+    margin-left: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

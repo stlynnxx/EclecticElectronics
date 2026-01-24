@@ -3,16 +3,38 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css', v=1) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='review.css', v=1) }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Review</title>
 </head>
 <body>
+<h1 class="title">Leave a review!</h1><br>
+    <p>This is for leaving a review about your experience with us.
+    This page is still currently under construction but it is in a functional state!
+    If you leave a review I will see it now, and eventually they will be displayed on the
+    home page.</p>
+
+
+<div class="review-form">
 <form method="POST" action="{{ url_for('review_submit') }}" enctype="multipart/form-data">
-    <h1 class="title">Submit a review!</h1><br>
+    <div class="name">
     <label for="name">Name:</label><br>
     <input type="text" name="name" id="name" placeholder="Type your name here"><br>
-    <label for="description">Description:</label><br>
+    </div>
+    <div class="name">
+        <label for="description">Description:</label><br>
     <textarea class="description" name="description" id="description" placeholder="Describe your experience!"></textarea><br>
-    <input type="submit" class="submit" value="Submit">
+    </div>
+
+
+    <label for="photos">Attach Photos:</label><br>
+
+    <input class="attach" type="file" name="photos" accept="image/*" id="photos" multiple><br>
+
+    <input type="submit" class="submit" value="Submit"><br>
 </form>
+</div>
+<p><a href="{{ url_for('home') }}">Home</a></p>
 </body>
 </html>
