@@ -3,5 +3,108 @@
 h1 {
     text-align: center;
 }
+.software-body-row {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    flex-dire;
+}
+.software-page-layout {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card-row {
+    display: flex;
+    width: 100%;
+}
+.card-row-left {
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+.software-content-flex {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
 
 
+    padding-top: 24px;
+}
+.content-flex-one {
+    align-items: flex-start !important;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 100px;
+
+
+
+}
+.card-one-div {
+    display: flex;
+    justify-content: flex-start;
+
+
+
+
+    text-align: center;}
+.strong {
+    color: black;
+}
+.trans-card-one
+{
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+.trans-card-one::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card-one:hover,
+.trans-card-one:active {
+    width: 400px;
+    height: 250px;
+}
+.trans-card-one:hover::after {
+    display: none;
+}
+.soft-title {
+    font-family: "Lato", sans-serif;
+
+    font-kerning: auto;
+
+    text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(237,187,220);
+    display: inline;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+
+}

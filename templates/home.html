@@ -10,14 +10,17 @@
  </head>
 
     <body>
+    <div class="page-layout">
+        <div class="body-row">
+        <div class="mobile-nav-flex">
      <!--mobile nav-->
     <details class="mobile-nav">
 
             <summary class="summary">Navigation</summary>
 
     <nav class="mobile-menu">
-    <ul>
-        <div class="mobile-div-1">
+    <ul class="mobile-div-1">
+
       <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
       <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
       <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
@@ -26,11 +29,12 @@
         <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
             <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
             <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
-        </div>
+
     </ul>
     </nav>
     </details>
-
+        </div>
+    <div class="desktop-nav-flex">
     <!--desktop-->
     <nav class="sidebar">
         <div class="desktop-div-1">
@@ -48,8 +52,11 @@
         </div>
 
     </nav>
+    </div>
+    </div>
+        <div class="content-flex-main">
 
-
+    <div class="content-flex-one">
     <h1 class="title">Eclectic Electronics</h1>
 
 
@@ -64,6 +71,8 @@
      <p>You can go to the <a href="{{ url_for('about') }}">about</a> page to read more about us and our services.</p>
      <p>You can also go to the <a href="{{ url_for('quote') }}">quote</a> page to get a free repair estimate!</p>
      </div><br>
+        </div>
+        <div class="content-flex-two">
 
     <h2>Want a discount code for our ebay store?</h2>
 
@@ -76,20 +85,24 @@
      <div class="container">
          <div class="container-item-img">
              <p><a href="{{ url_for('review') }}">Click here to leave us a review!</a></p>
-     <div><img src="{{ url_for('static', filename='photos/game.png') }}" alt="oops!" width=100%></div>
+     <div class="img-flex"><img src="{{ url_for('static', filename='photos/game.png') }}" alt="oops!" width=100%></div>
+             <p></p>
          </div>
 
      </div>
+        </div>
+        </div>
     <!-- https://ebay.us/m/Pk8Xo1-->
 
     <!-- We'll add some sort of click to show or hover that gives a coupon code-->
-
+ <div class="footer-flex">
  <div class="desktop-footer">
      <footer>
      <p class="toe">This website is completely open source and can be found at <a href="https://www.github.com/stlynnxx/EclecticElectronics">https://www.github.com/stlynnxx/EclecticElectronics</a></p>
      <p>This site logs zero user data in any manner.</p>
 
      </footer></div>
+ </div>
   <div class="mobile-footer">
      <footer>
      <p class="mobile-foot">This website is completely open source and can be found at <a href="https://www.github.com/stlynnxx/EclecticElectronics">https://www.github.com/stlynnxx/EclecticElectronics</a></p>
@@ -99,5 +112,6 @@
 
 
 
+    </div>
     </body>
 </html>

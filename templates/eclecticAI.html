@@ -7,24 +7,53 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='eclecticai.css') }}">
 </head>
 <body>
- <!--mobile nav-->
+<div class="software-page-layout">
+
+        <div class="software-body-row">
+        <div class="mobile-nav-flex">
+     <!--mobile nav-->
     <details class="mobile-nav">
-        <summary class="summary">Navigation</summary>
+
+            <summary class="summary">Navigation</summary>
 
     <nav class="mobile-menu">
-        <div class="mobile-div-1">
     <ul>
+        <div class="mobile-div-1">
       <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
       <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
       <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
       <li class="mobile-nav-item"><a  href="{{ url_for('eclecticAI') }}">Software</a></li>
         <li class="mobile-nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
         <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
-        <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
-    </ul>
+            <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+            <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
         </div>
+    </ul>
     </nav>
     </details>
+        </div>
+    <div class="desktop-nav-flex">
+    <!--desktop-->
+    <nav class="sidebar">
+        <div class="desktop-div-1">
+
+    <ul class="active">
+      <li class="nav-item"><a  href="{{ url_for('home') }}">Home!</a></li>
+      <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li class="nav-item"><a  href="{{ url_for('eclecticAI') }}">Software</a></li>
+        <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+        <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+        <li class="nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+        <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+    </ul>
+        </div>
+
+    </nav>
+    </div>
+    </div>
+
+<div class="desktop-nav-flex">
 
     <!--desktop-->
     <nav class="sidebar">
@@ -42,13 +71,25 @@
         </div>
 
     </nav>
-<h1>Software Development</h1>
-<p>One of our biggest loves is software development. We currently have multiple larger
-projects in the works, and will periodically be putting up for fun projects on this site,
-such as our secure <a href="{{ url_for('password') }}">password generator</a>, and more that
-you'll be seeing in the coming future!</p>
-<p>This site itself is one of our bigger ongoing projects; everything is built by hand, by me alone, and I try to
-push updates 6 days a week.</p>
-<p>The website along with future projects can be found on our <a target="_blank" rel="noopener noreferrer" href="https://www.github.com/stlynnxx">Github</a>.</p>
+</div>
+</div>
+<h1 class="title">Software Development</h1>
+<div class="software-content-flex">
+
+
+
+<div class="content-flex-one">
+<div class="card-row">
+    <div class="card-row-left">
+    <p class="trans-card-one">
+        <strong class="strong"><u><i>Password Generator</i></u></strong><br>
+       A simple program for generating secure passwords on the fly.
+        The code is included in the site codebase at our <a href="https://www.github.com/stlynnxx/EclecticElectronics">Github</a>.
+    </p>
+    </div>
+</div>
+</div>
+</div>
+
 </body>
 </html>

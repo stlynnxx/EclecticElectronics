@@ -17,6 +17,20 @@ font-family: "Lato", sans-serif;
 
 background-color:  rgb(228,219,238);
 }
+.page-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.body-row {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+}
+.mobile-nav-flex { display: none;}
+.desktop-nav-flex { display: block;}
 .nav-item {
     border: black solid 1px;
     border-radius: 25px;
@@ -25,15 +39,58 @@ background-color:  rgb(228,219,238);
 
 
 }
+.content-flex-main {
+    flex: 1;
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.content-flex-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.content-flex-two {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.img-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 /* This is the mobile nav bar */
-.mobile-nav { display: none; }
+
 .div_one {
         font-family: "Lato", sans-serif;
     }
 
 
 @media (max-width: 768px) {
+    .mobile-nav-flex { display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 12px auto;
+    }
+    .desktop-nav-flex { display: none;}
 
     .summary {
         font-family: "Lato", sans-serif;
@@ -58,11 +115,17 @@ background-color:  rgb(228,219,238);
     }
 
     .mobile-nav {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
         margin: 12px auto;
     }
 
     .mobile-nav summary {
+        display: flex;
+        justify-content: center;
         background: bisque;
         color: darkmagenta;
         padding: 12px 16px;
