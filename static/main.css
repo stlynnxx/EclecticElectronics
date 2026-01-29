@@ -100,6 +100,7 @@ background-color:  rgb(228,219,238);
     .mobile-div-1 {
         font-family: "Lato", sans-serif;
         background-color: rgb(228,219,238);
+
     }
     .mobile-nav-item {
         border: ButtonBorder 1px solid;
@@ -121,6 +122,7 @@ background-color:  rgb(228,219,238);
         width: 100%;
         justify-content: center;
         margin: 12px auto;
+        border-radius: 10px;
     }
 
     .mobile-nav summary {
@@ -137,17 +139,19 @@ background-color:  rgb(228,219,238);
 
     .mobile-menu ul {
         list-style-type: none;
-        margin: 10px 0 0 0;
+
         padding: 0;
-        background: bisque;
+
+
         border-radius: 10px;
         overflow: hidden;
     }
 
     .mobile-menu a {
         display: block;
-        padding: 12px 16px;
+
         text-align: center;
+        border-radius: 10px;
     }
 }
 
@@ -259,6 +263,7 @@ p {
 
 .gbimage {
     border: black solid 2px;
+
 
 }
 .img {

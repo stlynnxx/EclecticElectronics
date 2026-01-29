@@ -23,6 +23,8 @@ display: flex;
     justify-content: flex-start;
     align-self: flex-start;
 }
+.software-content-flex {display: flex;}
+.software-content-flex-mobile {display: none;}
 
 .software-content-flex {
 
@@ -57,6 +59,98 @@ display: flex;
 .strong {
     color: black;
 }
+@media (max-width: 768px) {
+    .software-content-flex-mobile {display: flex;}
+    .software-content-flex {display: none;}
+
+    .content-flex-one-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        justify-content: flex-start;
+
+    }
+    .card-row-left-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+
+    }
+
+    .trans-card-one-mobile
+    {
+        margin: 50px;
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+    .trans-card-one-mobile::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+    details[open] .trans-card-one-mobile {
+        width: 250px;
+        height: 250px;
+    }
+
+
+        .trans-card-two-mobile
+    {
+            margin: 50px;
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+    .trans-card-two-mobile::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+    details[open] .trans-card-two-mobile {
+        width: 150px;
+        height: 250px;
+    }
+
+
+
+}
+
+
+
 .trans-card-one
 {
 
@@ -84,8 +178,7 @@ display: flex;
     pointer-events: none;
 }
 
-.trans-card-one:hover,
-.trans-card-one:active {
+.trans-card-one:hover{
     width: 400px;
     height: 250px;
 }
@@ -107,4 +200,14 @@ display: flex;
     display: inline;
     box-shadow: darkgray 5.5px 5.5px 5.5px;
 
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+summary::marker {
+    content: '';
+}
+summary {
+    list-style: none;
 }
