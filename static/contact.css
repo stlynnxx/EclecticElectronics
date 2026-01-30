@@ -1,5 +1,12 @@
 
+.contact-page-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
 
+}
 
 
 .content-block {
@@ -39,8 +46,16 @@ body {
 
 
 }
-
+.mobile-nav {
+    display: none;
+}
 @media (max-width: 768px) {
+    .mobile-nav {
+        display: block;
+    }
+    .sidebar {
+        display: none;
+    }
     .desktop-version {display: none}
     .mobile-version {display: block}
     .mobile-headers {

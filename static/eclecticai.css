@@ -7,17 +7,19 @@ h1 {
     flex: 1;
     display: flex;
     align-items: flex-start;
-    flex-dire;
+
 }
 .software-page-layout {
 display: flex;
-    flex-direction: column;
+
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .card-row {
     display: flex;
     width: 100%;
+    flex-direction: row;
 }
 .card-row-left {
     justify-content: flex-start;
@@ -44,6 +46,7 @@ display: flex;
     display: flex;
     justify-content: flex-start;
     margin-left: 100px;
+    flex-direction: row;
 
 
 
@@ -59,6 +62,7 @@ display: flex;
 .strong {
     color: black;
 }
+
 @media (max-width: 768px) {
     .software-content-flex-mobile {display: flex;}
     .software-content-flex {display: none;}
@@ -185,6 +189,44 @@ display: flex;
 .trans-card-one:hover::after {
     display: none;
 }
+.trans-card-two
+    {
+
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+.trans-card-two::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card-two:hover{
+    width: 400px;
+    height: 250px;
+}
+.trans-card-two:hover::after {
+    display: none;
+}
+
+
+
 .soft-title {
     font-family: "Lato", sans-serif;
 

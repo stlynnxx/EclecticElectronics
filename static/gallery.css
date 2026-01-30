@@ -1,2 +1,15 @@
+.desktop-version {display: block}
+.mobile-version {display: none}
+.mobile-nav {
+    display: none;
+}
+@media (max-width: 768px) {
+    .mobile-nav {
+        display: block;
+    }
 
+    .sidebar {
+        display: none;
+    }
+}
 
