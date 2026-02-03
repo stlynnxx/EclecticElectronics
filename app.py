@@ -98,8 +98,14 @@ def password():
 
     return render_template('passwordgenerator.html')
 
-@app.route('/generator')
+@app.route('/generator', methods=['GET', 'POST'])
 def generator():
+    entropy_val = 0
+    if request.method == 'POST':
+        entropy_val = int(request.form.get('entropy', 0))
+    else:
+        entropy_val = 0
+
     adjs = ["Attractive", "Agreeable", "Angry", "Big",
             "Bald", "Ambitious", "Bewildered", "Colossal",
             "Beautiful", "Brave", "Clumsy", "Fat", "Chubby",
@@ -123,16 +129,47 @@ def generator():
              "Elf"]
     specials = ["!","?","@","#","$", "%","^", "&","*","+"]
 
+
     adj_pick = random.choice(adjs)
     noun_pick = random.choice(nouns)
     special_pick = random.choice(specials)
     random_one = random.randint(0, 9)
     random_two = random.randint(0, 9)
-    proto_password = adj_pick + noun_pick
-    num_1 = str(random_one)
-    num_2 = str(random_two)
-    password = proto_password + num_1 + num_2 + special_pick
+    match entropy_val:
+        case 0:
+            proto_password = adj_pick + noun_pick
+            num_1 = str(random_one)
+            num_2 = str(random_two)
+            password = proto_password + num_1 + num_2 + special_pick
+        case 1:
+            proto_password = noun_pick + adj_pick
+            num_1 = str(random_one)
+            num_2 = str(random_two)
+            password = proto_password + num_1 + num_2 + special_pick
+        case 2:
+            num_1 = str(random_one)
+            num_2 = str(random_two)
+            proto_password = num_1 + num_2 + special_pick
+            password = num_1 + num_2 + special_pick + noun_pick + adj_pick
+        case 3:
+            num_1 = str(random_one)
+            num_2 = str(random_two)
+            password = adj_pick + num_1 + num_2 + noun_pick + special_pick
+
+        case 4:
+            num_1 = str(random_one)
+            num_2 = str(random_two)
+            password = adj_pick + num_2 + noun_pick + num_1 + special_pick
+
+        case 5:
+            num_1 = str(random_one)
+            num_2 = str(random_two)
+            password = special_pick + num_1 + noun_pick + adj_pick + num_2
+        case _:
+            raise ValueError(f"Improper entropy value {entropy_val}")
+
     return render_template('passwordgenerator.html', password=password)
+
 
 @app.route('/quotesubmit', methods=['POST'])
 

@@ -273,10 +273,10 @@ p {
     z-index: -1;
 }
 .button2 {
-
+    margin: 15px;
     border-radius: 25px;
     color: white;
-    border: black solid 1px;
+
     background-color: darkmagenta;
     box-shadow: 2px 2px 5px darkmagenta;
     margin-bottom: 25px;

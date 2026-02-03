@@ -191,3 +191,17 @@ But I may not get to work on that until next week as I'd like to take the weeken
 which means I have limited time for programming today.
 
 Basically, I'm only human.
+
+2/3/2026-
+
+It's been a bit but I've been busy with other stuff and it's not like I left the site
+broken or anything. Or like anyone even sees it.
+
+Anyway, I did some updates to the password generator today; I added entropy values
+and a copy paste button! It really wasn't as bad as I had feared it would be.
+
+The password generator page definitely needs some layout tweaks, but, one thing at
+a time.
+
+Oh, and I got rid of the mobile nav popping up on the desktop version of the
+generator page.
