@@ -51,6 +51,7 @@ display: flex;
 
 
 }
+
 .card-one-div {
     display: flex;
     justify-content: flex-start;
@@ -64,7 +65,8 @@ display: flex;
 }
 
 @media (max-width: 768px) {
-    .software-content-flex-mobile {display: flex;}
+    .software-content-flex-mobile {display: flex;
+    flex-direction: column;}
     .software-content-flex {display: none;}
 
     .content-flex-one-mobile {
@@ -75,13 +77,24 @@ display: flex;
         justify-content: flex-start;
 
     }
+    .content-flex-two-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        justify-content: flex-start;
+    }
+
     .card-row-left-mobile {
         display: flex;
         justify-content: center;
         align-items: center;
 
-
-
+    }
+    .card-row-left-two-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .trans-card-one-mobile
@@ -148,7 +161,45 @@ display: flex;
         width: 150px;
         height: 250px;
     }
+    .trans-card-three-mobile
+    {
 
+
+        margin: 50px;
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+.trans-card-three-mobile::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card-three-mobile:hover{
+    width: 400px;
+    height: 250px;
+}
+.trans-card-three-mobile:hover::after {
+    display: none;
+}
 
 
 }
@@ -224,7 +275,41 @@ display: flex;
 .trans-card-two:hover::after {
     display: none;
 }
+.trans-card-three
+    {
 
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+.trans-card-three::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card-three:hover{
+    width: 400px;
+    height: 250px;
+}
+.trans-card-three:hover::after {
+    display: none;
+}
 
 
 .soft-title {
