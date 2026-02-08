@@ -205,3 +205,14 @@ a time.
 
 Oh, and I got rid of the mobile nav popping up on the desktop version of the
 generator page.
+
+2/8/2026-
+
+I've really been dropping the ball both on journaling every time that
+I'm in here, and on being in here daily, but, to be fair, it's been
+because I've been working on other work and not just slacking!
+
+Today in order to dip my toe back into website work a bit I worked on the
+password generator, making the higher emtropy passwords a bit noiseier.
+I added an injection method for injecting random values/letters into the
+generated nouns and adjectives. So far so good!

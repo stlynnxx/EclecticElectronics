@@ -1,12 +1,14 @@
 import os
 import uuid
 import json
+from os.path import split
 from xml.etree.ElementTree import QName
 
 from flask import Flask, render_template,request, redirect, url_for, current_app
 from werkzeug.utils import secure_filename
 
 import random
+import string
 
 
 app = Flask(__name__)
@@ -99,7 +101,12 @@ def password():
     return render_template('passwordgenerator.html')
 
 @app.route('/generator', methods=['GET', 'POST'])
+
 def generator():
+    def injection(word: str, num: str, pos: int) -> str:
+        s = num
+        return word[:pos] + s + word[pos:]
+
     entropy_val = 0
     if request.method == 'POST':
         entropy_val = int(request.form.get('entropy', 0))
@@ -128,43 +135,53 @@ def generator():
              "Fireplace", "Phone", "Mirror", "Paint", "Tablet", "Pad", "Gnome",
              "Elf"]
     specials = ["!","?","@","#","$", "%","^", "&","*","+"]
+    randoms = []
+    randoms_count = 10
+    for x in range(randoms_count):
+        randoms.append(random.choice(string.ascii_letters))
 
 
     adj_pick = random.choice(adjs)
     noun_pick = random.choice(nouns)
     special_pick = random.choice(specials)
-    random_one = random.randint(0, 9)
-    random_two = random.randint(0, 9)
+    special_pick_two = random.choice(specials)
+    random_one = str(random.randint(0, 9))
+    random_two = str(random.randint(0, 9))
+    random_three = str(random.randint(0, 9))
     match entropy_val:
         case 0:
             proto_password = adj_pick + noun_pick
-            num_1 = str(random_one)
-            num_2 = str(random_two)
+            num_1 = random_one
+            num_2 = random_two
             password = proto_password + num_1 + num_2 + special_pick
         case 1:
-            proto_password = noun_pick + adj_pick
-            num_1 = str(random_one)
-            num_2 = str(random_two)
-            password = proto_password + num_1 + num_2 + special_pick
+            injected_adj = injection(adj_pick, random_one, 2)
+            injected_noun = injection(noun_pick, random_two, 2)
+            password = injected_adj + special_pick + injected_noun
+
+
         case 2:
-            num_1 = str(random_one)
-            num_2 = str(random_two)
-            proto_password = num_1 + num_2 + special_pick
-            password = num_1 + num_2 + special_pick + noun_pick + adj_pick
+            injected_adj = injection(adj_pick, random_one, 2)
+            injected_noun = injection(noun_pick, random_two, 2)
+            password = injected_noun + special_pick + injected_adj
+
         case 3:
-            num_1 = str(random_one)
-            num_2 = str(random_two)
-            password = adj_pick + num_1 + num_2 + noun_pick + special_pick
+            injected_adj = injection(adj_pick, random_one, 2)
+            injected_noun = injection(noun_pick, random_two, 2)
+            password = injected_noun + special_pick + random_three + injected_adj
+
 
         case 4:
-            num_1 = str(random_one)
-            num_2 = str(random_two)
-            password = adj_pick + num_2 + noun_pick + num_1 + special_pick
+            injected_adj = injection(adj_pick, random_one, 2)
+            injected_noun = injection(noun_pick, randoms[6], 2)
+            password = injected_noun + special_pick + random_three + injected_adj
 
         case 5:
-            num_1 = str(random_one)
-            num_2 = str(random_two)
-            password = special_pick + num_1 + noun_pick + adj_pick + num_2
+
+            injected_adj = injection(adj_pick, random_one, 3)
+            injected_noun = injection(noun_pick, random_two, 4)
+            dbl_injc_noun = injection(noun_pick, randoms[0], 4)
+            password = dbl_injc_noun + randoms[1] + special_pick + random_three + injected_adj
         case _:
             raise ValueError(f"Improper entropy value {entropy_val}")
 
