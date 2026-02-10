@@ -1,0 +1,368 @@
+
+
+h1 {
+    text-align: center;
+}
+.software-body-row {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+
+}
+.software-page-layout {
+display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+.card-row-left {
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+.software-content-flex {display: flex;}
+.software-content-flex-mobile {display: none;}
+
+.software-content-flex {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+
+    padding-top: 24px;
+}
+.content-flex-one {
+    align-items: flex-start !important;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 100px;
+    flex-direction: row;
+
+
+
+}
+
+.card-one-div {
+    display: flex;
+    justify-content: flex-start;
+
+
+
+
+    text-align: center;}
+.strong {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .software-content-flex-mobile {display: flex;
+    flex-direction: column;}
+    .software-content-flex {display: none;}
+
+    .content-flex-one-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        justify-content: flex-start;
+
+    }
+    .content-flex-two-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .card-row-left-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .card-row-left-two-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .trans-card-one-mobile
+    {
+        margin: 50px;
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+    .trans-card-one-mobile::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+    details[open] .trans-card-one-mobile {
+        width: 250px;
+        height: 250px;
+    }
+
+
+        .trans-card-two-mobile
+    {
+            margin: 50px;
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+    .trans-card-two-mobile::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+    details[open] .trans-card-two-mobile {
+        width: 150px;
+        height: 250px;
+    }
+    .trans-card-three-mobile
+    {
+
+
+        margin: 50px;
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+.trans-card-three-mobile::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card-three-mobile:hover{
+    width: 400px;
+    height: 250px;
+}
+.trans-card-three-mobile:hover::after {
+    display: none;
+}
+
+
+}
+
+
+
+.trans-card-one
+{
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+.trans-card-one::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card-one:hover{
+    width: 400px;
+    height: 250px;
+}
+.trans-card-one:hover::after {
+    display: none;
+}
+.trans-card-two
+    {
+
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+.trans-card-two::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card-two:hover{
+    width: 400px;
+    height: 250px;
+}
+.trans-card-two:hover::after {
+    display: none;
+}
+.trans-card-three
+    {
+
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+.trans-card-three::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card-three:hover{
+    width: 400px;
+    height: 250px;
+}
+.trans-card-three:hover::after {
+    display: none;
+}
+
+
+.soft-title {
+    font-family: "Lato", sans-serif;
+
+    font-kerning: auto;
+
+    text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(237,187,220);
+    display: inline;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+summary::marker {
+    content: '';
+}
+summary {
+    list-style: none;
+}
+
+
+
+
+
+.card {
+    font-family: "Lato", sans-serif;
+
+    font-kerning: auto;
+
+    text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: bisque;
+    display: inline-grid;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+
+}
+.software-content-flex-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

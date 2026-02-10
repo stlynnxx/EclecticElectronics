@@ -79,6 +79,9 @@ def review_submit():
     return redirect(url_for('home'))
 
 
+@app.route('/software')
+def software():
+    return render_template('software.html')
 @app.route('/eclecticAI')
 def eclecticAI():
     return render_template('eclecticAI.html')

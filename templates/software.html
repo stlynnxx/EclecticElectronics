@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">
     <title>Software</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='eclecticai.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='software.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='photos/favicon.ico') }}">
 </head>
@@ -76,13 +75,104 @@
 </div>
 </div>
 <!--Content-->
-<div class="eAI-flex-one">
-<h1 class="title">EclecticAI</h1>
-<div class="card">
-    <p>Coming Soon!
-        <a href="{{ url_for('home') }}"><i>Home</i></a></p>
+
+<div class="software-content-flex-main">
+<h1 class="title">Software Development</h1>
+<div class="software-content-flex">
+
+
+
+<div class="content-flex-one">
+<div class="card-row">
+    <div class="card-row-left">
+    <p class="trans-card-one">
+
+        <strong class="strong"><u><i>Password Generator</i></u></strong><br>
+       A simple program for generating secure passwords on the fly.
+        The code is included in the site codebase at our <a href="https://www.github.com/stlynnxx/EclecticElectronics">Github</a>.
+    </p>
+
+         <p class="trans-card-two">
+            <strong class="strong"><u><i>Parts & Stock</i></u></strong><br>
+            Parts & Stock is commerically oriented, locally hosted inventory web app system.
+            More info coming soon! The beta build is still in progress.
+
+    </p>
+    </div>
 </div>
 </div>
+</div>
+<!--Mobile-->
+<div class="software-content-flex-mobile">
+
+
+
+<div class="content-flex-one-mobile">
+<div class="card-row-mobile">
+    <div class="card-row-left-mobile">
+        <details class="card-details">
+            <summary>
+
+        <p class="trans-card-one-mobile">
+            <strong class="strong"><u><i>Password Generator</i></u></strong><br>
+            A simple program for generating secure passwords on the fly. Click <a href="{{ url_for('password') }}">here</a> to use it!
+        The code is included in the site codebase at our <a href="https://www.github.com/stlynnxx/EclecticElectronics">Github</a>.
+    </p>
+            </summary>
+        </details>
+         <details class="card-details">
+            <summary>
+
+        <p class="trans-card-two-mobile">
+            <strong class="strong"><u><i>Parts & Stock</i></u></strong><br>
+            Parts & Stock is commerically oriented, locally hosted inventory web app system.
+            More info coming soon! The beta build is still in progress.
+
+    </p>
+
+            </summary>
+        </details>
+
+    </div>
+</div>
+</div>
+<div class="content-flex-two-mobile">
+<div class="card-row-two-mobile">
+    <div class="card-row-left-two-mobile">
+        <details class="card-details">
+            <summary>
+                 <p class="trans-card-three-mobile">
+                    <strong class="strong"><u><i>EclecticAI</i></u></strong><br>
+                     EclecticAI is an original, experimental intelligence framework
+    built to forsake the standards of Large Language Models.<br>
+        <a href="{{ url_for('eclecticAI') }}"><i>Learn how it works</i></a>.</p>
+</div>
+                </p>
+
+
+
+
+
+            </summary>
+
+
+
+        </details>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
 
 
 </body>
