@@ -1,9 +1,23 @@
+.eAI-page-layout {
 
+    display: flex;
 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+ .eAI-body-row {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+
+}
 
 
 .card {
     font-family: "Lato", sans-serif;
+    color: black;
 
     font-kerning: auto;
 
@@ -14,12 +28,55 @@
     border-radius: 15px;
     padding: 20px;
     background-color: bisque;
+
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+
+}
+
+.eAI-title {
+    font-family: "Lato", sans-serif;
+
+    font-kerning: auto;
+
+    text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(237,187,220);
     display: inline-grid;
     box-shadow: darkgray 5.5px 5.5px 5.5px;
 
 }
 
-.eAI-flex-one {
+
+
+.eAI-content-flex-one {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.eAI-sub-flex-one {
+    display: flex;
+
+
+
+}
+.eAI-sub-flex-two {
+
+    display: flex;
+    font-size: larger;
+
+    margin: 10px;
+}
+.font-class {
+    color: deeppink;
+}
+.eAI-sub-flex-three {
+    margin: 5px;
+    display: flex;
+
 }

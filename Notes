@@ -216,3 +216,12 @@ Today in order to dip my toe back into website work a bit I worked on the
 password generator, making the higher emtropy passwords a bit noiseier.
 I added an injection method for injecting random values/letters into the
 generated nouns and adjectives. So far so good!
+
+2/14/2026-
+
+I've been out hunting inventory and as a result have been in here for a bit
+but I got back at it a bit today. I was having an issue getting the text colors
+correct on the eclecticAI page; I was setting them and they were ignoring me
+and I had to hunt down the culprit in the main.css file (I used p {} instead of
+a class on a paragraph and main.css is linked to eclecticAI for the nav bar) and
+fixed it and worked on the bio a bit as well.
