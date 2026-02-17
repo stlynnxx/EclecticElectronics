@@ -1,26 +1,118 @@
+.dsktp-div-zero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-.desktop-paragraph {
-    max-width: 680;
-    width: 92%;
-    margin: 24px auto;
-    padding: 24px 22px;
-    border-radius: 18px;
+    }
+.dsktp-title-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+.dsktp-div-one {
+    max-width: 1000px;
+
+         text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: bisque;
+    display: inline-grid;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+
+
+    }
+.dsktp-para {
+    display: flex;
 }
 .list {
-    color: deeppink;
-}
+    color: deeppink;}
+.title {
+    font-family: "Lato", sans-serif;
 
-.desktop-version {display: block}
-.mobile-version {display: none}
-.mobile-nav {
-    display: none;
+    font-kerning: auto;
+
+    text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(237,187,220);
+    display: inline-grid;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+
 }
+.desktop-version {
+
+        display: block;
+    }
+
+.mobile-version {
+
+        display: none;
+    }
+
+.mobile-nav {
+        display: none;
+    }
+
+
+
 @media (max-width: 768px) {
+    .desktop-version { display: none;}
+    .mobile-version {display: block;}
     .mobile-nav {
         display: block;
+    }
+
+
+    .mobile-title-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 20px;
     }
 
     .sidebar {
         display: none;
     }
+
+    .mobile-div-zero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-div-one {
+        max-width: 325px;
+        width: 100%;
+
+        text-align: center;
+        text-box: auto;
+        text-decoration-style: solid;
+        text-decoration-color: black;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: bisque;
+        display: inline-grid;
+        box-shadow: darkgray 5.5px 5.5px 5.5px;
+
+
+    }
+
+
+    .mobile-para {
+        display: flex;
+
+    }
 }
+

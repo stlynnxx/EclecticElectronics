@@ -225,3 +225,9 @@ correct on the eclecticAI page; I was setting them and they were ignoring me
 and I had to hunt down the culprit in the main.css file (I used p {} instead of
 a class on a paragraph and main.css is linked to eclecticAI for the nav bar) and
 fixed it and worked on the bio a bit as well.
+
+2/16/2026-
+
+I made some visual fixes to the home page the about page; I wasn't getting the
+media query to trigger on the about page and it was quite a headache
+but I was eventually able to.

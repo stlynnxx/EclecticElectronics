@@ -40,12 +40,13 @@ background-color:  rgb(228,219,238);
 
 }
 .content-flex-main {
+    flex-direction: column;
     flex: 1;
     display: flex;
     gap: 24px;
     padding: 24px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
 }
 .content-flex-one {

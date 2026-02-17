@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">
     <title>About Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
     <link rel="shortcut icon" href="{{ url_for('static', filename='photos/favicon.ico') }}">
 </head>
 <body>
@@ -43,12 +45,79 @@
         </div>
 
     </nav>
+ <div class="mobile-version">
 <!--Mobile-->
- <div class="desktop-paragraph">
-<!--<h1 class="title">Welcome to our about page!</h1>-->
+ <div class="mobile-div-zero">
+     <div class="mobile-title-div">
+         <h1 class="title">Welcome to our about page!</h1></div>
 <div>
-    <h2 class="title">Who we are:</h2>
-    <div class="div_one">
+    <div class="mobile-title-div">
+        <h2 class="title">Who we are:</h2></div>
+    <div class="mobile-div-one">
+    <p>
+        Eclectic Electronics is an independently owned and operated small business in
+        Charleston, Illinois, focusing on Technology Repair and Restoration,
+        Web/Software Development, and Cyber Security.</p>
+
+        <p>Our work spans from repairing and restoring both vintage and modern consumer tech,
+        developing Software and Websites, and Cybersecurity solutions. This business was born
+        from a desire to fight back against anti consumer, anti environment tech practices
+        where consumers are encouraged to trash perfectly repairable technology and just simply
+        buy a new machine. This is unsustainable both economically and ecologically, and every
+        repaired or restored device that leaves our shop with a renewed lifespan is a personal
+            win in our book.</p>
+
+        <p>Our work is backed by a standing CompTia A+ certification and countless hours of hands
+        on experimenting and repairing. I stayed up all night burning my fingers on my soldering
+            iron night after night so you don't have to. :)</p>
+    </div></div>
+
+
+    <div class="mobile-title-div">
+    <h3 class="title">What all we do:</h3></div>
+    <div class="mobile-div-one">
+    <p><strong>-Repairs and Restoration-</strong></p>
+    <p class="mobile-para">We are taking on basically any manner of repair on electronic devices. This spans
+    from broken screens to board level repairs to hardware, such as replacing charger ports.
+    </p>
+    <p class="mobile-para">We also offer restoration on vintage/aging electronics. We are constantly buying aged devices
+    in need of restoration, and are taking on live restoration comissions.<br> Under the photo gallery
+    page we will be listing photos of our restoration work.<br> You can often find the restored devices for sale
+        on our ebay page.</p></div><br>
+<div class="mobile-title-div">
+
+    <div class="title"><strong>IT and Cybersecurity Services:</strong></div></div>
+
+    <div class="mobile-div-one">
+    <p class="mobile-para">Our IT and Cybersecurity work is backed by an up to date CompTIA A+ Certification.</p>
+    <p>Home amd Small Office Networking:</p>
+
+    <ul class="list">
+        <li>OS Installations/Setups</li>
+        <li>Wifi Setup and Optimization</li>
+        <li>Router/Infrastructure Installation</li>
+        <li>Network Troubleshooting</li>
+        <li>Firewall Configurations</li>
+        <li>Printer Troubleshooting and Repair/Maintainence</li>
+
+    </ul>
+    <p>We specialize in building secure, efficient networks.</p>
+
+</div>
+
+</div>
+</div>
+ </div>
+</div>
+<div class="desktop-version">
+  <!--Desktop-->
+ <div class="dsktp-div-zero">
+     <div class="dsktp-title-div">
+         <h1 class="title">Welcome to our about page!</h1></div>
+<div>
+    <div class="dsktp-title-div">
+        <h2 class="title">Who we are:</h2></div>
+    <div class="dsktp-div-one">
     <p>
         Eclectic Electronics is an independently owned and operated small business in
         Charleston, Illinois, focusing on Technology Repair and Restoration,
@@ -68,19 +137,23 @@
     </div>
 
 
-
-    <h3 class="title">What all we do:</h3>
+    <div class="dsktp-title-div">
+    <h3 class="title">What all we do:</h3></div>
+    <div class="dsktp-div-one">
     <p><strong>-Repairs and Restoration-</strong></p>
-    <p class="mobile-para">We are taking on basically any manner of repair on electronic devices. This spans
+    <p class="dsktp-para">We are taking on basically any manner of repair on electronic devices. This spans
     from broken screens to board level repairs to hardware, such as replacing charger ports.
     </p>
-    <p class="mobile-para">We also offer restoration on vintage/aging electronics. We are constantly buying aged devices
-    in need of restoration, and are taking on live restoration comissions. Under the <a href="{{ url_for('gallery') }}">photo gallery</a>
-    page we will be listing photos of our restoration work. You can often find the restored devices for sale
-    on our <a href=https://ebay.us/m/TC9rpf target="_blank" rel="noopener noreferrer">ebay page</a>.</p>
-<div>
-    <p><strong>IT and Cybersecurity Services:</strong></p>
-    <p class="mobile-para">Our IT and Cybersecurity work is backed by an up to date CompTIA A+ Certification.</p>
+    <p class="dsktp-para">We also offer restoration on vintage/aging electronics. We are constantly buying aged devices
+    in need of restoration, and are taking on live restoration comissions.<br> Under the photo gallery
+    page we will be listing photos of our restoration work.<br> You can often find the restored devices for sale
+        on our ebay page.</p></div><br>
+<div class="dsktp-title-div">
+
+    <div class="title"><strong>IT and Cybersecurity Services:</strong></div></div>
+
+    <div class="dsktp-div-one">
+    <p class="dsktp-para">Our IT and Cybersecurity work is backed by an up to date CompTIA A+ Certification.</p>
     <p>Home amd Small Office Networking:</p>
 
     <ul class="list">
@@ -94,43 +167,11 @@
     </ul>
     <p>We specialize in building secure, efficient networks.</p>
 </div>
-<!--Desktop--
- <div class="desktop-paragraph">
-<h1 class="title">Welcome to our about page!</h1>
-<div>
-    <h2 class="title">Who we are:</h2>
-    <p class="desktop-para">
-        Eclectic Electronics is an independently owned and operated small business in
-        Charleston, Illinois, focusing on Technology Repair and Restoration,
-        Web/Software Development, and Cyber Security.</p>
-
-        <p class="paragraph">Our work spans from repairing and restoring both vintage and modern consumer tech,
-        developing Software and Websites, and Cybersecurity solutions. This business was born
-        from a desire to fight back against anti consumer, anti environment tech practices
-        where consumers are encouraged to trash perfectly repairable technology and just simply
-        buy a new machine. This is unsustainable both economically and ecologically, and every
-        repaired or restored device that leaves our shop with a renewed lifespan is a personal
-            win in our book.</p>
-
-        <p class="desktop-para"">Our work is backed by a standing CompTia A+ certification and countless hours of hands
-        on experimenting and repairing. I stayed up all night burning my fingers on my soldering
-            iron night after night so you don't have to. :)</p>
+</div>
+ </div>
 
 
-
-
-    <h3 class="title">What all we do:</h3>
-    <p><strong>-Repairs and Restoration-</strong></p>
-    <p class="paragraph">We are taking on basically any manner of repair on electronic devices. This spans
-    from broken screens to board level repairs to hardware, such as replacing charger ports.
-    </p>
-    <p class="paragraph">We also offer restoration on vintage/aging electronics. We are constantly buying aged devices
-    in need of restoration, and are taking on live restoration comissions. Under the <a href="{{ url_for('gallery') }}">photo gallery</a>
-    page we will be listing photos of our restoration work. You can often find the restored devices for sale
-    on our <a href=https://ebay.us/m/TC9rpf target="_blank" rel="noopener noreferrer">ebay page</a>.</p>
-</div></div>-->
-
-
+</div>
 
 
 
