@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Python!</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css', v=2) }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='magic.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='photos/favicon.ico') }}">
+</head>
+
+<body>
+     <div class="mobile-nav-flex">
+     <!--mobile nav-->
+    <details class="mobile-nav">
+
+            <summary class="summary">Navigation</summary>
+
+    <nav class="mobile-menu">
+    <ul class="mobile-div-1">
+
+      <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
+      <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li class="mobile-nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+        <li class="mobile-nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+        <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+            <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+            <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+
+    </ul>
+    </nav>
+    </details>
+        </div>
+    <div class="desktop-nav-flex">
+    <!--desktop-->
+    <nav class="sidebar">
+        <div class="desktop-div-1">
+
+    <ul class="active">
+      <li class="nav-item"><a  href="{{ url_for('home') }}">Home!</a></li>
+      <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li class="nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+        <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+        <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+        <li class="nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+        <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+    </ul>
+        </div>
+
+    </nav>
+    </div>
+
+
+<!--Content-->
+<div class="magic-content-flex-one">
+    <div class="title-container">
+        <h1 class="title">Magic Python</h1>
+    </div>
+    <div class="magic-content-div-one">
+        <div class="card">
+        <p>Magic Python is just a fun little program which gives
+        a random answer in response to a question!</p>
+            <form method="POST" action="{{ url_for('magic') }}" enctype="multipart/form-data">
+            <label for="question"><h2>Question:</h2></label>
+            <textarea class="question" name="question" id="question" placeholder="Type your question ^.^"></textarea><br>
+                <button class="button" type="submit">Submit</button>
+            </form>
+            {% if answer %}
+                <p>Your question: {{ question }}</p>
+                <div class="title-container">
+                    <h2 class="title">Your answer</h2></div>
+    <p id="generated-answer"><em>{{ answer }}</em></p>
+                <div class="title-container">
+    <button class="button2" type="button" id="copy-btn">Copy to Clipboard</button>
+    <script>
+    document.getElementById('copy-btn').addEventListener('click', async () => {
+        const text = document.getElementById("generated-answer").textContent.trim();
+        await navigator.clipboard.writeText(text);
+    });
+
+    </script></div>
+{% endif %}
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

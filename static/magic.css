@@ -1,0 +1,31 @@
+.magic-content-flex-one {
+    display: flex;
+    flex-direction: column;
+}
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.magic-content-flex-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+     max-width: 1000px;
+
+         text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: bisque;
+    display: inline-grid;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+}

@@ -18,6 +18,7 @@ def allowed_file(filename: str) -> bool:
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 DATA_FILE = "Quotes.json"
 DATA_FILE_TWO = "Reviews.json"
+A_FILE = "Answers.json"
 
 STORAGE_ROOT = os.environ.get("STORAGE_ROOT", "./persist")
 UPLOAD_DIR = os.path.join(STORAGE_ROOT, "uploads")
@@ -28,6 +29,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 QUOTES_FILE = os.path.join(DATA_DIR, "Quotes.json")
 REVIEWS_FILE = os.path.join(DATA_DIR, "Reviews.json")
+ANSWERS_FILE = os.path.join(DATA_DIR, "Answers.json")
 UPLOAD_FOLDER = os.path.join(DATA_DIR, "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
@@ -234,6 +236,26 @@ def quotesubmit():
         json.dump(passer, f, indent=2)
 
     return redirect(url_for('quote'))
+
+@app.route('/magicpython')
+def magicpython():
+    return render_template('magicpython.html')
+@app.route('/magic', methods=['POST'])
+def magic():
+    passer = []
+
+    question = request.form.get('question')
+    if os.path.exists(ANSWERS_FILE):
+        with open(ANSWERS_FILE, 'r', encoding="utf-8") as f:
+            passer = json.load(f)
+    else:
+        passer = []
+    with open(ANSWERS_FILE, 'w', encoding="utf-8") as f:
+        json.dump(passer, f, indent=2)
+
+    random.shuffle(passer)
+    answer = random.choice(passer)
+    return render_template('magicpython.html', answer=answer, question=question)
 
 
 
