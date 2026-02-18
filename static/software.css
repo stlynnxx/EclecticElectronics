@@ -202,6 +202,54 @@ display: flex;
 }
 
 
+
+
+
+
+
+
+
+
+    .trans-card-four-mobile
+    {
+
+
+        margin: 50px;
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+    }
+.trans-card-four-mobile::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card-four-mobile:hover{
+    width: 400px;
+    height: 250px;
+}
+.trans-card-four-mobile:hover::after {
+    display: none;
+
+
 }
 
 
