@@ -243,15 +243,23 @@ def magicpython():
 @app.route('/magic', methods=['POST'])
 def magic():
     passer = []
+    fallbacks = [ "Yes.", "No.", "Maybe.", "Ask again later.",
+        "Definitely.", "I wouldn't count on it.", "Signs point to yes."
+
+
+    ]
 
     question = request.form.get('question')
-    if os.path.exists(ANSWERS_FILE):
-        with open(ANSWERS_FILE, 'r', encoding="utf-8") as f:
-            passer = json.load(f)
-    else:
-        passer = []
-    with open(ANSWERS_FILE, 'w', encoding="utf-8") as f:
-        json.dump(passer, f, indent=2)
+    if os.path.exists(ANSWERS_FILE) and os.path.getsize(ANSWERS_FILE) > 0:
+        try:
+            with open(ANSWERS_FILE, 'r', encoding="utf-8") as f:
+                passer = json.load(f)
+        except FileNotFoundError:
+            passer = []
+
+
+    if not isinstance(passer, list) or len(passer) == 0:
+        passer = fallbacks
 
     random.shuffle(passer)
     answer = random.choice(passer)
