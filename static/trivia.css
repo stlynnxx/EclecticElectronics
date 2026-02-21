@@ -1,0 +1,23 @@
+.trivia-content-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card {
+    font-family: "Lato", sans-serif;
+    color: black;
+    font-kerning: auto;
+    text-align: center;
+    text-box: auto;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: bisque;
+    box-shadow: darkgray 5.5px 5.5px 5.5px;
+    margin: 10px;
+
+}

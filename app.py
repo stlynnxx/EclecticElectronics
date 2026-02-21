@@ -264,6 +264,11 @@ def magic():
     random.shuffle(passer)
     answer = random.choice(passer)
     return render_template('magicpython.html', answer=answer, question=question)
+@app.route('/trivia')
+def trivia():
+    return render_template('trivia.html')
+@app.route('/triviaget', methods=['POST'])
+def triviaget():
 
 
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">
+    <title>Software</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='trivia.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='photos/favicon.ico') }}">
+</head>
+<body>
+ <div class="mobile-nav-flex">
+     <!--mobile nav-->
+    <details class="mobile-nav">
+
+            <summary class="summary">Navigation</summary>
+
+    <nav class="mobile-menu">
+    <ul class="mobile-div-1">
+
+      <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
+      <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li class="mobile-nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+        <li class="mobile-nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+        <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+            <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+            <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+
+    </ul>
+    </nav>
+    </details>
+        </div>
+    <div class="desktop-nav-flex">
+    <!--desktop-->
+    <nav class="sidebar">
+        <div class="desktop-div-1">
+
+    <ul class="active">
+      <li class="nav-item"><a  href="{{ url_for('home') }}">Home!</a></li>
+      <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li class="nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+        <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+        <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+        <li class="nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+        <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+    </ul>
+        </div>
+
+    </nav>
+    </div>
+
+<!--Content-->
+ <div class="trivia-content-flex">
+<h1 class="title">Trivia</h1>
+ <form method="POST" action="{{ url_for('triviaget') }}" enctype="multipart/form-data">
+     <div class="card">
+<label for="get">Get a question</label><br>
+<input type="submit" name="get" id="get" value="Question">
+     </div>
+ </form>
+     <div class="card">
+         <h2 class="title">Question:</h2>
+         {% if question %}
+         {% endif %}
+
+     </div>
+ </div>
+</body>
+</html>
