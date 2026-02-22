@@ -19,6 +19,8 @@ def allowed_file(filename: str) -> bool:
 DATA_FILE = "Quotes.json"
 DATA_FILE_TWO = "Reviews.json"
 A_FILE = "Answers.json"
+T_FILE = "questions.json"
+TA_FILE = "triviaanswers.json"
 
 STORAGE_ROOT = os.environ.get("STORAGE_ROOT", "./persist")
 UPLOAD_DIR = os.path.join(STORAGE_ROOT, "uploads")
@@ -30,6 +32,8 @@ os.makedirs(DATA_DIR, exist_ok=True)
 QUOTES_FILE = os.path.join(DATA_DIR, "Quotes.json")
 REVIEWS_FILE = os.path.join(DATA_DIR, "Reviews.json")
 ANSWERS_FILE = os.path.join(DATA_DIR, "Answers.json")
+TRIVIA_FILE =  os.path.join(DATA_DIR, "questions.json")
+TANSWERS_FILE = os.path.join(DATA_DIR, "triviaanswers.json")
 UPLOAD_FOLDER = os.path.join(DATA_DIR, "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
@@ -269,6 +273,19 @@ def trivia():
     return render_template('trivia.html')
 @app.route('/triviaget', methods=['POST'])
 def triviaget():
+    passer = []
+    splits = []
+    if os.path.exists(TRIVIA_FILE):
+        try:
+            with open(TRIVIA_FILE, 'r', encoding="utf-8") as f:
+                passer = json.load(f)
+        except FileNotFoundError:
+                passer = []
+    question = random.choice(passer)
+    q_text, a_text = next(iter(question.items()))
+    return render_template('trivia.html', question=q_text, answer=a_text)
+
+
 
 
 
