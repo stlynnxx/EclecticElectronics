@@ -63,10 +63,31 @@
          <h2 class="title">Question:</h2>
          {% if question %}
              <p>{{ question }}</p>
-             <p>{{ answer }}</p>
+             </div>
+
+
+         {% endif %}
+             <div class="card">
+                 <form method="POST" action="{{ url_for('triviaget') }}" enctype="multipart/form-data">
+            <label for="send">Submit your answer</label><br>
+
+                 <label for="ans">Answer:</label><br>
+                 <input type="text" id="ans" name="ans"><br>
+                 <input type="submit" name="get" id="get" value="Submit"><br>
+                 </form>
+
+            </div>
+         {% if return_ans %}
+             <div class="card">
+                <h3 class="title">{{ return_ans }}</h3>
+
+             </div>
+
+
+
          {% endif %}
 
      </div>
- </div>
+
 </body>
 </html>

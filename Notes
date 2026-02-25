@@ -251,9 +251,17 @@ responses!
 Tonight we got a the trivia game up through the backend logic built. We can start
 off there next; I'm quite sleepy and would like to head to bed soon.
 
-2/21/2026-
+2/22/2026-
 
 We did a bit of work on the trivia stuff, but nothing major. I just set up the
 json file a bit and fleshed out the logic for pulling random questions with answers.
 Now we have to implement collecting the user answer and comparing it to the
 correct answer and considering question types like multiple choice or true/false.
+
+2/24/2026-
+
+I've been working on the trivia stuff, but it's not ready to go live yet. I'm having some wonkyness
+with returns and even whenever that gets sorted out I'll still only have it build to handle long
+form questions/answers without fuzzy answering. But it's all one step at a time anyway! This is
+something I've been interested in building since I first started programming, so, it's worth the
+ effort even for nothing more than just personal satisfaction.

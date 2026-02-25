@@ -2,6 +2,7 @@ import os
 import uuid
 import json
 from os.path import split
+from unittest import case
 from xml.etree.ElementTree import QName
 
 from flask import Flask, render_template,request, redirect, url_for, current_app
@@ -275,6 +276,9 @@ def trivia():
 def triviaget():
     passer = []
     splits = []
+    ans = request.form.get('ans')
+    correct = 0
+    return_ans = ""
     if os.path.exists(TRIVIA_FILE):
         try:
             with open(TRIVIA_FILE, 'r', encoding="utf-8") as f:
@@ -283,7 +287,18 @@ def triviaget():
                 passer = []
     question = random.choice(passer)
     q_text, a_text = next(iter(question.items()))
-    return render_template('trivia.html', question=q_text, answer=a_text)
+    if ans == a_text:
+        correct = 1
+    if ans != a_text:
+        correct = 0
+    match correct:
+        case 0:
+            return_ans = "False"
+        case 1:
+            return_ans = "True"
+
+
+    return render_template('trivia.html', question=q_text, answer=a_text, return_ans=return_ans)
 
 
 
