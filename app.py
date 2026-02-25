@@ -144,6 +144,10 @@ def generator():
              "Gamer", "Coffee", "Snake", "Tank", "Stove", "Oven", "Car", "Truck",
              "Fireplace", "Phone", "Mirror", "Paint", "Tablet", "Pad", "Gnome",
              "Elf"]
+    vowels = ["A","a","E","e","I","i","O","o","U","u", "Y","y"]
+    consonants = ["B","b","C","c","D","d","F","f","G","g","H","h","J","j"
+                  "K","k","L","l","M","m","N","n","P","p","Q","q","R","r",
+                  "S","s","T","t","V","v","W","w","X","x","Z","z"]
     specials = ["!","?","@","#","$", "%","^", "&","*","+"]
     randoms = []
     randoms_count = 10
@@ -158,6 +162,20 @@ def generator():
     random_one = str(random.randint(0, 9))
     random_two = str(random.randint(0, 9))
     random_three = str(random.randint(0, 9))
+    random.shuffle(vowels)
+    random.shuffle(consonants)
+    vowel_one = random.choice(vowels)
+    vowel_two = random.choice(vowels)
+    vowel_three = random.choice(vowels)
+    consonant_one = random.choice(consonants)
+    consonant_two = random.choice(consonants)
+    consonant_three = random.choice(consonants)
+    combo_one = consonant_one + vowel_one
+    combo_two = consonant_two + vowel_two
+    combo_three = vowel_three + consonant_three
+    num_combo_one = random_one + random_two
+    num_combo_two = random_two + random_three
+    num_combo_three = random_three + random_one
     match entropy_val:
         case 0:
             proto_password = adj_pick + noun_pick
@@ -167,31 +185,38 @@ def generator():
         case 1:
             injected_adj = injection(adj_pick, random_one, 2)
             injected_noun = injection(noun_pick, random_two, 2)
-            password = injected_adj + special_pick + injected_noun
+            injected_combo = injection(combo_two, num_combo_two, 2)
+            password = injected_adj + injected_combo + special_pick + injected_noun
 
 
         case 2:
             injected_adj = injection(adj_pick, random_one, 2)
             injected_noun = injection(noun_pick, random_two, 2)
-            password = injected_noun + special_pick + injected_adj
+            injected_combo = injection(combo_one, num_combo_one, 2)
+            password = injected_noun + special_pick + injected_adj + injected_combo
 
         case 3:
             injected_adj = injection(adj_pick, random_one, 2)
             injected_noun = injection(noun_pick, random_two, 2)
+            injected_combo = injection(combo_two, num_combo_two, 2)
             password = injected_noun + special_pick + random_three + injected_adj
 
 
         case 4:
             injected_adj = injection(adj_pick, random_one, 2)
             injected_noun = injection(noun_pick, randoms[6], 2)
-            password = injected_noun + special_pick + random_three + injected_adj
+            injected_combo = injection(combo_three, num_combo_three, 2)
+            password = injected_noun + special_pick + injected_combo + random_three + injected_adj
 
         case 5:
 
             injected_adj = injection(adj_pick, random_one, 3)
             injected_noun = injection(noun_pick, random_two, 4)
             dbl_injc_noun = injection(noun_pick, randoms[0], 4)
-            password = dbl_injc_noun + randoms[1] + special_pick + random_three + injected_adj
+            injected_combo_one = injection(combo_one, num_combo_three, 2)
+            injected_combo_two = injection(combo_two, num_combo_two, 3)
+            injected_combo_three = injection(combo_three, num_combo_three, 4)
+            password = injected_combo_one + dbl_injc_noun + randoms[1] + injected_combo_three + special_pick + injected_combo_two + random_three + injected_adj
         case _:
             raise ValueError(f"Improper entropy value {entropy_val}")
 

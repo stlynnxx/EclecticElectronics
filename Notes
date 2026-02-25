@@ -265,3 +265,17 @@ with returns and even whenever that gets sorted out I'll still only have it buil
 form questions/answers without fuzzy answering. But it's all one step at a time anyway! This is
 something I've been interested in building since I first started programming, so, it's worth the
  effort even for nothing more than just personal satisfaction.
+
+2/25/2026-
+
+So far this morning all I've done is work on some of the password generator logic.
+I gave it all a bit of a buff this morning and I've been putting some of the
+generated results into zxcvbn, to good results!
+
+I'm debating on if I want to touch the trivia game today because it needs a fair amount of work
+done still and I have a lot to do today so I need to keep moving; it was just
+important to me that I put some time into this today.
+
+Maybe we'll do some trivia work later, but I think i'll go ahead and push and deploy
+the password changes. That means the in progress trivia page will technically be
+up but it won't be linked to anywhere so whatever.
