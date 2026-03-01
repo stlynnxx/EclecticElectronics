@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">
+    <title>Positive Message Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css', v=1) }}">
+     <link rel="shortcut icon" href="{{ url_for('static', filename='photos/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pm.css', v=1) }}">
+
+</head>
+
+<body>
+
+
+<!--mobile nav-->
+<div class="mobile-nav-flex">
+<!--mobile nav-->
+<details class="mobile-nav">
+<summary class="summary">Navigation</summary>
+
+    <nav class="mobile-menu">
+    <ul class="mobile-div-1">
+
+      <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
+      <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li class="mobile-nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+        <li class="mobile-nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+        <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+            <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+            <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+
+    </ul>
+    </nav>
+    </details>
+        </div>
+    <div class="desktop-nav-flex">
+    <!--desktop-->
+    <nav class="sidebar">
+        <div class="desktop-div-1">
+
+    <ul class="active">
+      <li class="nav-item"><a  href="{{ url_for('home') }}">Home!</a></li>
+      <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+      <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li class="nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+        <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+        <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+        <li class="nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+        <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+    </ul>
+        </div>
+
+    </nav>
+    </div>
+<!--Content-->
+<div class="pm-content-one">
+    <div class="pm-title-container">
+<h1 class="title">Positive Message Generator!</h1>
+    </div>
+    <div class="pm-card-container">
+        <div class="pm-card"><p>Hello!</p>
+        <p>This is going to be a positive message generator!
+           Get an uplifting beep bop from a computer at the click
+           of a button! </p>
+            <form method="POST" action="{{ url_for('pm') }}" enctype="multipart/form-data">
+                <button class="button2" type="submit">Get a message!</button>
+            </form>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+        </div>
+
+    </div>
+
+
+
+</div>
+</body>

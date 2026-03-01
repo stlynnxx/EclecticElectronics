@@ -1,0 +1,43 @@
+.pm-content-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+}
+
+.pm-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+}
+
+.pm-card {
+        max-width: 325px;
+        width: 100%;
+        text-align: center;
+        text-box: auto;
+        text-decoration-style: solid;
+        text-decoration-color: black;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: bisque;
+        display: inline-grid;
+        box-shadow: darkgray 5.5px 5.5px 5.5px;
+
+
+}
+.pm-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}

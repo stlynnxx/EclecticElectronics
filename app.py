@@ -294,38 +294,54 @@ def magic():
     random.shuffle(passer)
     answer = random.choice(passer)
     return render_template('magicpython.html', answer=answer, question=question)
-@app.route('/trivia')
-def trivia():
-    return render_template('trivia.html')
-@app.route('/triviaget', methods=['POST'])
-def triviaget():
-    passer = []
-    splits = []
-    ans = request.form.get('ans')
-    correct = 0
-    return_ans = ""
-    if os.path.exists(TRIVIA_FILE):
-        try:
-            with open(TRIVIA_FILE, 'r', encoding="utf-8") as f:
-                passer = json.load(f)
-        except FileNotFoundError:
-                passer = []
-    question = random.choice(passer)
-    q_text, a_text = next(iter(question.items()))
-    if ans == a_text:
-        correct = 1
-    if ans != a_text:
-        correct = 0
-    match correct:
-        case 0:
-            return_ans = "False"
-        case 1:
-            return_ans = "True"
+#@app.route('/trivia')
+#def trivia():
+#    return render_template('trivia.html')
+#@app.route('/triviaget', methods=['POST'])
+#def triviaget():
+#    passer = []
+#    splits = []
+#    ans = request.form.get('ans')
+#    correct = 0
+#    return_ans = ""
+#    if os.path.exists(TRIVIA_FILE):
+#        try:
+#            with open(TRIVIA_FILE, 'r', encoding="utf-8") as f:
+#                passer = json.load(f)
+#        except FileNotFoundError:
+#                passer = []
+#    question = random.choice(passer)
+#    q_text, a_text = next(iter(question.items()))
+#    if ans == a_text:
+#        correct = 1
+#    if ans != a_text:
+#        correct = 0
+#    match correct:
+#        case 0:
+#            return_ans = "False"
+#        case 1:
+#            return_ans = "True"
 
 
-    return render_template('trivia.html', question=q_text, answer=a_text, return_ans=return_ans)
+#    return render_template('trivia.html', question=q_text, answer=a_text, return_ans=return_ans)
+
+@app.route('/positive')
+def positive():
+    return render_template('positivemessage.html')
+@app.route('/pm', methods=['POST'])
+def pm():
+    messages = {
+                1: "Everything you want is just outside of your comfort zone.",
+                2: "The cost of procrastination is the life you could’ve lived",
+                3: "You are under no obligation to be the same person you were 5 minutes ago. -Alan Watts",
+                4: "You're going to have a wonderful day!",
+                5: "It's okay to rest!",
+                6: "Stay Hydrated!"
+                }
 
 
+    message = random.choice(messages)
+    return render_template('positivemessage.html', message=message)
 
 
 
@@ -333,4 +349,4 @@ def triviaget():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port, debug=True)
