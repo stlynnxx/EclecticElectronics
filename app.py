@@ -336,11 +336,17 @@ def pm():
                 3: "You are under no obligation to be the same person you were 5 minutes ago. -Alan Watts",
                 4: "You're going to have a wonderful day!",
                 5: "It's okay to rest!",
-                6: "Stay Hydrated!"
+                6: "Stay Hydrated!",
+                7: "You got this!",
+                8: "You're the best at being you",
+                9: "Don't stop not stopping",
+                10: "The universe is your crustacean"
                 }
 
 
-    message = random.choice(messages)
+    messages_len = len(messages)
+    messages_len = random.randint(1, messages_len)
+    message = messages[messages_len]
     return render_template('positivemessage.html', message=message)
 
 

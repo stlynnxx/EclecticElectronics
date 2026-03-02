@@ -65,11 +65,16 @@ display: flex;
 }
 
 @media (max-width: 768px) {
-    .software-content-flex-mobile {display: flex;
-    flex-direction: column;}
-    .software-content-flex {display: none;}
+    .software-content-flex-mobile {
+        display: flex;
+        flex-direction: column;
+    }
 
-    .content-flex-one-mobile {
+    .software-content-flex {
+        display: none;
+    }
+
+    .content-flex-mobile {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -77,13 +82,8 @@ display: flex;
         justify-content: flex-start;
 
     }
-    .content-flex-two-mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        flex: 1;
-        justify-content: flex-start;
-    }
+
+
 
     .card-row-left-mobile {
         display: flex;
@@ -91,166 +91,58 @@ display: flex;
         align-items: center;
 
     }
-    .card-row-left-two-mobile {
+
+
+
+
+    }
+
+    .card-row-left-three-mobile {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .trans-card-one-mobile
-    {
+
+    .trans-card-mobile {
         margin: 50px;
 
 
-   border: black solid 2px;
-    border-radius: 25px;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    background-color: bisque;
-    position: relative;
+        border: black solid 2px;
+        border-radius: 25px;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        background-color: bisque;
+        position: relative;
 
 
-    transform-origin: top left;
-    transition: width 0.4s ease, height 0.4s ease;
+        transform-origin: top left;
+        transition: width 0.4s ease, height 0.4s ease;
     }
-    .trans-card-one-mobile::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 20px;
-    width: 100%;
-    background: linear-gradient(transparent, lightsalmon);
-    pointer-events: none;
-}
-    details[open] .trans-card-one-mobile {
+
+    .trans-card-mobile::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 20px;
+        width: 100%;
+        background: linear-gradient(transparent, lightsalmon);
+        pointer-events: none;
+    }
+
+    details[open] .trans-card-mobile {
         width: 250px;
         height: 250px;
     }
 
-
-        .trans-card-two-mobile
-    {
-            margin: 50px;
-
-
-   border: black solid 2px;
-    border-radius: 25px;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    background-color: bisque;
-    position: relative;
-
-
-    transform-origin: top left;
-    transition: width 0.4s ease, height 0.4s ease;
-    }
-    .trans-card-two-mobile::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 20px;
-    width: 100%;
-    background: linear-gradient(transparent, lightsalmon);
-    pointer-events: none;
-}
-    details[open] .trans-card-two-mobile {
-        width: 150px;
-        height: 250px;
-    }
-    .trans-card-three-mobile
-    {
-
-
-        margin: 50px;
-
-   border: black solid 2px;
-    border-radius: 25px;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    background-color: bisque;
-    position: relative;
-    justify-content: flex-start;
-    align-items: center;
-
-
-
-    transform-origin: top left;
-    transition: width 0.4s ease, height 0.4s ease;
-    }
-.trans-card-three-mobile::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 20px;
-    width: 100%;
-    background: linear-gradient(transparent, lightsalmon);
-    pointer-events: none;
-}
-
-.trans-card-three-mobile:hover{
-    width: 400px;
-    height: 250px;
-}
-.trans-card-three-mobile:hover::after {
-    display: none;
 }
 
 
 
 
 
-
-
-
-
-
-    .trans-card-four-mobile
-    {
-
-
-        margin: 50px;
-
-   border: black solid 2px;
-    border-radius: 25px;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    background-color: bisque;
-    position: relative;
-    justify-content: flex-start;
-    align-items: center;
-
-
-
-    transform-origin: top left;
-    transition: width 0.4s ease, height 0.4s ease;
-    }
-.trans-card-four-mobile::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 20px;
-    width: 100%;
-    background: linear-gradient(transparent, lightsalmon);
-    pointer-events: none;
-}
-
-.trans-card-four-mobile:hover{
-    width: 400px;
-    height: 250px;
-}
-.trans-card-four-mobile:hover::after {
-    display: none;
-
-
-}
 
 
 
