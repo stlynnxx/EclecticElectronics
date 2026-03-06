@@ -296,36 +296,38 @@ def magic():
     random.shuffle(passer)
     answer = random.choice(passer)
     return render_template('magicpython.html', answer=answer, question=question)
-#@app.route('/trivia')
-#def trivia():
-#    return render_template('trivia.html')
-#@app.route('/triviaget', methods=['POST'])
-#def triviaget():
-#    passer = []
-#    splits = []
-#    ans = request.form.get('ans')
-#    correct = 0
-#    return_ans = ""
-#    if os.path.exists(TRIVIA_FILE):
-#        try:
-#            with open(TRIVIA_FILE, 'r', encoding="utf-8") as f:
-#                passer = json.load(f)
-#        except FileNotFoundError:
-#                passer = []
-#    question = random.choice(passer)
-#    q_text, a_text = next(iter(question.items()))
-#    if ans == a_text:
-#        correct = 1
-#    if ans != a_text:
-#        correct = 0
-#    match correct:
-#        case 0:
-#            return_ans = "False"
-#        case 1:
-#            return_ans = "True"
+@app.route('/trivia')
+def trivia():
+    return render_template('trivia.html')
+@app.route('/triviaget', methods=['POST'])
+def triviaget():
+    passer = {
+        "Current": []
+    }
+    splits = []
+    ans = request.form.get('ans')
+    correct = 0
+    return_ans = ""
+    if os.path.exists(TRIVIA_FILE):
+        try:
+            with open(TRIVIA_FILE, 'r', encoding="utf-8") as f:
+                passer["Current"] = json.load(f)
+        except FileNotFoundError:
+                passer = {}
+    key, value = random.choice(passer["Current"]), random.choice(passer["Current"])
+
+    if ans == value:
+        correct = 1
+    if ans != value:
+        correct = 0
+    match correct:
+        case 0:
+            return_ans = "False"
+        case 1:
+            return_ans = "True"
 
 
-#    return render_template('trivia.html', question=q_text, answer=a_text, return_ans=return_ans)
+    return render_template('trivia.html', question=key, answer=value, return_ans=return_ans)
 
 @app.route('/positive')
 def positive():

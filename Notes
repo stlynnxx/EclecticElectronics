@@ -311,3 +311,15 @@ But I switched the positive message generator from an array to a proper json set
 nothing more, nothing less.
 
 Better than nothing!
+
+3/6/2026-
+
+I'm working on the trivia game a bit and it..technically works? Although now it is printing the entier
+json file as the question and not just a trimmed selection so there's still more work to go.
+
+To be fair it was working perfectly but I wasn't a fan of certain elements of the design and am now chasing
+something else and it's at least kind of my own fault that it's broken again.
+
+As a solo dev i'm not sure who else would be at fault but oh well.
+
+I need to go take some packages, so, I'll have to come back to this later.
