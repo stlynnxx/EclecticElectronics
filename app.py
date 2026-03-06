@@ -22,6 +22,7 @@ DATA_FILE_TWO = "Reviews.json"
 A_FILE = "Answers.json"
 T_FILE = "questions.json"
 TA_FILE = "triviaanswers.json"
+P_FILE = "pos.json"
 
 STORAGE_ROOT = os.environ.get("STORAGE_ROOT", "./persist")
 UPLOAD_DIR = os.path.join(STORAGE_ROOT, "uploads")
@@ -35,6 +36,7 @@ REVIEWS_FILE = os.path.join(DATA_DIR, "Reviews.json")
 ANSWERS_FILE = os.path.join(DATA_DIR, "Answers.json")
 TRIVIA_FILE =  os.path.join(DATA_DIR, "questions.json")
 TANSWERS_FILE = os.path.join(DATA_DIR, "triviaanswers.json")
+POS_FILE = os.path.join(DATA_DIR, "pos.json")
 UPLOAD_FOLDER = os.path.join(DATA_DIR, "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
@@ -330,23 +332,16 @@ def positive():
     return render_template('positivemessage.html')
 @app.route('/pm', methods=['POST'])
 def pm():
-    messages = {
-                1: "Everything you want is just outside of your comfort zone.",
-                2: "The cost of procrastination is the life you could’ve lived",
-                3: "You are under no obligation to be the same person you were 5 minutes ago. -Alan Watts",
-                4: "You're going to have a wonderful day!",
-                5: "It's okay to rest!",
-                6: "Stay Hydrated!",
-                7: "You got this!",
-                8: "You're the best at being you",
-                9: "Don't stop not stopping",
-                10: "The universe is your crustacean"
-                }
+    passer = []
 
+    if os.path.exists(POS_FILE) and os.path.getsize(POS_FILE) > 0:
+        try:
+            with open(POS_FILE, 'r', encoding="utf-8") as f:
+                passer = json.load(f)
+        except FileNotFoundError:
+            passer = []
+    message = random.choice(passer)
 
-    messages_len = len(messages)
-    messages_len = random.randint(1, messages_len)
-    message = messages[messages_len]
     return render_template('positivemessage.html', message=message)
 
 
