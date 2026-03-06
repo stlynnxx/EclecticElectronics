@@ -1,12 +1,12 @@
 # EclecticElectronics.com
 The code behind www.eclecticelectronics.com
 
-[Homepage](www.eclecticelectronics.com)
+[Homepage](https://www.eclecticelectronics.com)
 
-[Password Generator](www.eclecticelectronics.com/password)
+[Password Generator](https://www.eclecticelectronics.com/password)
 
-[Positive Message Generator](www.eclecticelectronics.com/positive)
+[Positive Message Generator](https://www.eclecticelectronics.com/positive)
 
-[Eclectic AI Info Page](www.eclecticelectronics.com/eclecticAI)
+[Eclectic AI Info Page](https://www.eclecticelectronics.com/eclecticAI)
 
-[Contact](www.eclecticelectronics.com/contact)
+[Contact](https://www.eclecticelectronics.com/contact)
