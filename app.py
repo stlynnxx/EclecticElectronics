@@ -27,16 +27,18 @@ P_FILE = "pos.json"
 STORAGE_ROOT = os.environ.get("STORAGE_ROOT", "./persist")
 UPLOAD_DIR = os.path.join(STORAGE_ROOT, "uploads")
 DATA_DIR = os.path.join(STORAGE_ROOT, "data")
+FILE_DIR = os.path.join(STORAGE_ROOT, "files")
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(DATA_DIR, exist_ok=True)
+os.makedirs(FILE_DIR, exist_ok=True)
 
 QUOTES_FILE = os.path.join(DATA_DIR, "Quotes.json")
 REVIEWS_FILE = os.path.join(DATA_DIR, "Reviews.json")
 ANSWERS_FILE = os.path.join(DATA_DIR, "Answers.json")
 TRIVIA_FILE =  os.path.join(DATA_DIR, "questions.json")
 TANSWERS_FILE = os.path.join(DATA_DIR, "triviaanswers.json")
-POS_FILE = os.path.join(DATA_DIR, "pos.json")
+POS_FILE = os.path.join(FILE_DIR, "pos.json")
 UPLOAD_FOLDER = os.path.join(DATA_DIR, "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
