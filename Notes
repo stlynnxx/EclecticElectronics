@@ -333,3 +333,19 @@ The layout is funky, but the cards work and the information is available and tha
 me the most!
 
 I'll work on it some more tomorrow.
+
+3/17/2026-
+
+I've been having reliability issues with fly.io but I think that I've gotten all of it
+sorted out, for the most part. I had a machine refusing to start or stop or be destroyed
+and it was causing issues but it's gone now and now we're running two machines for
+redundancy. Not that many people find themselves on my site, anyway.
+
+I was then having issues with the positive message generator that I honestly didn't really
+figure out LOL. In the locally hosted version it all worked perfectly, but on the live
+version it couldn't find the json file with the messages. I have no idea why. I triple
+checked my path, moved that file specifically to it's own dir, and nothing made it work
+in the live version. So... I just moved everything back to an array server side since the
+json was really overkill for it anyways.
+
+Maybe one day i'll revisit it but right now there's really no need for the json.

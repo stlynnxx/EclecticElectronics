@@ -336,16 +336,20 @@ def positive():
     return render_template('positivemessage.html')
 @app.route('/pm', methods=['POST'])
 def pm():
-    passer = []
-
-    if os.path.exists(POS_FILE) and os.path.getsize(POS_FILE) > 0:
-        try:
-            with open(POS_FILE, 'r', encoding="utf-8") as f:
-                passer = json.load(f)
-        except FileNotFoundError:
-            passer = []
+    passer = [
+        "You got this!",
+        "Don't stop not stopping!",
+        "Today is the day that you've been waiting for.",
+        "Why do tomorrow what you could do today?",
+        "You're the best you that there could ever be!",
+        "'You miss 100% of the shots you don't take -Wayne Gretzky' -Michael Scott",
+        "May the force be with you",
+        "Stay Hydrated!",
+        "You're worth it!",
+        "You can't do your best if you don't get your rest!"
+    ]
+    random.shuffle(passer)
     message = random.choice(passer)
-
     return render_template('positivemessage.html', message=message)
 
 
