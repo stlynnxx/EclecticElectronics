@@ -347,6 +347,7 @@ def pm():
         "Stay Hydrated!",
         "You're worth it!",
         "You can't do your best if you don't get your rest!"
+        "A truly happy person is one who can enjoy the scenery while on a detour."
     ]
     random.shuffle(passer)
     message = random.choice(passer)
