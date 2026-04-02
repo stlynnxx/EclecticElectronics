@@ -355,9 +355,9 @@ def pm():
     message = random.choice(passer)
     return render_template('positivemessage.html', message=message)
 
-
-
-
+@app.route('/security')
+def security():
+    return render_template('security.html')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
