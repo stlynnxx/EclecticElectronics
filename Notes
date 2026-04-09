@@ -349,3 +349,18 @@ in the live version. So... I just moved everything back to an array server side 
 json was really overkill for it anyways.
 
 Maybe one day i'll revisit it but right now there's really no need for the json.
+
+4/9/2026-
+
+I've been neglecting this a bit so today I thought I'd come and at least
+do *something*; so, I've decided to update the word lists for the password generator
+a bit. Just a few additions to each list and, so far, nothing else, but it's still
+something!
+
+I also did some aesthetic work on the security page!
+
+I had the idea of showing a screenshot of the ascii penguin from
+slippery penguin on the security page but I'd prefer to take it within
+a VM and I don't feel like doing that right now as really I need to go shower
+and prepare for my day so I'm leaving myself this note!
+

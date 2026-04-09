@@ -139,7 +139,10 @@ def generator():
             "Advanced", "Chronic", "Dank", "Slippery", "Icy", "Energetic", "Glassy",
             "Pure", "Impure", "Superb", "Agentic", "Nightmarish", "Dreamlike",
             "Ethereal", "Smooth", "Burnt", "Annoying", "Sophomoric", "Integral",
-            "Twitchy", "Acceptable", "Soft", "Grand", "Musical"]
+            "Twitchy", "Acceptable", "Soft", "Grand", "Musical", "Keen", "Quaint",
+            "Arcadian", "Contumacious", "Efficacious", "Effulgent", "Egregious", "Equanimous",
+            "Jejune", "Meretricious", "Parsimonious", "Recalcitrant", "Sartorial", "Voracious",
+            "Withering", "Spasmodic"]
     nouns = ["Airplane", "Bell", "Belt", "Newspaper", "Owl", "Lizard",
              "Lunch", "Sun", "Slinky", "Sheep", "Kangaroo", "Hair", "Helicopter", "Cup",
              "Straw", "Torch", "Wood", "Tower", "Zygon", "Borg", "Tardis", "Dog", "Cat",
@@ -149,7 +152,8 @@ def generator():
              "Gamer", "Coffee", "Snake", "Tank", "Stove", "Oven", "Car", "Truck",
              "Fireplace", "Phone", "Mirror", "Paint", "Tablet", "Pad", "Gnome",
              "Elf", "Controller", "Flipper", "FlipperZero", "Pentium",
-             "Dragon", "Baka", "Sidewalk", "Silk", "Ascot"]
+             "Dragon", "Baka", "Sidewalk", "Silk", "Ascot", "Snood", "Aglet", "Splat",
+             "Guimpe", "Spile","Bumbershoot", "Winklepicker"]
     vowels = ["A","a","E","e","I","i","O","o","U","u", "Y","y"]
     consonants = ["B","b","C","c","D","d","F","f","G","g","H","h","J","j"
                   "K","k","L","l","M","m","N","n","P","p","Q","q","R","r",
