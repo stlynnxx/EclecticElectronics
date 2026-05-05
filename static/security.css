@@ -7,7 +7,14 @@
 }
 
 
+.col1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 2px;
 
+}
 .sec-header {
     display: flex;
     margin: 5px;
@@ -15,8 +22,8 @@
 
 .sec-para-one {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
     max-width: 325px;
     width: 100%;
@@ -29,4 +36,38 @@
     background-color: bisque;
     display: inline-grid;
     box-shadow: darkgray 5.5px 5.5px 5.5px;
+}
+.trans-card
+{
+
+
+   border: black solid 2px;
+    border-radius: 25px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-color: bisque;
+    position: relative;
+
+
+    transform-origin: top left;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+.trans-card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, lightsalmon);
+    pointer-events: none;
+}
+
+.trans-card:hover{
+    width: 225px;
+    height: 200px;
+}
+.trans-card:hover::after {
+    display: none;
 }

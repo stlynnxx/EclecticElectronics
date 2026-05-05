@@ -145,7 +145,7 @@ display: flex;
 
 
 
-.trans-card-one
+.trans-card
 {
 
 
@@ -161,7 +161,7 @@ display: flex;
     transform-origin: top left;
     transition: width 0.4s ease, height 0.4s ease;
 }
-.trans-card-one::before {
+.trans-card::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -172,11 +172,11 @@ display: flex;
     pointer-events: none;
 }
 
-.trans-card-one:hover{
+.trans-card:hover{
     width: 400px;
     height: 250px;
 }
-.trans-card-one:hover::after {
+.trans-card:hover::after {
     display: none;
 }
 .trans-card-two

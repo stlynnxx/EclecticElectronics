@@ -352,8 +352,13 @@ def pm():
         "May the force be with you",
         "Stay Hydrated!",
         "You're worth it!",
-        "You can't do your best if you don't get your rest!"
-        "A truly happy person is one who can enjoy the scenery while on a detour."
+        "You can't do your best if you don't get your rest!",
+        "A truly happy person is one who can enjoy the scenery while on a detour.",
+        "Often times, the only way out is through, but it is well worth the journey.",
+        "We must all suffer from one of two pains: the pain of discipline or the pain of regret. - Jim Rohn",
+        "Failure is not defeat until you stop trying.",
+        "I know of no more encouraging fact than the unquestionable ability of man to elevate his life by conscious endeavor. -Henry David Thoreau",
+
     ]
     random.shuffle(passer)
     message = random.choice(passer)
