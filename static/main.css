@@ -114,7 +114,7 @@ background-color:  rgb(228,219,238);
     .summary {
         font-family: "Lato", sans-serif;
         border: black solid 0.5px;
-        box-shadow: darkgray 5.5px 5.5px 5.5px;
+        box-shadow:4px 4p 10px darkmagenta;
     }
     .mobile-div-1 {
         font-family: "Lato", sans-serif;
@@ -187,7 +187,7 @@ background-color:  rgb(228,219,238);
     padding: 10px;
     background-color: rgb(237,187,220);
     display: inline-grid;
-    box-shadow: darkgray 5.5px 5.5px 5.5px;
+    box-shadow: 4px 4px 10px darkmagenta;
 
 }
 .active {
@@ -269,7 +269,7 @@ body {text-align: center;
     padding: 20px;
     background-color: bisque;
     display: inline-grid;
-    box-shadow: darkgray 5.5px 5.5px 5.5px;
+    box-shadow: 4px 4px 10px darkmagenta;
 
 
 
@@ -328,6 +328,7 @@ body {text-align: center;
     .desktop-footer {display: none}
     .mobile-footer {display: block}
     .mobile-foot {
+        box-shadow: 4px 4px 10px darkmagenta;
         font-family: "Lato", sans-serif;
         text-align: center;
         text-box: auto;
@@ -351,4 +352,16 @@ body {text-align: center;
 .password {
     color: black;
     text-decoration-style: wavy;
+}
+.home_ul {
+box-shadow: 4px 4px 10px darkmagenta;
+color: black;
+background-color: bisque;
+text-align: center;
+text-box: auto;
+border-radius: 15px;
+border: black solid 1.75px;
+padding 10px;
+margin: 5px;
+
 }
