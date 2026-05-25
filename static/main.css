@@ -15,7 +15,7 @@ font-family: "Lato", sans-serif;
 
 
 
-background-color:  rgb(228,219,238);
+background-color:rgb(228,219,238);
 }
 .bubble {
     position: sticky;
@@ -213,7 +213,7 @@ li a:hover {
 
 
 body {text-align: center;
-        background-color:rgb(229,219,240) ;
+        background-color:rgb(228,219,238);
         color: black;
         }
 .p {

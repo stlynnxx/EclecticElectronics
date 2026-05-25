@@ -380,4 +380,14 @@ I did some light work on the home page today, adding some decor and doing some r
 still more to do but, it was a good start!
 
 
+5/25/2026-
 
+At this point after lots of trial and error and learning as I go the codebase for the website has turned into a bit
+of a mess so I'm starting a little rewrite of the entire thing. It's less about actually rewriting logic and front end
+code as much as it is reorganizing the existing code, renaming some classes, etc. I started on the home page this
+morning because why not? And I figured I'd work my way through that and go from there. I think this will both be good
+for the project overall and also for establishing a new coding routine during my personal upheaval.
+
+We got through the homepage this morning but it seems moving the ebay coupon inside of the footer seems to have broken
+it, but that's okay! I don't want to push myself too hard this morning, so that'll be a good place to come back to
+for the next session.
