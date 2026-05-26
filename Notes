@@ -391,3 +391,13 @@ for the project overall and also for establishing a new coding routine during my
 We got through the homepage this morning but it seems moving the ebay coupon inside of the footer seems to have broken
 it, but that's okay! I don't want to push myself too hard this morning, so that'll be a good place to come back to
 for the next session.
+
+5/26/2026-
+
+So far this morning I've ben working on the home page again, actually making some changes today. So far I've (temporarily)
+commented out the ebay discount code until I can figure out where exactly I want it to live, and also set up an
+unordered list for links to the various features of the site.
+
+I also started redoing the footer as that's been a mess for quite some time and that made me dip into main.css
+which is a complete mess. I've got the footer.. better.. but it still needs more attention and also the media query isn't
+working correctly at the moment, so there's my starting point for the next session!

@@ -64,47 +64,59 @@
                                 <li>PC/Electronic Device Repair and Customizations</li>
                             </ul>
                         </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- Terminates content-flex-one-->
+                    </div> <!-- Terminates home_ul-->
+                </div> <!-- Terminates p-->
+                 <br>
+                 <div class="container">
+                    <div class="container-item-img">
+                        <p><a href="{{ url_for('review') }}">Click here to leave us a review!</a></p>
+                            <div class="img-flex"><img src="{{ url_for('static', filename='photos/game.png') }}" class="gbimage" alt="oops!" width=100%></div>
+                    </div> <!--Terminates container-item-img-->
+                 </div> <!--Terminates container-->
+            </div> <!-- terminates paragraph-flex-->
+        </div> <!-- Terminates content-flex-one-->
+    </div> <!-- Terminates content-flex-main-->
     <br>
     <p>You can go to the <a href="{{ url_for('about') }}">about</a> page to read more about us and our services.</p>
-    <p>You can also go to the <a href="{{ url_for('quote') }}">quote</a> page to get a free repair estimate!</p>
+    <p>You can go to the <a href="{{ url_for('software') }}">Software</a> page and check out our various software projects!</p>
     <br>
     <div class="content-flex-two">
         <p class="p">
-            Try out our <a href="{{ url_for('positive') }}">Positive Message Generator</a>! :)
+            There are also a few small programming projects built into the site for interaction:
+            <ul>
+                <li><a href="{{ url_for('generator') }}">Password Generator</a></li>
+                <li><a href="{{ url_for('magicpython') }}">Magic Python,</a>inspired by the Magic 8 ball.</li>
+                <li><a href="{{ url_for('positive') }}">Positive Message Generator</a></li>
+
+            </ul>
         </p>
     </div> <!-- Terminates content-flex-two-->
     <!-- Footer-->
+
     <div class="footer-flex">
-        <div class="desktop-footer">
-            <footer>
-            <p class="toe">This website is completely open source and can be found at <a href="https://www.github.com/stlynnxx/EclecticElectronics">https://www.github.com/stlynnxx/EclecticElectronics</a></p>
+        <footer class="footer">
+            <p>This website is completely open source and can be found at <a href="https://www.github.com/stlynnxx/EclecticElectronics">https://www.github.com/stlynnxx/EclecticElectronics</a></p>
+            <p>This site logs zero user data in any manner.</p>
+        </footer>
+    </div> <!-- Terminates the Footer Flex-->
+    <div class="mobile-foot">
+        <footer class="footer-mobile">
+            <p>This website is completely open source and can be found at <a href="https://www.github.com/stlynnxx/EclecticElectronics">https://www.github.com/stlynnxx/EclecticElectronics</a></p>
             <p>This site logs zero user data in any manner.</p>
 
-            </footer></div>
- </div>
-  <div class="mobile-footer">
-     <footer>
-     <p class="mobile-foot">This website is completely open source and can be found at <a href="https://www.github.com/stlynnxx/EclecticElectronics">https://www.github.com/stlynnxx/EclecticElectronics</a></p>
-     <p>This site logs zero user data in any manner.</p>
-         <!-- ebay discount-->
-         <h2>Want a discount code for our ebay store?</h2>
+        <!-- ebay discount-->
+         <!--<h2>Want a discount code for our ebay store?</h2>
          <form>
             <button class="button" type="submit" formaction="https://ebay.us/m/Pk8Xo1">Click here for your ebay discount!</button>
         </form>
         <p>This discount code is good for 25% off any item in my store, and allows up to three uses per customer.</p>
-        <div class="container">
-            <div class="container-item-img">
-            <p><a href="{{ url_for('review') }}">Click here to leave us a review!</a></p>
-                <div class="img-flex"><img src="{{ url_for('static', filename='photos/game.png') }}" class="gbimage" alt="oops!" width=100%></div>
-            </div>
-        </div>
-     </footer>
-  </div> <!-- Terminates mobile-footer-->
+
+        </div>-->
+
+
+
+        </footer>
+    </div> <!-- Terminates mobile-footer-->
 </div> <!-- This terminates the page-layout div-->
 </body>
 </html>

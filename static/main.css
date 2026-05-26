@@ -310,8 +310,8 @@ body {text-align: center;
 }
 .desktop-footer {display: block}
 .mobile-footer {display: none}
-
-.desktop-footer {
+footer {
+    display: flex;
     font-family: "Lato", sans-serif;
     text-align: center;
     background-color: bisque;
@@ -322,33 +322,25 @@ body {text-align: center;
     margin-bottom: 100px;
     border-radius: 15px;
     border: black solid 1px;
+
 }
+
 
 @media (max-width: 768px) {
-    .desktop-footer {display: none}
-    .mobile-footer {display: block}
-    .mobile-foot {
-        box-shadow: 4px 4px 10px darkmagenta;
-        font-family: "Lato", sans-serif;
-        text-align: center;
-        text-box: auto;
-        display: inline-grid;
-        font-size: 12px;
-        border-radius: 15px;
-        background-color: bisque;
-        border: black solid 1.75px;
-        padding: 10px;
-
-    }
-
-
+.footer-mobile {
+display: flex;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    background-color: bisque;
+    height: 20%;
+    margin-left: 200px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    border-radius: 15px;
+    border: black solid 1px;
 }
-
-
-
-.toe {
-    padding-top: 50px;
-}
+ }
 .password {
     color: black;
     text-decoration-style: wavy;
