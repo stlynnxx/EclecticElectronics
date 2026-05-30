@@ -8,55 +8,52 @@
      <link rel="shortcut icon" href="{{ url_for('static', filename='photos/favicon.ico') }}">
 </head>
 <body>
-   <!--mobile nav-->
-    <details class="mobile-nav">
-    <summary class="summary">Navigation</summary>
-
+    <!--mobile nav-->
+<details class="mobile-nav">
+<summary class="summary">Navigation</summary>
     <nav class="mobile-menu">
-    <ul>
         <div class="mobile-div-1">
-      <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
-      <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
-      <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
-      <li class="mobile-nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
-        <li class="mobile-nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
-        <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
-            <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
-            <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+            <ul>
+                <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
+                <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+                <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li class="mobile-nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+                <li class="mobile-nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+                <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+                <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+                <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+            </ul>
         </div>
-    </ul>
     </nav>
-    </details>
+</details>
 
-    <!--desktop-->
-    <nav class="sidebar">
-        <div class="desktop-div-1">
-
-    <ul class="active">
-      <li class="nav-item"><a  href="{{ url_for('home') }}">Home!</a></li>
-      <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
-      <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
-      <li class="nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
-        <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
-        <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
-        <li class="nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
-        <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
-    </ul>
-        </div>
-
-    </nav>
+<!--desktop-->
+<nav class="sidebar">
+    <div class="desktop-div-1">
+        <ul class="active">
+            <li class="nav-item"><a  href="{{ url_for('home') }}">Home!</a></li>
+            <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+            <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li class="nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+            <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+            <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+            <li class="nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+            <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+        </ul>
+    </div>
+</nav>
 <!--Submission Form-->
- <h1 class="title">Get a free quote!</h1>
- <p class="paragraphs">Here you can get a free estimated quote on repairing a device.
+<h1 class="title">Get a free quote!</h1>
+<p class="paragraphs">Here you can get a free estimated quote on repairing a device.
     Just fill out the form below and click the submit button and we'll
     get to it!</p>
 <form method="POST" action="{{ url_for('quotesubmit') }}" enctype="multipart/form-data">
 <label for="fname">First name:</label><br>
 <input class="input" type="text" id="fname" name="fname" placeholder="Your First Name.."><br>
 <label for="lname">Last name:</label><br>
-  <input class="input" type="text" id="lname" name="lname" placeholder="Your Last Name.."><br>
- <label for="email">Enter your email:</label><br>
-  <input class="input" type="email" id="email" name="email" placeholder="Your Email.."><br>
+<input class="input" type="text" id="lname" name="lname" placeholder="Your Last Name.."><br>
+<label for="email">Enter your email:</label><br>
+<input class="input" type="email" id="email" name="email" placeholder="Your Email.."><br>
 <label for="tel">Phone number:</label><br>
 <input class="input" type="tel" id="tel" name="tel" placeholder="Don't forget the area code :)"><br>
 <label id="preferred" for="preferred">Choose your preferred contact method:</label><br>

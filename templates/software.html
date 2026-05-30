@@ -9,247 +9,192 @@
 </head>
 <body>
 <div class="software-page-layout">
-
-        <div class="software-body-row">
+    <div class="software-body-row">
         <div class="mobile-nav-flex">
      <!--mobile nav-->
-    <details class="mobile-nav">
-
-            <summary class="summary">Navigation</summary>
-
-    <nav class="mobile-menu">
-    <ul>
-        <div class="mobile-div-1">
-      <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
-      <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
-      <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
-      <li class="mobile-nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
-        <li class="mobile-nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
-        <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
-            <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
-            <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+            <details class="mobile-nav">
+                <summary class="summary">Navigation</summary>
+                <nav class="mobile-menu">
+                    <div class="mobile-div-1">
+                        <ul>
+                            <li class="mobile-nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
+                            <li class="mobile-nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+                            <li class="mobile-nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+                            <li class="mobile-nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+                            <li class="mobile-nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+                            <li class="mobile-nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+                            <li class="mobile-nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+                            <li class="mobile-nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </details>
         </div>
-    </ul>
-    </nav>
-    </details>
+        <div class="desktop-nav-flex">
+        <!--desktop-->
+            <nav class="sidebar">
+                <div class="desktop-div-1">
+                    <ul class="active">
+                        <li class="nav-item"><a  href="{{ url_for('home') }}">Home!</a></li>
+                        <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
+                        <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+                        <li class="nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
+                        <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
+                        <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
+                        <li class="nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
+                        <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    <div class="desktop-nav-flex">
-    <!--desktop-->
-    <nav class="sidebar">
-        <div class="desktop-div-1">
+    </div> <!-- Ends software body row-->
 
-    <ul class="active">
-      <li class="nav-item"><a  href="{{ url_for('home') }}">Home!</a></li>
-      <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
-      <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
-      <li class="nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
-        <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
-        <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
-        <li class="nav-item"><a href="{{ url_for('password') }}">Password Generator</a></li>
-        <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
-    </ul>
-        </div>
-
-    </nav>
-    </div>
-    </div>
-
-<div class="desktop-nav-flex">
-
-    <!--desktop-->
-    <nav class="sidebar">
-        <div>
-
-    <ul class="active">
-      <li class="nav-item"><a  href="{{ url_for('home') }}">Home</a></li>
-      <li class="nav-item"><a  href="{{ url_for('gallery') }}">Photo Gallery (Coming Soon!)</a></li>
-      <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
-      <li class="nav-item"><a  href="{{ url_for('software') }}">Software</a></li>
-        <li class="nav-item"><a href="{{ url_for('about') }}">About Us!</a></li>
-        <li class="nav-item"><a href="{{ url_for('quote') }}">Get a Free Repair Quote!</a></li>
-        <li class="nav-item"><a  target="_blank" rel="noopener noreferrer" href=https://ebay.us/m/TC9rpf>Find us on eBay!</a></li>
-    </ul>
-        </div>
-
-    </nav>
-</div>
-</div>
 <!--Content-->
 
 <!-- Desktop -->
-<h1 class="title">Software Projects</h1>
-<div class="software-content-flex">
-<div class="content-flex">
-<div class="card-row-"> <!-- card row one -->
-    <div>
-        <details class="card-details">
-            <summary>
-
-        <p class="trans-card">
-            <strong class="strong"><u><i>Password Generator</i></u></strong><br>
-            A simple program for generating secure passwords on the fly. Click <a href="{{ url_for('password') }}">here</a> to use it!
-        The code is included in the site codebase at our <a href="https://www.github.com/stlynnxx/EclecticElectronics">Github</a>.
-    </p>
-            </summary>
-        </details>
-         <details class="card-details">
-            <summary>
-
-        <p class="trans-card">
-            <strong class="strong"><u><i>Parts & Stock</i></u></strong><br>
-            Parts & Stock is commerically oriented, locally hosted inventory web app system.
-            More info coming soon! The beta build is still in progress.
-
-    </p>
-
-            </summary>
-        </details>
-
-    </div>
-</div>
-</div>
-<div class="content-flex">
-<div class="card-row"> <!--Card Row Two-->
-    <div>
-        <details class="card-details">
-            <summary>
-                 <p class="trans-card">
-                    <strong class="strong"><u><i>EclecticAI</i></u></strong><br>
-                     EclecticAI is an original, experimental intelligence framework
-    built to forsake the standards of Large Language Models.<br>
-        <a href="{{ url_for('eclecticAI') }}"><i>Learn how it works</i></a>.</p>
-                </p>
-            </summary>
-        </details>
-        <details class="card-details">
-            <summary>
-                 <p class="trans-card">
-                     <strong class="strong"><u><i>MagicPython</i></u></strong><br>
-                     MagicPython is a simple program I built while initially learning
-                     Python that I had a fun time with! It is a digital Magic 8 ball;
-                     ask a question, and get a random answer.<br>
-                     <a href="{{ url_for('magicpython') }}">Click here to try it!</a>
-                </p>
-            </summary>
-        </details>
-    </div>
-</div>
-<div class="content-flex">
-    <div class="card-row"> <!--Card Row Three-->
-        <div>
-            <details class="card-details">
-                <summary>
-                    <p class="trans-card">
-                        <strong class="strong"><u><i>Positive Message Generator</i></u></strong><br>
-                        The Positive Message Generator is what it claims to be;
-                        positive messages at the click of a button!<br>
-                        <a href="{{ url_for('positive') }}">Click here to try it!</a>
-                    </p>
-                </summary>
-
-            </details>
-
+    <h1 class="title">Software Projects</h1>
+    <div class="software-content-flex">
+        <div class="content-flex">
+            <div class="card-row-"> <!-- card row one -->
+                <div>
+                    <details class="card-details">
+                        <summary>
+                            <p class="trans-card">
+                                <strong class="strong"><u><i>Password Generator</i></u></strong><br>
+                                    A simple program for generating secure passwords on the fly. Click <a href="{{ url_for('password') }}">here</a> to use it!
+                                    The code is included in the site codebase at our <a href="https://www.github.com/stlynnxx/EclecticElectronics">Github</a>.
+                            </p>
+                        </summary>
+                    </details>
+                    <details class="card-details">
+                        <summary>
+                            <p class="trans-card">
+                                <strong class="strong"><u><i>Parts & Stock</i></u></strong><br>
+                                Parts & Stock is commerically oriented, locally hosted inventory web app system.
+                                More info coming soon! The beta build is still in progress.
+                            </p>
+                        </summary>
+                    </details>
+                </div>
+            </div>
         </div>
-
-
+        <div class="content-flex">
+            <div class="card-row"> <!--Card Row Two-->
+                <div>
+                    <details class="card-details">
+                        <summary>
+                            <p class="trans-card">
+                                <strong class="strong"><u><i>EclecticAI</i></u></strong><br>
+                                EclecticAI is an original, experimental intelligence framework
+                                built to forsake the standards of Large Language Models.<br>
+                                <a href="{{ url_for('eclecticAI') }}"><i>Learn how it works</i></a>.</p>
+                            </p>
+                        </summary>
+                    </details>
+                    <details class="card-details">
+                        <summary>
+                            <p class="trans-card">
+                                <strong class="strong"><u><i>MagicPython</i></u></strong><br>
+                                MagicPython is a simple program I built while initially learning
+                                Python that I had a fun time with! It is a digital Magic 8 ball;
+                                ask a question, and get a random answer.<br>
+                                <a href="{{ url_for('magicpython') }}">Click here to try it!</a>
+                            </p>
+                        </summary>
+                    </details>
+                </div>
+            </div>
+            <div class="content-flex">
+                <div class="card-row"> <!--Card Row Three-->
+                    <div>
+                        <details class="card-details">
+                            <summary>
+                                <p class="trans-card">
+                                    <strong class="strong"><u><i>Positive Message Generator</i></u></strong><br>
+                                    The Positive Message Generator is what it claims to be;
+                                    positive messages at the click of a button!<br>
+                                    <a href="{{ url_for('positive') }}">Click here to try it!</a>
+                                </p>
+                            </summary>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>
-
-
-</div>
-</div>
-</div>
-
 
 
 
 <!--Mobile-->
 <div class="software-content-flex-mobile">
-<div class="content-flex-mobile">
-<div class="card-row-mobile">
-    <div class="card-row-left-mobile">
-        <details class="card-details">
-            <summary>
-
-        <p class="trans-card-mobile">
-            <strong class="strong"><u><i>Password Generator</i></u></strong><br>
-            A simple program for generating secure passwords on the fly. Click <a href="{{ url_for('password') }}">here</a> to use it!
-        The code is included in the site codebase at our <a href="https://www.github.com/stlynnxx/EclecticElectronics">Github</a>.
-    </p>
-            </summary>
-        </details>
-         <details class="card-details">
-            <summary>
-
-        <p class="trans-card-mobile">
-            <strong class="strong"><u><i>Parts & Stock</i></u></strong><br>
-            Parts & Stock is commerically oriented, locally hosted inventory web app system.
-            More info coming soon! The beta build is still in progress.
-
-    </p>
-
-            </summary>
-        </details>
-
-    </div>
-</div>
-</div>
-<div class="content-flex-mobile">
-<div class="card-row-mobile">
-    <div class="card-row-left-mobile">
-        <details class="card-details">
-            <summary>
-                 <p class="trans-card-mobile">
-                    <strong class="strong"><u><i>EclecticAI</i></u></strong><br>
-                     EclecticAI is an original, experimental intelligence framework
-    built to forsake the standards of Large Language Models.<br>
-        <a href="{{ url_for('eclecticAI') }}"><i>Learn how it works</i></a>.</p>
-                </p>
-            </summary>
-        </details>
-        <details class="card-details">
-            <summary>
-                 <p class="trans-card-mobile">
-                     <strong class="strong"><u><i>MagicPython</i></u></strong><br>
-                     MagicPython is a simple program I built while initially learning
-                     Python that I had a fun time with! It is a digital Magic 8 ball;
-                     ask a question, and get a random answer.<br>
-                     <a href="{{ url_for('magicpython') }}">Click here to try it!</a>
-                </p>
-            </summary>
-        </details>
-    </div>
-</div>
-<div class="content-flex-mobile">
-    <div class="card-row-mobile">
-        <div class="card-row-left-mobile">
-            <details class="card-details">
-                <summary>
-                    <p class="trans-card-mobile">
-                        <strong class="strong"><u><i>Positive Message Generator</i></u></strong><br>
-                        The Positive Message Generator is what it claims to be;
-                        positive messages at the click of a button!<br>
-                        <a href="{{ url_for('positive') }}">Click here to try it!</a>
-                    </p>
-                </summary>
-
-            </details>
-
+    <div class="content-flex-mobile">
+        <div class="card-row-mobile">
+            <div class="card-row-left-mobile">
+                <details class="card-details">
+                    <summary>
+                       <p class="trans-card-mobile">
+                            <strong class="strong"><u><i>Password Generator</i></u></strong><br>
+                            A simple program for generating secure passwords on the fly. Click <a href="{{ url_for('password') }}">here</a> to use it!
+                            The code is included in the site codebase at our <a href="https://www.github.com/stlynnxx/EclecticElectronics">Github</a>.
+                        </p>
+                    </summary>
+                </details>
+                <details class="card-details">
+                    <summary>
+                        <p class="trans-card-mobile">
+                            <strong class="strong"><u><i>Parts & Stock</i></u></strong><br>
+                            Parts & Stock is commerically oriented, locally hosted inventory web app system.
+                            More info coming soon! The beta build is still in progress.
+                        </p>
+                    </summary>
+                </details>
+            </div>
         </div>
-
-
     </div>
-
+    <div class="content-flex-mobile">
+        <div class="card-row-mobile">
+            <div class="card-row-left-mobile">
+                <details class="card-details">
+                    <summary>
+                        <p class="trans-card-mobile">
+                            <strong class="strong"><u><i>EclecticAI</i></u></strong><br>
+                            EclecticAI is an original, experimental intelligence framework
+                            built to forsake the standards of Large Language Models.<br>
+                            <a href="{{ url_for('eclecticAI') }}"><i>Learn how it works</i></a>.</p>
+                        </p>
+                    </summary>
+                </details>
+                <details class="card-details">
+                    <summary>
+                        <p class="trans-card-mobile">
+                            <strong class="strong"><u><i>MagicPython</i></u></strong><br>
+                                MagicPython is a simple program I built while initially learning
+                                Python that I had a fun time with! It is a digital Magic 8 ball;
+                                ask a question, and get a random answer.<br>
+                                <a href="{{ url_for('magicpython') }}">Click here to try it!</a>
+                        </p>
+                    </summary>
+                </details>
+            </div>
+        </div>
+        <div class="content-flex-mobile">
+            <div class="card-row-mobile">
+                <div class="card-row-left-mobile">
+                    <details class="card-details">
+                        <summary>
+                            <p class="trans-card-mobile">
+                                <strong class="strong"><u><i>Positive Message Generator</i></u></strong><br>
+                                The Positive Message Generator is what it claims to be;
+                                positive messages at the click of a button!<br>
+                                <a href="{{ url_for('positive') }}">Click here to try it!</a>
+                            </p>
+                        </summary>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
-</div>
-</div>
-</div>
-
-
-
-
 </body>
 </html>
