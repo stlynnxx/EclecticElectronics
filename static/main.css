@@ -279,20 +279,19 @@ body {text-align: center;
 
 }
 
-
-
-
 .gbimage {
     border: black solid 2px;
 
 
 }
+
 .img {
     position: absolute;
     left: 0;
     top: 0;
     z-index: -1;
 }
+
 .button2 {
     margin: 15px;
     border-radius: 25px;
@@ -302,6 +301,7 @@ body {text-align: center;
     box-shadow: 2px 2px 5px darkmagenta;
     margin-bottom: 25px;
 }
+
 .paragraph {
     text-align: center;
 
@@ -310,6 +310,7 @@ body {text-align: center;
     color: black;
 
 }
+
 .desktop-footer {display: block}
 .mobile-footer {display: none}
 footer {
@@ -326,7 +327,6 @@ footer {
     border: black solid 1px;
 
 }
-
 
 @media (max-width: 768px) {
 .footer-mobile {
