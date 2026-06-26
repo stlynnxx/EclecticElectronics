@@ -435,3 +435,17 @@ So far this morning I've mostly worked on updooting the password generator page 
 I made some visually updates, and reworded some things. Right now I'm having issues with
 the width of the "Your Password" title and the copy to clipboard button so I think that's
 where I'll stop for now and pick back up at next time!
+
+6/26/2026-
+
+Light work this morning, I picked up where I said I would
+in my previous entry and fixed the width of the titles and
+buttons and overall box on the password generator page.
+Next on that page I would like to add a box behind the
+content between the top title and tne existing text box,
+and then I think the front end for this page will be mostly
+updated.
+I do want to redesign desktop navigation eventually but that's
+a site-wide change, obviously. Mobile navigation I'm still
+happy with, desktop navigation was never even actually finished
+and was considered "good enough".
