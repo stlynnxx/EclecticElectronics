@@ -1,4 +1,5 @@
 import os
+import sys
 import uuid
 import json
 from os.path import split
@@ -186,6 +187,7 @@ def generator():
     num_combo_one = random_one + random_two
     num_combo_two = random_two + random_three
     num_combo_three = random_three + random_one
+    pos, pos_one, pos_two, pos_three,pos_four,pos_five = 0
     match entropy_val:
         case 0:
             proto_password = adj_pick + noun_pick
@@ -219,13 +221,23 @@ def generator():
             password = injected_noun + special_pick + injected_combo + random_three + injected_adj
 
         case 5:
-
-            injected_adj = injection(adj_pick, random_one, 3)
-            injected_noun = injection(noun_pick, random_two, 4)
-            dbl_injc_noun = injection(noun_pick, randoms[0], 4)
-            injected_combo_one = injection(combo_one, num_combo_three, 2)
-            injected_combo_two = injection(combo_two, num_combo_two, 3)
-            injected_combo_three = injection(combo_three, num_combo_three, 4)
+            adj_size = sys.getsizeof(adj_pick)
+            noun_size = sys.getsizeof(noun_pick)
+            combo_one_size = sys.getsizeof(combo_one)
+            combo_two_size = sys.getsizeof(combo_two)
+            combo_three_size = sys.getsizeof(combo_three)
+            pos = random.randint(0, adj_size)
+            pos_one = random.randint(0, noun_size)
+            pos_two = random.randint(0, noun_size)
+            pos_three = random.randint(0, combo_one_size)
+            pos_four = random.randint(0, combo_two_size)
+            pos_five = random.randint(0, combo_three_size)
+            injected_adj = injection(adj_pick, random_one, pos)
+            injected_noun = injection(noun_pick, random_two, pos_one)
+            dbl_injc_noun = injection(noun_pick, randoms[0], pos_two)
+            injected_combo_one = injection(combo_one, num_combo_three, pos_three)
+            injected_combo_two = injection(combo_two, num_combo_two, pos_four)
+            injected_combo_three = injection(combo_three, num_combo_three, pos_five)
             password = injected_combo_one + dbl_injc_noun + randoms[1] + injected_combo_three + special_pick + injected_combo_two + random_three + injected_adj
         case _:
             raise ValueError(f"Improper entropy value {entropy_val}")

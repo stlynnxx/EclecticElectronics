@@ -449,3 +449,10 @@ I do want to redesign desktop navigation eventually but that's
 a site-wide change, obviously. Mobile navigation I'm still
 happy with, desktop navigation was never even actually finished
 and was considered "good enough".
+
+As far as the logic behind the password generator goes, I am
+always looking for more words to add but also after playing around
+with the generator a bit, I need to make sure the highest
+entropy level is producing less distinct words; twice I got
+a password with a long word with one interuppting number. One
+was Fant4astic. That's unacceptable at that level of entropy.
