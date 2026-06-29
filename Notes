@@ -463,3 +463,10 @@ was Fant4astic. That's unacceptable at that level of entropy.
 This morning I've just played around with randomly generating the pos value for the
 password generator in an effort to make complete words less likely at the highest entropy level,
 although admittedly I have yet to solve that issue. But that's okay! We'll get it figure out eventually.
+
+
+6/28/2026-
+
+This moring so far i've just added some small simple logic for checking the entropy
+5 "morphemes" for whole words; I've hit a small bug in it but the idea
+is out and in code!

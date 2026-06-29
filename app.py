@@ -49,7 +49,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 @app.route('/')
 def home():
 
-    return render_template('home01.html')
+    return render_template('home.html')
 @app.route('/review')
 def review():
     return render_template('review.html')
@@ -117,10 +117,28 @@ def password():
 
 @app.route('/generator', methods=['GET', 'POST'])
 
+
 def generator():
     def injection(word: str, num: str, pos: int) -> str:
         s = num
         return word[:pos] + s + word[pos:]
+
+    def check(check_var, check_dict):
+        check_var = check_var
+        check_dict = [check_dict]
+        check_idx = 0
+        check_size = sys.getsizeof(check_dict)
+        check_bool = False
+        for x in check_size:
+            if check_var == check_dict[check_idx]:
+                check_bool == True
+            else:
+                check_idx = check_idx + 1
+            if check_bool == True:
+                return 1
+            else:
+                if check_idx == check_size:
+                    return 0
 
     entropy_val = 0
     if request.method == 'POST':
@@ -235,6 +253,15 @@ def generator():
             injected_adj = injection(adj_pick, random_one, pos)
             injected_noun = injection(noun_pick, random_two, pos_one)
             dbl_injc_noun = injection(noun_pick, randoms[0], pos_two)
+            check_result_adj = check(injected_adj, adjs) # Using the check method to check vars for whole words
+            check_result_noun = check(injected_noun, nouns)
+            check_result_noun_two = check(dbl_injc_noun, nouns)
+            check_results = [check_result_adj, check_result_noun, check_result_noun_two]
+            for result in check_results:
+                if result == 1:
+                    injection(adj_pick, random_one, pos)
+                else:
+                    pass
             injected_combo_one = injection(combo_one, num_combo_three, pos_three)
             injected_combo_two = injection(combo_two, num_combo_two, pos_four)
             injected_combo_three = injection(combo_three, num_combo_three, pos_five)
