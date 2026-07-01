@@ -124,20 +124,31 @@ def generator():
         return word[:pos] + s + word[pos:]
 
     def check(check_var, check_dict):
+        dict_count = 0
+
         check_var = check_var
-        check_dict = [check_dict]
+
+        check_dict = check_dict
+        for n in check_dict:
+            dict_count = dict_count + 1
+        print(f"Dict count: {dict_count}")
         check_idx = 0
-        check_size = sys.getsizeof(check_dict)
+        check_size = len(check_dict)
         check_bool = False
-        for x in check_size:
+        dict_size = len(check_dict)
+        print(f"Dict size: {dict_size}")
+        for x in range(check_size):
             if check_var == check_dict[check_idx]:
-                check_bool == True
+                print("Check found")
+                check_bool = True
             else:
                 check_idx = check_idx + 1
             if check_bool == True:
+                print("Returning 1")
                 return 1
             else:
                 if check_idx == check_size:
+                    print("Returning 0")
                     return 0
 
     entropy_val = 0
@@ -183,6 +194,16 @@ def generator():
     for x in range(randoms_count):
         randoms.append(random.choice(string.ascii_letters))
 
+    check_adj = []
+    check_nouns = []
+    for entry in adjs:
+        check_adj.append(entry)
+        check_adj_s = len(check_adj)
+    print(f"Check s size: {check_adj_s}")
+    for entry in nouns:
+        check_nouns.append(entry)
+        check_nouns_s = len(check_nouns)
+    print(f"Check nouns size: {check_nouns_s}")
 
     adj_pick = random.choice(adjs)
     noun_pick = random.choice(nouns)
@@ -253,9 +274,11 @@ def generator():
             injected_adj = injection(adj_pick, random_one, pos)
             injected_noun = injection(noun_pick, random_two, pos_one)
             dbl_injc_noun = injection(noun_pick, randoms[0], pos_two)
-            check_result_adj = check(injected_adj, adjs) # Using the check method to check vars for whole words
-            check_result_noun = check(injected_noun, nouns)
-            check_result_noun_two = check(dbl_injc_noun, nouns)
+            check_result_adj = check(injected_adj, check_adj) # Using the check method to check vars for whole words
+            print(f"Noun dict 2 : {check_nouns_s}")
+            print(f"Adj dict 2 : {check_adj_s}")
+            check_result_noun = check(injected_noun, check_nouns)
+            check_result_noun_two = check(dbl_injc_noun, check_nouns)
             check_results = [check_result_adj, check_result_noun, check_result_noun_two]
             for result in check_results:
                 if result == 1:

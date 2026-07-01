@@ -467,6 +467,17 @@ although admittedly I have yet to solve that issue. But that's okay! We'll get i
 
 6/28/2026-
 
-This moring so far i've just added some small simple logic for checking the entropy
+This morning so far i've just added some small simple logic for checking the entropy
 5 "morphemes" for whole words; I've hit a small bug in it but the idea
 is out and in code!
+
+7/1/2026-
+
+We're having some issues with the word checking still, in that for whatever reason, the check dict isn't being accessed
+properly from within the check method. I'm yet to actually put in any effort into finding out why, so, that's next!
+
+After a few debug statements I've at least established that the issue lies in feeding the array as an argument into the
+check function. That's somewhere to continue on from here!
+
+Found the issue! It was in the check_dict var inside of check. Now we can work on the effectiveness of the logic!
+
