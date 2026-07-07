@@ -125,33 +125,39 @@ def generator():
 
     def check(check_var, check_dict):
         dict_count = 0
-
-        check_var = check_var
-
-        check_dict = check_dict
-        for n in check_dict:
-            dict_count = dict_count + 1
-        print(f"Dict count: {dict_count}")
         check_idx = 0
+        check_var = check_var
+        check_dict = check_dict
         check_size = len(check_dict)
         check_bool = False
         dict_size = len(check_dict)
+        entropy_val = 0
+
+        for n in check_dict:
+            print(f"n: {n}")
+            dict_count = dict_count + 1
+        print(f"Dict count: {dict_count}")
+
+
         print(f"Dict size: {dict_size}")
         for x in range(check_size):
-            if check_var == check_dict[check_idx]:
-                print("Check found")
-                check_bool = True
-            else:
-                check_idx = check_idx + 1
-            if check_bool == True:
-                print("Returning 1")
-                return 1
-            else:
-                if check_idx == check_size:
-                    print("Returning 0")
-                    return 0
+            for y in check_dict:
+                print(f"Y: {y}")
+                print(f"Check_var: {check_var}")
+                if check_var == y:
+                    print("Check found")
+                    check_bool = True
+                else:
+                    check_idx = check_idx + 1
+                if check_bool == True:
+                    print("Returning 1")
+                    return 1
+                else:
+                    if check_idx == check_size:
+                        print("Returning 0")
+                        return 0
 
-    entropy_val = 0
+
     if request.method == 'POST':
         entropy_val = int(request.form.get('entropy', 0))
     else:
@@ -199,10 +205,14 @@ def generator():
     for entry in adjs:
         check_adj.append(entry)
         check_adj_s = len(check_adj)
+    adj_length = len(adjs)
+    noun_length = len(nouns)
+    print("Adj Length: ", adj_length)
     print(f"Check s size: {check_adj_s}")
     for entry in nouns:
         check_nouns.append(entry)
         check_nouns_s = len(check_nouns)
+    print("Noun Length: ", noun_length)
     print(f"Check nouns size: {check_nouns_s}")
 
     adj_pick = random.choice(adjs)

@@ -481,3 +481,24 @@ check function. That's somewhere to continue on from here!
 
 Found the issue! It was in the check_dict var inside of check. Now we can work on the effectiveness of the logic!
 
+7/7/2026-
+
+I need to take a moment to do what I've done for Parts&Stock, which is, make an actual list of things to do here.
+
+- Asthetics for
+- Entropy 5 word checking in the password generator
+- Trivia Game
+- Should we take down the submissions page?
+- The photo gallery?
+- Desktop navigation
+- More positive messages
+- Maybe brainstorm some more small productivity tools we can integrate as small side projects?
+
+
+Okay, after some work on the entropy 5 issue, so far, we've actually gotten check catching whole word matches! It's not
+quite perfect yet, but, it is solid progress, especially since I've personally been fighting to reestablish a regular
+coding routine. Every small win is still a win!
+
+As of now the injected variable is being checked against, which means instead of "Clean" it is coming out to something like "Clean6"
+and thus not triggering a match; I need to think on what I plan to do about that!
+
