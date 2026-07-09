@@ -502,3 +502,8 @@ coding routine. Every small win is still a win!
 As of now the injected variable is being checked against, which means instead of "Clean" it is coming out to something like "Clean6"
 and thus not triggering a match; I need to think on what I plan to do about that!
 
+7/9/2026-
+
+I'm still having some issues catching words and I'm trying to trace back to the source and it's definetly something to do with pos
+and rearranging the word within injection as my pos number printed out of range and my statements from within injection were printing
+garbled nonsense. I'll spend some time with that whenever I'm back and go from there.

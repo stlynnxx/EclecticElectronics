@@ -120,7 +120,9 @@ def password():
 
 def generator():
     def injection(word: str, num: str, pos: int) -> str:
+        print(f"Pre-injection Print: {word}")
         s = num
+        print(f"Injection print: {word[:pos] + s + word[:pos]}")
         return word[:pos] + s + word[pos:]
 
     def check(check_var, check_dict):
@@ -242,12 +244,12 @@ def generator():
     combo_one_size = sys.getsizeof(combo_one)
     combo_two_size = sys.getsizeof(combo_two)
     combo_three_size = sys.getsizeof(combo_three)
-    pos = random.randint(1, adj_size)
-    pos_one = random.randint(1, noun_size)
-    pos_two = random.randint(1, noun_size)
-    pos_three = random.randint(1, combo_one_size)
-    pos_four = random.randint(1, combo_two_size)
-    pos_five = random.randint(1, combo_three_size)
+    pos = random.randint(0,5)
+    pos_one = random.randint(1, (noun_size - 2))
+    pos_two = random.randint(1, (noun_size - 2))
+    pos_three = random.randint(1, (combo_one_size - 2))
+    pos_four = random.randint(1, (combo_two_size - 2))
+    pos_five = random.randint(1, (combo_three_size - 2))
     match entropy_val:
         case 0:
             proto_password = adj_pick + noun_pick
@@ -281,6 +283,9 @@ def generator():
             password = injected_noun + special_pick + injected_combo + random_three + injected_adj
 
         case 5:
+            print(f"Case 5 adj pick: {adj_pick}")
+            print(f"Case 5 random: {random_one}")
+            print(f"Case 5 pos: {pos}")
             injected_adj = injection(adj_pick, random_one, pos)
             injected_noun = injection(noun_pick, random_two, pos_one)
             dbl_injc_noun = injection(noun_pick, randoms[0], pos_two)
