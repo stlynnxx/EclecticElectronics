@@ -124,6 +124,14 @@ def generator():
         s = num
         print(f"Injection print: {word[:pos] + s + word[:pos]}")
         return word[:pos] + s + word[pos:]
+    def length_enforcer(word, check_length):
+        leng = check_length
+        word = word
+        word_len = len(word)
+        if word_len > leng:
+            diff = word_len - leng
+            # Here we need some logic to remove an amount of chars equal to diff
+            # from the password
 
     def check(check_var, check_dict):
         dict_count = 0

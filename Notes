@@ -507,3 +507,17 @@ and thus not triggering a match; I need to think on what I plan to do about that
 I'm still having some issues catching words and I'm trying to trace back to the source and it's definetly something to do with pos
 and rearranging the word within injection as my pos number printed out of range and my statements from within injection were printing
 garbled nonsense. I'll spend some time with that whenever I'm back and go from there.
+
+7/23/2026-
+
+Since I'm just getting back here after a break and it's the middle of the night, I ammostly
+looking at things and trying to decide where to go next more so than digging into some work for real.
+
+I would like to add length parameters to the password generator. I am thinking that my best
+way to do this is by organizing the words in the arrays in a JSON file by word length
+and drawing appropriately lengthed words. For example, a 0 entropy, 8 char password will be
+two words across 6 letters, two numbers, and a number. It could be two three letter words,
+a 4 letter + 2 letter, or 5 letter + 1 letter.
+
+But my eyes are pretty heavy so I won't be doing much in the way of that tonight.
+
