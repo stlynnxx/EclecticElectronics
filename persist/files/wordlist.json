@@ -118,6 +118,113 @@
     ]
   },
   "NOUN": {
-
+    "1": [],
+    "2": [],
+    "3": [
+      "Sun",
+      "Bell",
+      "Owl",
+      "Cup",
+      "Dog",
+      "Cat",
+      "Box",
+      "Jar",
+      "Fez",
+      "Car",
+      "Pad",
+      "Elf"],
+    "4": [
+      "Belt",
+      "Hair",
+      "Wood",
+      "Borg",
+      "Wall",
+      "Desk",
+      "Book",
+      "Puck",
+      "Lamp",
+      "Tank",
+      "Oven",
+      "Baka",
+      "Silk"
+    ],
+    "5": [
+      "Lunch",
+      "Sheep",
+      "Straw",
+      "Torch",
+      "Tower",
+      "Zygon",
+      "Scarf",
+      "Wrist",
+      "Brush",
+      "Heart",
+      "Shelf",
+      "Gamer",
+      "Snake",
+      "Stove",
+      "Truck",
+      "Phone",
+      "Paint",
+      "Gnome",
+      "Ascot",
+      "Snood",
+      "Aglet",
+      "Splat",
+      "Spile"
+    ],
+    "6": [
+      "Lizard",
+      "Slinky",
+      "Tardis",
+      "Beagle",
+      "Window",
+      "Screen",
+      "Drawer",
+      "Singer",
+      "Router",
+      "Coffee",
+      "Mirror",
+      "Tablet",
+      "Dragon",
+      "Guimpe"
+    ],
+    "7": [
+      "Airplane",
+      "Pudding",
+      "Machine",
+      "Coaster",
+      "Flipper",
+      "Pentium"
+    ],
+    "8": [
+      "Kangaroo",
+      "Keyboard",
+      "Sidewalk"
+    ],
+    "9": [
+      "Newspaper",
+      "Fireplace"
+    ],
+    "10": [
+      "Helicopter",
+      "Controller"
+    ],
+    "11": [
+      "FlipperZero",
+      "Bumbleshoot"
+    ],
+    "12": ["Winklepicker"]
+  },
+  "SINGLES": {
+    "VOWELS": {
+      "UPPERS": ["A", "E", "I", "O", "U", "Y"],
+      "LOWERS": ["a", "e", "i", "o", "u"]
+    },
+    "CONSONANTS": {
+      "UPPERS": [],
+      "LOWERS": []
+    },
+    "SPECIALS": []
   }
 }

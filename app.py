@@ -175,17 +175,6 @@ def generator():
 
     # This is where the adj and noun arrays were prior to starting the json.
 
-    nouns = ["Airplane", "Bell", "Belt", "Newspaper", "Owl", "Lizard",
-             "Lunch", "Sun", "Slinky", "Sheep", "Kangaroo", "Hair", "Helicopter", "Cup",
-             "Straw", "Torch", "Wood", "Tower", "Zygon", "Borg", "Tardis", "Dog", "Cat",
-             "Beagle", "Pudding", "Wall", "Desk", "Window", "Box", "Book", "Scarf","Jar",
-             "Screen", "Wrist", "Keyboard", "Drawer", "Fez", "Singer", "Machine",
-             "Puck", "Brush", "Lamp", "Heart", "Coaster", "Router", "Shelf",
-             "Gamer", "Coffee", "Snake", "Tank", "Stove", "Oven", "Car", "Truck",
-             "Fireplace", "Phone", "Mirror", "Paint", "Tablet", "Pad", "Gnome",
-             "Elf", "Controller", "Flipper", "FlipperZero", "Pentium",
-             "Dragon", "Baka", "Sidewalk", "Silk", "Ascot", "Snood", "Aglet", "Splat",
-             "Guimpe", "Spile","Bumbershoot", "Winklepicker"]
     vowels = ["A","a","E","e","I","i","O","o","U","u", "Y","y"]
     consonants = ["B","b","C","c","D","d","F","f","G","g","H","h","J","j"
                   "K","k","L","l","M","m","N","n","P","p","Q","q","R","r",
