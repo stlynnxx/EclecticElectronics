@@ -1,0 +1,123 @@
+{
+  "ADJ": {
+    "1": [],
+    "2": [],
+    "3": [
+      "Big",
+      "Fat",
+      "Red",
+      "Wet",
+      "Icy"
+    ],
+    "4": [
+      "Bald",
+      "Calm",
+      "Cold",
+      "Soft",
+      "Pink",
+      "Blue",
+      "Teal",
+      "Grey",
+      "Warm",
+      "Dank",
+      "Pure",
+      "Soft",
+      "Keen"
+    ],
+    "5": [
+      "Brave",
+      "Clean",
+      "Empty",
+      "Green",
+      "Sandy",
+      "Salty",
+      "Tidal",
+      "Sweet",
+      "Burnt",
+      "Grand",
+      "Angry"
+    ],
+    "6": [
+      "Clumsy",
+      "Chubby",
+      "Purple",
+      "Patient",
+      "Cursed",
+      "Silver",
+      "Orange",
+      "Bitter",
+      "Glassy",
+      "Clicky",
+      "Clacky",
+      "Glassy",
+      "Impure",
+      "Superb",
+      "Smooth",
+      "Serene",
+      "Golden",
+      "Quaint",
+      "JeJune"
+    ],
+    "7": [
+      "Crimson",
+      "Dancing",
+      "Oceanic",
+      "Forlorn",
+      "Chronic",
+      "Agentic",
+      "Musical",
+      "Twitchy"
+    ],
+    "8": [
+      "Colossal",
+      "Defeated",
+      "Gigantic",
+      "Lavender",
+      "Fabulous",
+      "Forsaken",
+      "Advanced",
+      "Slippery",
+      "Integral",
+      "Annoying",
+      "Ethereal",
+      "Arcadian"
+    ],
+    "9": [
+      "Agreeable",
+      "Ambitious",
+      "Forgotten",
+      "Fantastic",
+      "Energetic",
+      "Dreamlike",
+      "Effulgent",
+      "Egregious",
+      "Voracious",
+      "Sartorial",
+      "Withering",
+      "Spasmodic",
+      "Beautiful"
+    ],
+    "10": [
+      "Attractive",
+      "Bewildered",
+      "Delightful",
+      "Aquamarine",
+      "Sophomoric",
+      "Acceptable",
+      "Equanimous"
+    ],
+    "11": [
+      "Nightmarish",
+      "Efficacious"
+    ],
+    "12": [
+      "Contumacious",
+      "Meretricious",
+      "Parsimonious",
+      "Recalcitrant"
+    ]
+  },
+  "NOUN": {
+
+  }
+}

@@ -173,22 +173,8 @@ def generator():
     else:
         entropy_val = 0
 
-    adjs = ["Attractive", "Agreeable", "Angry", "Big",
-            "Bald", "Ambitious", "Bewildered", "Colossal",
-            "Beautiful", "Brave", "Clumsy", "Fat", "Chubby",
-            "Calm", "Defeated", "Gigantic", "Clean", "Delightful", "Cold",
-            "Patient", "Serene", "Empty", "Soft", "Pink", "Purple", "Golden",
-            "Blue", "Aquamarine", "Lavender", "Green", "Teal", "Red", "Crimson",
-            "Purple", "Orange", "Sandy", "Silver", "Grey", "Cursed", "Forgotten",
-            "Forsaken", "Bitter", "Forlorn", "Wet","Warm", "Glassy", "Clicky", "Clacky",
-            "Salty", "Tidal", "Oceanic", "Sweet", "Fabulous", "Dancing", "Fantastic",
-            "Advanced", "Chronic", "Dank", "Slippery", "Icy", "Energetic", "Glassy",
-            "Pure", "Impure", "Superb", "Agentic", "Nightmarish", "Dreamlike",
-            "Ethereal", "Smooth", "Burnt", "Annoying", "Sophomoric", "Integral",
-            "Twitchy", "Acceptable", "Soft", "Grand", "Musical", "Keen", "Quaint",
-            "Arcadian", "Contumacious", "Efficacious", "Effulgent", "Egregious", "Equanimous",
-            "Jejune", "Meretricious", "Parsimonious", "Recalcitrant", "Sartorial", "Voracious",
-            "Withering", "Spasmodic"]
+    # This is where the adj and noun arrays were prior to starting the json.
+
     nouns = ["Airplane", "Bell", "Belt", "Newspaper", "Owl", "Lizard",
              "Lunch", "Sun", "Slinky", "Sheep", "Kangaroo", "Hair", "Helicopter", "Cup",
              "Straw", "Torch", "Wood", "Tower", "Zygon", "Borg", "Tardis", "Dog", "Cat",

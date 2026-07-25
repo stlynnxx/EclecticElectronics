@@ -521,3 +521,7 @@ a 4 letter + 2 letter, or 5 letter + 1 letter.
 
 But my eyes are pretty heavy so I won't be doing much in the way of that tonight.
 
+7/25/2026-
+
+So fat this morning I've started building the json file for the password generator so that words are organized
+both by part of speech and also word length for controlled length results.
