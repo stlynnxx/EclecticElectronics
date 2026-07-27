@@ -24,6 +24,7 @@ A_FILE = "Answers.json"
 T_FILE = "questions.json"
 TA_FILE = "triviaanswers.json"
 P_FILE = "pos.json"
+W_FILE = "wordlist.json"
 
 STORAGE_ROOT = os.environ.get("STORAGE_ROOT", "./persist")
 UPLOAD_DIR = os.path.join(STORAGE_ROOT, "uploads")
@@ -40,6 +41,7 @@ ANSWERS_FILE = os.path.join(DATA_DIR, "Answers.json")
 TRIVIA_FILE =  os.path.join(DATA_DIR, "questions.json")
 TANSWERS_FILE = os.path.join(DATA_DIR, "triviaanswers.json")
 POS_FILE = os.path.join(FILE_DIR, "pos.json")
+WORDS_FILE = os.path.join(FILE_DIR, "wordlist.json")
 UPLOAD_FOLDER = os.path.join(DATA_DIR, "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
@@ -119,6 +121,43 @@ def password():
 
 
 def generator():
+    with open(WORDS_FILE, 'r', encoding="utf-8") as f:
+        wordlist = {json.load(f)}
+
+
+    all_adjs = {
+        'entry': {}
+    }
+    for length, words in wordlist['ADJ'].items():
+        all_adjs['entry'] = (words)
+    adjz_one = all_adjs['entry']['ADJ']['1']
+    print(adjz_one)
+
+    adjs_one = wordlist['ADJ']['1']
+    adjs_two = wordlist['ADJ']['2']
+    adjs_three = wordlist['ADJ']['3']
+    adjs_four = wordlist['ADJ']['4']
+    adjs_five = wordlist['ADJ']['5']
+    adjs_six = wordlist['ADJ']['6']
+    adjs_seven = wordlist['ADJ']['7']
+    adjs_eight = wordlist['ADJ']['8']
+    adjs_nine = wordlist['ADJ']['9']
+    adjs_ten = wordlist['ADJ']['10']
+    adjs_eleven = wordlist['ADJ']['11']
+    adjs_twelve = wordlist['ADJ']['12']
+
+    noun_one = wordlist['NOUN']['1']
+    noun_two = wordlist['NOUN']['2']
+    noun_three = wordlist['NOUN']['3']
+    noun_four = wordlist['NOUN']['4']
+    noun_five = wordlist['NOUN']['5']
+    noun_six = wordlist['NOUN']['6']
+
+
+
+    specials = []
+    vowels = []
+    consonants = []
     def injection(word: str, num: str, pos: int) -> str:
         print(f"Pre-injection Print: {word}")
         s = num
@@ -175,12 +214,7 @@ def generator():
 
     # This is where the adj and noun arrays were prior to starting the json.
 
-    vowels = ["A","a","E","e","I","i","O","o","U","u", "Y","y"]
-    consonants = ["B","b","C","c","D","d","F","f","G","g","H","h","J","j"
-                  "K","k","L","l","M","m","N","n","P","p","Q","q","R","r",
-                  "S","s","T","t","V","v","W","w","X","x","Z","z"]
-    specials = ["!","?","@","#","$", "%","^", "&","*","+"]
-    randoms = []
+
     randoms_count = 10
     for x in range(randoms_count):
         randoms.append(random.choice(string.ascii_letters))
@@ -190,7 +224,7 @@ def generator():
     for entry in adjs:
         check_adj.append(entry)
         check_adj_s = len(check_adj)
-    adj_length = len(adjs)
+    adj_length = len(wordlist[])
     noun_length = len(nouns)
     print("Adj Length: ", adj_length)
     print(f"Check s size: {check_adj_s}")

@@ -528,3 +528,9 @@ both by part of speech and also word length for controlled length results.
 
 5:10 PM: I came back and did some more work in the JSON, adding the nouns and adjectives and getting ready to add
 consonants and specials!
+
+7/26/2026-
+
+I've done a bit more work tonight on importing the new json wordlist, I need to implement the
+changes in the structure of the password generator and figure out my design for the adjs and nouns lists still!
+
