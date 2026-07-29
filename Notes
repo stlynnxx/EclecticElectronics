@@ -534,3 +534,9 @@ consonants and specials!
 I've done a bit more work tonight on importing the new json wordlist, I need to implement the
 changes in the structure of the password generator and figure out my design for the adjs and nouns lists still!
 
+7/29/2026-
+
+I've been in the password generator this morning working on load() and all of the various methods that it needed to
+exist that I built this morning as well, such as get_count and load_interface. Next I need to tackle the logic for
+the three parameter entries; I am sort of considering just feeding in a flag for the parameter number and building
+out a seperate branch to follow for the 3 parameter options. But we'll see!

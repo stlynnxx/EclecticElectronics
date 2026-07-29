@@ -121,43 +121,112 @@ def password():
 
 
 def generator():
-    with open(WORDS_FILE, 'r', encoding="utf-8") as f:
-        wordlist = {json.load(f)}
-
-
+    wordlist = {}
     all_adjs = {
-        'entry': {}
+        'entry': {
+            '1': {},
+            '2': {},
+            '3': {},
+            '4': {},
+            '5': {},
+            '6': {},
+            '7': {},
+            '8': {},
+            '9': {},
+            '10': {},
+            '11': {},
+            '12': {}
+        }
     }
-    for length, words in wordlist['ADJ'].items():
-        all_adjs['entry'] = (words)
-    adjz_one = all_adjs['entry']['ADJ']['1']
-    print(adjz_one)
+    all_nouns = {
+        'entry': {
+            '1': {},
+            '2': {},
+            '3': {},
+            '4': {},
+            '5': {},
+            '6': {},
+            '7': {},
+            '8': {},
+            '9': {},
+            '10': {},
+            '11': {},
+            '12': {}
+        }
+    }
+    all_specials = {
+        'entry': {
+            '1': {},
+            '2': {},
+            '3': {},
+            '4': {},
+            '5': {},
+            '6': {},
+            '7': {},
+            '8': {},
+            '9': {},
+            '10': {},
+            '11': {},
+            '12': {}
+        }
+    }
+    consonants = {
+        'entry': {
+            'Uppers': {},
+            'Lowers': {}
+        }
+    }
+    vowels = {
+        'entry': {
+            'Uppers': {},
+            'Lowers': {}
+        }
+    }
 
-    adjs_one = wordlist['ADJ']['1']
-    adjs_two = wordlist['ADJ']['2']
-    adjs_three = wordlist['ADJ']['3']
-    adjs_four = wordlist['ADJ']['4']
-    adjs_five = wordlist['ADJ']['5']
-    adjs_six = wordlist['ADJ']['6']
-    adjs_seven = wordlist['ADJ']['7']
-    adjs_eight = wordlist['ADJ']['8']
-    adjs_nine = wordlist['ADJ']['9']
-    adjs_ten = wordlist['ADJ']['10']
-    adjs_eleven = wordlist['ADJ']['11']
-    adjs_twelve = wordlist['ADJ']['12']
+    def load():
+        with open(WORDS_FILE, 'r', encoding="utf-8") as f:
+            wordlist = {json.load(f)}
 
-    noun_one = wordlist['NOUN']['1']
-    noun_two = wordlist['NOUN']['2']
-    noun_three = wordlist['NOUN']['3']
-    noun_four = wordlist['NOUN']['4']
-    noun_five = wordlist['NOUN']['5']
-    noun_six = wordlist['NOUN']['6']
+        load_interface('ADJ', all_adjs)
+        load_interface('NOUN', all_nouns)
+
+        for length, words in wordlist['SINGLES']['VOWELS']['UPPERS'].items():
+            vowels['entry']['Uppers'] = (words)
+        for length, words in wordlist['SINGLES']['VOWELS']['LOWERS'].items():
+            vowels['entry']['Lowers'] = (words)
+        for length, words in wordlist['SINGLES']['CONSONANTS']['UPPERS'].items():
+            consonants['entry']['Uppers'] = (words)
+        for length, words in wordlist['SINGLES']['CONSONANTS']['LOWERS'].items():
+            consonants['entry']['Lowers'] = (words)
+        for length, words in wordlist['SINGLES']['SPECIALS'].items():
+            all_specials['entry']['entry'] = (words)
+        # adjz_one = all_adjs['entry']['ADJ']['1']
+        # print(adjz_one)
+
+    def get_count(self, part, num):
+        part = part
+        num = num
+        count = len(wordlist[f'{part}'][f'{num}'])
+        return count
+
+    def load_loop(self, part, num, append):
+        part = part
+        num = str(num)
+        append = append
+        count = get_count(part, num)
+        for x in range(count):
+            for length, words in wordlist[f'{part}'][f'{num}']:
+                append['entry'][f'{num}'] = (words)
+
+    def load_interface(part_speech, append):
+        part_speech = part_speech
+        part_num = 1
+        if part_num <= 12:
+            load_loop(part_speech, f'{part_num}', append)
+            part_num = part_num + 1
 
 
-
-    specials = []
-    vowels = []
-    consonants = []
+    load()
     def injection(word: str, num: str, pos: int) -> str:
         print(f"Pre-injection Print: {word}")
         s = num
