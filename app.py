@@ -121,6 +121,7 @@ def password():
 
 
 def generator():
+    randoms = []
     wordlist = {}
     all_adjs = {
         'entry': {
@@ -172,14 +173,14 @@ def generator():
     }
     consonants = {
         'entry': {
-            'Uppers': {},
-            'Lowers': {}
+            'UPPERS': {},
+            'LOWERS': {}
         }
     }
     vowels = {
         'entry': {
-            'Uppers': {},
-            'Lowers': {}
+            'UPPERS': {},
+            'LOWERS': {}
         }
     }
 
@@ -187,43 +188,59 @@ def generator():
         with open(WORDS_FILE, 'r', encoding="utf-8") as f:
             wordlist = {json.load(f)}
 
-        load_interface('ADJ', all_adjs)
-        load_interface('NOUN', all_nouns)
+        load_interface('ADJ', all_adjs, 2, 'UPPERS')
+        load_interface('NOUN', all_nouns, 2, 'UPPERS')
+        load_interface('SPECIAL', all_specials, 2, 'UPPERS')
+        load_interface('VOWELS', vowels, 3, 'UPPERS')
+        load_interface('VOWELS', vowels, 3, 'LOWERS')
+        load_interface('CONSONANTS', consonants, 3, 'UPPERS')
+        load_interface('CONSONANTS', consonants, 3, 'LOWERS')
 
-        for length, words in wordlist['SINGLES']['VOWELS']['UPPERS'].items():
-            vowels['entry']['Uppers'] = (words)
-        for length, words in wordlist['SINGLES']['VOWELS']['LOWERS'].items():
-            vowels['entry']['Lowers'] = (words)
-        for length, words in wordlist['SINGLES']['CONSONANTS']['UPPERS'].items():
-            consonants['entry']['Uppers'] = (words)
-        for length, words in wordlist['SINGLES']['CONSONANTS']['LOWERS'].items():
-            consonants['entry']['Lowers'] = (words)
-        for length, words in wordlist['SINGLES']['SPECIALS'].items():
-            all_specials['entry']['entry'] = (words)
+
         # adjz_one = all_adjs['entry']['ADJ']['1']
         # print(adjz_one)
 
-    def get_count(self, part, num):
+    def get_count(part, num, arg_count, up_low):
         part = part
         num = num
-        count = len(wordlist[f'{part}'][f'{num}'])
+        arg_count = arg_count
+        if arg_count == 2:
+            count = len(wordlist[f'{part}'][f'{num}'])
+        if arg_count == 3:
+            count = len(wordlist['SINGLES'][f'{part}'][f'{up_low}'])
         return count
 
-    def load_loop(self, part, num, append):
+    def load_loop(part, num, append, arg_count, up_low):
         part = part
         num = str(num)
         append = append
-        count = get_count(part, num)
-        for x in range(count):
-            for length, words in wordlist[f'{part}'][f'{num}']:
-                append['entry'][f'{num}'] = (words)
+        arg_count = arg_count
+        up_low = up_low
+        count = get_count(part, num, arg_count, up_low)
 
-    def load_interface(part_speech, append):
+        if arg_count == 2:
+            for x in range(count):
+                for length, words in wordlist[f'{part}'][f'{num}']:
+                    append['entry'][f'{num}'] = (words)
+        if arg_count == 3:
+            for x in range(count):
+                for length, words in wordlist['SINGLES'][f'{part}'][f'{up_low}']:
+                    append['entry'][f'{up_low}'] = (words)
+
+    def load_interface(part_speech, append, arg_count, up_low):
+        arg_count = arg_count
         part_speech = part_speech
         part_num = 1
+        up_low = up_low
         if part_num <= 12:
-            load_loop(part_speech, f'{part_num}', append)
-            part_num = part_num + 1
+            if arg_count == 2:
+                load_loop(part_speech, f'{part_num}', append, arg_count, up_low)
+                part_num = part_num + 1
+            if arg_count == 3:
+                load_loop(consonants, f'{part_num}', append, arg_count, up_low)
+
+                # Three arg load loop call/version
+
 
 
     load()
@@ -290,34 +307,39 @@ def generator():
 
     check_adj = []
     check_nouns = []
-    for entry in adjs:
+    check_adj_s = 0
+    for entry in all_adjs:
         check_adj.append(entry)
         check_adj_s = len(check_adj)
-    adj_length = len(wordlist[])
-    noun_length = len(nouns)
+    adj_length = len(all_adjs)
+    noun_length = len(all_nouns)
     print("Adj Length: ", adj_length)
     print(f"Check s size: {check_adj_s}")
-    for entry in nouns:
+    check_nouns_s = 0
+    for entry in all_nouns:
         check_nouns.append(entry)
         check_nouns_s = len(check_nouns)
     print("Noun Length: ", noun_length)
     print(f"Check nouns size: {check_nouns_s}")
 
-    adj_pick = random.choice(adjs)
-    noun_pick = random.choice(nouns)
-    special_pick = random.choice(specials)
-    special_pick_two = random.choice(specials)
+    adj_pick = random.choice(all_adjs)
+    noun_pick = random.choice(all_nouns)
+    special_pick = random.choice(all_specials)
+    special_pick_two = random.choice(all_specials)
+
     random_one = str(random.randint(0, 9))
     random_two = str(random.randint(0, 9))
     random_three = str(random.randint(0, 9))
-    random.shuffle(vowels)
-    random.shuffle(consonants)
-    vowel_one = random.choice(vowels)
-    vowel_two = random.choice(vowels)
-    vowel_three = random.choice(vowels)
-    consonant_one = random.choice(consonants)
-    consonant_two = random.choice(consonants)
-    consonant_three = random.choice(consonants)
+    # Args
+    random.shuffle(vowels['entry'])
+    random.shuffle(consonants['entry'])
+    vowel_one = random.choice(vowels['entry'])
+    vowel_two = random.choice(vowels['entry'])
+    vowel_three = random.choice(vowels['entry'])
+    consonant_one = random.choice(consonants['entry'])
+    consonant_two = random.choice(consonants['entry'])
+    consonant_three = random.choice(consonants['entry'])
+
     combo_one = consonant_one + vowel_one
     combo_two = consonant_two + vowel_two
     combo_three = vowel_three + consonant_three

@@ -540,3 +540,12 @@ I've been in the password generator this morning working on load() and all of th
 exist that I built this morning as well, such as get_count and load_interface. Next I need to tackle the logic for
 the three parameter entries; I am sort of considering just feeding in a flag for the parameter number and building
 out a seperate branch to follow for the 3 parameter options. But we'll see!
+
+7/30/2026-
+
+So far today I've finished out the loading process from where I left off yesterday within the password generator.
+We have our arg_count branches built out and I think I'm ready to move on to the next step in getting this generator
+updated.
+
+I got to a point where I felt ready to run the generator and hit an error in load() with loading the wordlist,
+something that I'm sure I can figure out with a bit of thought and maybe some breakfast + coffee.
