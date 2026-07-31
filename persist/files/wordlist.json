@@ -7,7 +7,8 @@
       "Fat",
       "Red",
       "Wet",
-      "Icy"
+      "Icy",
+      "Dry"
     ],
     "4": [
       "Bald",
@@ -22,7 +23,8 @@
       "Dank",
       "Pure",
       "Soft",
-      "Keen"
+      "Keen",
+      "Lame"
     ],
     "5": [
       "Brave",
@@ -219,7 +221,7 @@
   "SINGLES": {
     "VOWELS": {
       "UPPERS": ["A", "E", "I", "O", "U", "Y"],
-      "LOWERS": ["a", "e", "i", "o", "u"]
+      "LOWERS": ["a", "e", "i", "o", "u", "y"]
     },
     "CONSONANTS": {
       "UPPERS": ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R",
