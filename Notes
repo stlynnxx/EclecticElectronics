@@ -549,3 +549,9 @@ updated.
 
 I got to a point where I felt ready to run the generator and hit an error in load() with loading the wordlist,
 something that I'm sure I can figure out with a bit of thought and maybe some breakfast + coffee.
+
+7/31/2026-
+
+Tonight's work is a quick debugging session; we got through where we left off yesterday and through the next few bugs
+until I hit a solid wall. I have pretty limited time today so that's probably about where I'll end things for today;
+we are having issues with appending words to the append dict in the password generator, so, that's where I'll pick back up!

@@ -118,8 +118,6 @@ def password():
     return render_template('passwordgenerator.html')
 
 @app.route('/generator', methods=['GET', 'POST'])
-
-
 def generator():
     randoms = []
     wordlist = {}
@@ -185,12 +183,13 @@ def generator():
     }
 
     def load():
+        nonlocal wordlist
         with open(WORDS_FILE, 'r', encoding="utf-8") as f:
-            wordlist = {json.load(f)}
+            wordlist = json.load(f)
 
         load_interface('ADJ', all_adjs, 2, 'UPPERS')
         load_interface('NOUN', all_nouns, 2, 'UPPERS')
-        load_interface('SPECIAL', all_specials, 2, 'UPPERS')
+        load_interface('SPECIALS', all_specials, 3, 'UPPERS')
         load_interface('VOWELS', vowels, 3, 'UPPERS')
         load_interface('VOWELS', vowels, 3, 'LOWERS')
         load_interface('CONSONANTS', consonants, 3, 'UPPERS')
@@ -207,6 +206,8 @@ def generator():
         if arg_count == 2:
             count = len(wordlist[f'{part}'][f'{num}'])
         if arg_count == 3:
+            if part == "SPECIALS":
+                up_low = "ALLOWED"
             count = len(wordlist['SINGLES'][f'{part}'][f'{up_low}'])
         return count
 
@@ -228,6 +229,9 @@ def generator():
                     append['entry'][f'{up_low}'] = (words)
 
     def load_interface(part_speech, append, arg_count, up_low):
+        if part_speech == "SPECIALS":
+            up_low = "ALLOWED"
+            print(f"ALLOWED check: {up_low}")
         arg_count = arg_count
         part_speech = part_speech
         part_num = 1
@@ -237,7 +241,7 @@ def generator():
                 load_loop(part_speech, f'{part_num}', append, arg_count, up_low)
                 part_num = part_num + 1
             if arg_count == 3:
-                load_loop(consonants, f'{part_num}', append, arg_count, up_low)
+                load_loop(part_speech, f'{part_num}', append, arg_count, up_low)
 
                 # Three arg load loop call/version
 
