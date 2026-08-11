@@ -555,3 +555,16 @@ something that I'm sure I can figure out with a bit of thought and maybe some br
 Tonight's work is a quick debugging session; we got through where we left off yesterday and through the next few bugs
 until I hit a solid wall. I have pretty limited time today so that's probably about where I'll end things for today;
 we are having issues with appending words to the append dict in the password generator, so, that's where I'll pick back up!
+
+8/11/2026-
+
+This is my first day back in here since before my mom passed, so, I'm taking things slowly but I am here.
+
+I'm a little frustrated with the password generator in general and still rebuilding back to normal after my mom's death
+so I'm looking at the trivia game feature that I never finished. I gave the JSON a big buff compared to the half cooked mess that it
+was before and I think that should go a long way in improving more downstream and hopefully actually getting this running this time!
+
+I got the question and answer lookup rewritten in a way that I think should be good, and the next thing I need to do here is make
+sure that the question is being displayed to the user, then the answer collected and evaluated. Until next time, hopefully either later
+today or tomorrow!
+

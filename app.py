@@ -38,8 +38,8 @@ os.makedirs(FILE_DIR, exist_ok=True)
 QUOTES_FILE = os.path.join(DATA_DIR, "Quotes.json")
 REVIEWS_FILE = os.path.join(DATA_DIR, "Reviews.json")
 ANSWERS_FILE = os.path.join(DATA_DIR, "Answers.json")
-TRIVIA_FILE =  os.path.join(DATA_DIR, "questions.json")
-TANSWERS_FILE = os.path.join(DATA_DIR, "triviaanswers.json")
+TRIVIA_Q_FILE =  os.path.join(DATA_DIR, "questions.json")
+TRIVIA_A_FILE = os.path.join(DATA_DIR, "triviaanswers.json")
 POS_FILE = os.path.join(FILE_DIR, "pos.json")
 WORDS_FILE = os.path.join(FILE_DIR, "wordlist.json")
 UPLOAD_FOLDER = os.path.join(DATA_DIR, "uploads")
@@ -225,7 +225,7 @@ def generator():
                     append['entry'][f'{num}'] = (words)
         if arg_count == 3:
             for x in range(count):
-                for length, words in wordlist['SINGLES'][f'{part}'][f'{up_low}']:
+                for words in wordlist['SINGLES'][f'{part}'][f'{up_low}']:
                     append['entry'][f'{up_low}'] = (words)
 
     def load_interface(part_speech, append, arg_count, up_low):
@@ -243,7 +243,6 @@ def generator():
             if arg_count == 3:
                 load_loop(part_speech, f'{part_num}', append, arg_count, up_low)
 
-                # Three arg load loop call/version
 
 
 
@@ -326,7 +325,14 @@ def generator():
     print("Noun Length: ", noun_length)
     print(f"Check nouns size: {check_nouns_s}")
 
-    adj_pick = random.choice(all_adjs)
+    if not all_adjs:
+        print("No Adj")
+    if all_adjs:
+        print("All Adj")
+
+
+    adj_num = random.randint(1, adj_length)
+    adj_pick = random.choice(all_adjs['entry'][f'{adj_num}'])
     noun_pick = random.choice(all_nouns)
     special_pick = random.choice(all_specials)
     special_pick_two = random.choice(all_specials)
@@ -498,21 +504,40 @@ def trivia():
     return render_template('trivia.html')
 @app.route('/triviaget', methods=['POST'])
 def triviaget():
-    passer = {
-        "Current": []
-    }
+    questions = {}
+    answers = {}
     splits = []
     ans = request.form.get('ans')
     correct = 0
     return_ans = ""
-    if os.path.exists(TRIVIA_FILE):
+    q_len = 0
+    if os.path.exists(TRIVIA_Q_FILE):
         try:
-            with open(TRIVIA_FILE, 'r', encoding="utf-8") as f:
-                passer["Current"] = json.load(f)
+            with open(TRIVIA_Q_FILE, 'r', encoding="utf-8") as f:
+                questions = json.load(f)
         except FileNotFoundError:
-                passer = {}
-    key, value = random.choice(passer["Current"]), random.choice(passer["Current"])
+                questions = {}
+    if os.path.exists(TRIVIA_A_FILE):
+        try:
+            with open(TRIVIA_A_FILE, 'r', encoding="utf-8") as f:
+                answers = json.load(f)
+        except FileNotFoundError:
+            answers = {}
 
+    key, value = "", ""
+
+    decide_int = random.randint(1, 3)
+    match decide_int:
+        case 1:
+            key, value = random.choice(questions["Questions"]["Long Form"]), random.choice(answers["Answers"]["Long Form"])
+        case 2:
+            key, value = random.choice(questions["Questions"]["T/F"]), random.choice(answers["Answers"]["T/F"])
+        case 3:
+            key, value = random.choice(questions["Questions"]["Multiple Choice"]), random.choice(answers["Answers"]["Multiple Choice"])
+        case _:
+            print("triviaget match error")
+
+       # We need to make sure the key is being displayed before the value check so the user has a chance to answer
     if ans == value:
         correct = 1
     if ans != value:

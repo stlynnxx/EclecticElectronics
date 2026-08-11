@@ -1,3 +1,15 @@
 {
-  "How many legs does a standard issue dog feature?": "Four"
+  "Answers": {
+    "Long Form": {
+      "1": ["Four"],
+      "2": []
+    },
+    "T/F": {
+      "1": ["F"]
+    },
+    "Multiple Choice": {
+      "1": {"Choices": ["George Washington", "George Washington Carver", "Michael Jordan", "Piers Morgan"], "Correct":  ["George Washington Carver"]},
+
+    }
+  }
 }

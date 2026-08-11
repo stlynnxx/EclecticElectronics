@@ -1,6 +1,14 @@
-[
-  {
-    "How many legs does a standard issue dog feature?": "Four",
-    "Is the Earth Flat?": "Yes"
+{
+  "Questions": {
+    "Long Form": {
+    "1": ["How many legs does a standard issue dog feature?"],
+    "2": []
+    },
+    "T/F": {
+      "1": ["Is the Earth flat?"]
+    },
+    "Multiple Choice": {
+      "1": ["Who invented Peanut Butter?"]
+    }
   }
-]
+}
