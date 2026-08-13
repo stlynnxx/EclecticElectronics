@@ -504,10 +504,11 @@ def trivia():
     return render_template('trivia.html')
 @app.route('/triviaget', methods=['POST'])
 def triviaget():
+    display = False
     questions = {}
     answers = {}
     splits = []
-    ans = request.form.get('ans')
+
     correct = 0
     return_ans = ""
     q_len = 0
@@ -529,14 +530,17 @@ def triviaget():
     decide_int = random.randint(1, 3)
     match decide_int:
         case 1:
-            key, value = random.choice(questions["Questions"]["Long Form"]), random.choice(answers["Answers"]["Long Form"])
+            key, value = random.choice(list(questions["Questions"]["Long Form"].values())), random.choice(list(answers["Answers"]["Long Form"].values()))
         case 2:
-            key, value = random.choice(questions["Questions"]["T/F"]), random.choice(answers["Answers"]["T/F"])
+            key, value = random.choice(list(questions["Questions"]["T/F"].values())), random.choice(list(answers["Answers"]["T/F"].values()))
         case 3:
-            key, value = random.choice(questions["Questions"]["Multiple Choice"]), random.choice(answers["Answers"]["Multiple Choice"])
+            key, value = random.choice(list(questions["Questions"]["Multiple Choice"].values())), random.choice(list(answers["Answers"]["Multiple Choice"].values()))
         case _:
             print("triviaget match error")
 
+    ans = request.form.get('ans')
+    if ans:
+        display = True
        # We need to make sure the key is being displayed before the value check so the user has a chance to answer
     if ans == value:
         correct = 1
@@ -549,7 +553,8 @@ def triviaget():
             return_ans = "True"
 
 
-    return render_template('trivia.html', question=key, answer=value, return_ans=return_ans)
+
+    return render_template('trivia.html', question=key, answer=value, return_ans=return_ans, display=display)
 
 @app.route('/positive')
 def positive():

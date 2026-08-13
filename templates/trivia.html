@@ -47,18 +47,27 @@
 <!--Content-->
 <div class="trivia-content-flex">
     <h1 class="title">Trivia</h1>
+    <div class="card">
+        <p>
+            Welcome to my trivia game!
+            It's pretty simple; you will get either a long form
+            or True/False question. Type your answer into the box
+            and hit submit!
+
+            True/False questions will be marked and should be answered with a "T" or "F".
+        </p>
+    </div>
         <form method="POST" action="{{ url_for('triviaget') }}" enctype="multipart/form-data">
             <div class="card">
                 <label for="get">Get a question</label><br>
                 <input type="submit" name="get" id="get" value="Question">
             </div>
         </form>
-        <div class="card">
-            <h2 class="title">Question:</h2>
-            {% if question %}
+        {% if question %}
+            <div class="card">
+                <h2 class="title">Question:</h2>
                 <p>{{ question }}</p>
-        </div>
-        {% endif %}
+            </div>
             <div class="card">
                 <form method="POST" action="{{ url_for('triviaget') }}" enctype="multipart/form-data">
                     <label for="send">Submit your answer</label><br>
@@ -67,7 +76,8 @@
                     <input type="submit" name="get" id="get" value="Submit"><br>
                 </form>
             </div>
-            {% if return_ans %}
+        {% endif %}
+            {% if display %}
                 <div class="card">
                     <h3 class="title">{{ return_ans }}</h3>
                  </div>

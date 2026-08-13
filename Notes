@@ -568,3 +568,15 @@ I got the question and answer lookup rewritten in a way that I think should be g
 sure that the question is being displayed to the user, then the answer collected and evaluated. Until next time, hopefully either later
 today or tomorrow!
 
+8/12/2026-
+
+I've done a bit more work tonight on the trivia game, fixing the issue where we stopped at yesterday and a few more small
+bugs after and now I'm actually over in the HTML for the trivia game, making sure the different elements are visible at the correct
+time. I  need to figure out the return ans display still as that value is passed immediately so it's always going to become
+visible at the wrong time at the moment.
+
+Okay I fixed that by moving the ans declaration and making a display bool and an if statement to flip it on
+at the right time.
+
+I also added some nice ugly text at the top to explain the game a bit that will surely take more effort than expected
+to get looking decent. It is the way around here.

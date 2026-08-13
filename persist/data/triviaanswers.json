@@ -1,14 +1,14 @@
 {
   "Answers": {
     "Long Form": {
-      "1": ["Four"],
-      "2": []
+      "1": ["Four"]
     },
     "T/F": {
       "1": ["F"]
     },
     "Multiple Choice": {
-      "1": {"Choices": ["George Washington", "George Washington Carver", "Michael Jordan", "Piers Morgan"], "Correct":  ["George Washington Carver"]},
+      "1": {"Choices": ["George Washington", "George Washington Carver", "Michael Jordan", "Piers Morgan"],
+        "Correct":  ["George Washington Carver"]}
 
     }
   }
