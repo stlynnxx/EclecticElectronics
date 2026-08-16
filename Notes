@@ -580,3 +580,9 @@ at the right time.
 
 I also added some nice ugly text at the top to explain the game a bit that will surely take more effort than expected
 to get looking decent. It is the way around here.
+
+8/16/2026-
+
+I've started work on a Session class today within the trivia game that will allow for score keeping within and maybe
+across sessions. I had considered creating unique session IDs in an effort to track high scores across users, which would
+require a JSON file I would think, but I'm still thinking it through.

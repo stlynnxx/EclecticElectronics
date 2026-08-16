@@ -499,11 +499,33 @@ def magic():
     random.shuffle(passer)
     answer = random.choice(passer)
     return render_template('magicpython.html', answer=answer, question=question)
+
+
 @app.route('/trivia')
 def trivia():
     return render_template('trivia.html')
+
+
 @app.route('/triviaget', methods=['POST'])
+class Session:
+    def __init__(self):
+        self.sessionID = random.randint(1, 999)
+        # Wee need to build the HTML side for requesting the user name
+        # username = request.form.get('username')
+        self.overall_score = 0
+        self.questionCount = 0
+    def score(self, score, control):
+        score = self.overall_score
+        if control == 0:
+            score = score + 1
+        if control == 1:
+            score = score - 1
+        self.overall_score = score
+
+
+
 def triviaget():
+    session = Session(0)
     display = False
     questions = {}
     answers = {}
@@ -549,8 +571,10 @@ def triviaget():
     match correct:
         case 0:
             return_ans = "False"
+            Session.score(1)
         case 1:
             return_ans = "True"
+            Session.score(0)
 
 
 
@@ -590,3 +614,6 @@ def security():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port)
+
+
+
