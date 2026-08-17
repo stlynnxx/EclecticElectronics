@@ -586,3 +586,8 @@ to get looking decent. It is the way around here.
 I've started work on a Session class today within the trivia game that will allow for score keeping within and maybe
 across sessions. I had considered creating unique session IDs in an effort to track high scores across users, which would
 require a JSON file I would think, but I'm still thinking it through.
+
+10:37 PM-
+
+I came back to do just a bit more work, rearranging the order of things within triviaget a bit and filling out
+the session class a bit more.

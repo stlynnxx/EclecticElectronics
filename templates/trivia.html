@@ -62,6 +62,14 @@
                 <label for="get">Get a question</label><br>
                 <input type="submit" name="get" id="get" value="Question">
             </div>
+            <div class="card">
+                <!-- <form method="POST" action="{{ url_for('triviaget') }}" enctype="multipart/form-data"> -->
+                    <label for="name">Username</label><br>
+                    <label for="usr">Answer:</label><br>
+                    <input type="text" id="usr" name="usr"><br>
+                    <input type="submit" name="get" id="get" value="Username"><br>
+                <!-- </form> -->
+            </div>
         </form>
         {% if question %}
             <div class="card">

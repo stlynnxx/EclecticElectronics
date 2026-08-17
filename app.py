@@ -11,6 +11,8 @@ from werkzeug.utils import secure_filename
 
 import random
 import string
+from datetime import date
+import datetime
 
 
 app = Flask(__name__)
@@ -506,26 +508,26 @@ def trivia():
     return render_template('trivia.html')
 
 
-@app.route('/triviaget', methods=['POST'])
-class Session:
-    def __init__(self):
-        self.sessionID = random.randint(1, 999)
-        # Wee need to build the HTML side for requesting the user name
-        # username = request.form.get('username')
-        self.overall_score = 0
-        self.questionCount = 0
-    def score(self, score, control):
-        score = self.overall_score
-        if control == 0:
-            score = score + 1
-        if control == 1:
-            score = score - 1
-        self.overall_score = score
-
-
-
+@app.route('/triviaget', methods=['POST', 'GET'])
 def triviaget():
-    session = Session(0)
+    class Session:
+        def __init__(self):
+            self.datetime = datetime.datetime.now()
+            self.username = request.form.get('username')
+            self.sessionID = f"{self.username}{str(self.datetime)}"
+            # We need to build the HTML side for requesting the user name
+
+            self.overall_score = 0
+            self.questionCount = 0
+        def score(self,control):
+            score = self.overall_score
+            if control == 0:
+                score = score + 1
+            if control == 1:
+                score = score - 1
+            self.overall_score = score
+    ans = request.form.get('ans')
+    session = Session()
     display = False
     questions = {}
     answers = {}
@@ -556,11 +558,11 @@ def triviaget():
         case 2:
             key, value = random.choice(list(questions["Questions"]["T/F"].values())), random.choice(list(answers["Answers"]["T/F"].values()))
         case 3:
-            key, value = random.choice(list(questions["Questions"]["Multiple Choice"].values())), random.choice(list(answers["Answers"]["Multiple Choice"].values()))
+                key, value = random.choice(list(questions["Questions"]["Multiple Choice"].values())), random.choice(list(answers["Answers"]["Multiple Choice"].values()))
         case _:
             print("triviaget match error")
 
-    ans = request.form.get('ans')
+
     if ans:
         display = True
        # We need to make sure the key is being displayed before the value check so the user has a chance to answer
@@ -571,12 +573,10 @@ def triviaget():
     match correct:
         case 0:
             return_ans = "False"
-            Session.score(1)
+            Session.score(session, 1)
         case 1:
             return_ans = "True"
-            Session.score(0)
-
-
+            Session.score(session, 0)
 
     return render_template('trivia.html', question=key, answer=value, return_ans=return_ans, display=display)
 
