@@ -6,7 +6,7 @@ from os.path import split
 from unittest import case
 from xml.etree.ElementTree import QName
 
-from flask import Flask, render_template,request, redirect, url_for, current_app
+from flask import Flask, render_template, request, redirect, url_for, current_app, jsonify
 from werkzeug.utils import secure_filename
 
 import random
@@ -50,6 +50,17 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
+
+# Update data
+UPDATE_INFO = {
+    "latest": "2.0.0",
+    "url": "",
+    "sha256": "",
+    "notes": ""
+}
+
+
+
 @app.route('/')
 def home():
 
@@ -59,6 +70,12 @@ def review():
     return render_template('review.html')
 # @app.route('/review-submit', methods=['POST'])
 # def review_submit():
+
+@app.route('/api/check-update/<current_version>')
+def check_update(current_version):
+    return jsonify(UPDATE_INFO)
+
+
 @app.route('/review-submit' , methods=['POST'])
 def review_submit():
     passer = []
