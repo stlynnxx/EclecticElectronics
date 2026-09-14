@@ -6,7 +6,7 @@ from os.path import split
 from unittest import case
 from xml.etree.ElementTree import QName
 
-from flask import Flask, render_template, request, redirect, url_for, current_app, jsonify
+from flask import Flask, render_template, request, redirect, url_for, current_app, jsonify, send_file
 from werkzeug.utils import secure_filename
 
 import random
@@ -53,8 +53,8 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 # Update data
 UPDATE_INFO = {
-    "latest": "2.0.1",
-    "url": "https://eclecticelectronics.fly.dev/api/download/2.0.1",
+    "latest": "2.1.0",
+    "url": "https://eclecticelectronics.fly.dev/api/download/2.1.0",
     "sha256": "0dccf85a50a657e13242f2b6d9a3b99ad363332be5e8ea22659a167845eac543",
     "notes": ""
 }
@@ -63,7 +63,6 @@ UPDATE_INFO = {
 
 @app.route('/')
 def home():
-
     return render_template('home.html')
 @app.route('/review')
 def review():
@@ -74,8 +73,9 @@ def review():
 @app.route('/api/check-update/<current_version>')
 def check_update(current_version):
     return jsonify(UPDATE_INFO)
-
-
+@app.route('/api/download/<version>')
+def download(version):
+    return send_file(f'releases/slipperypenguin-{version}.tar.gz')
 @app.route('/review-submit' , methods=['POST'])
 def review_submit():
     passer = []
@@ -132,8 +132,6 @@ def contact():
     return render_template('contact.html')
 @app.route('/password')
 def password():
-
-
     return render_template('passwordgenerator.html')
 
 @app.route('/generator', methods=['GET', 'POST'])
@@ -631,6 +629,7 @@ def security():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port)
+
 
 
 
