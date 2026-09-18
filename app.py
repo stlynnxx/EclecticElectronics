@@ -60,8 +60,6 @@ UPDATE_INFO = {
     "notes": ""
 }
 
-
-
 @app.route('/')
 def home():
     return render_template('home.html')
