@@ -114,7 +114,7 @@ background-color:rgb(228,219,238);
     .summary {
         font-family: "Lato", sans-serif;
         border: black solid 0.5px;
-        box-shadow:4px 4p 10px darkmagenta;
+        box-shadow:4px 10px #8b008b;
     }
     .mobile-div-1 {
         font-family: "Lato", sans-serif;
