@@ -53,10 +53,10 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 # Update data
 UPDATE_INFO = {
-    "latest": "2.3.6",
-    "url": "https://eclecticelectronics.fly.dev/api/download/2.3.6",
-    "sha256": "d9ab7203c64e535535a072a1ae69d88b801facc58c87ef9c8842e5338a51bfcd",
-    "Release Date": "10/12/2026",
+    "latest": "2.3.7",
+    "url": "https://eclecticelectronics.fly.dev/api/download/2.3.7",
+    "sha256": "89a09f8fc63db9c246f51d674ac717790246e131b8dc259c6666247082929f05",
+    "Release Date": "10/15/2026",
     "notes": ""
 }
 
