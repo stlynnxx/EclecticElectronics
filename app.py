@@ -63,7 +63,7 @@ _DLP_VERSION = "1.0.1"
 DLP_UPDATE_INFO = {
     "latest": _DLP_VERSION,
     "url": f"https://eclecticelectronics.fly.dev/api/download/dlp/{_DLP_VERSION}",
-    "sha256": "ba1089e2cad7758dd1edc416190d9321f15643c2776fd99a11d3286d856612da",
+    "sha256": "dbd6cdcd82e8cdb4e3161911dc74160252c6b2d4a6d3fc0174377f0c8d88c355",
     "Release Date": "10/18/2026",
     "notes": ""
 }
