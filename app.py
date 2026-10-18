@@ -52,11 +52,19 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 
 # Update data
-UPDATE_INFO = {
+SP_UPDATE_INFO = {
     "latest": "2.3.6",
     "url": "https://eclecticelectronics.fly.dev/api/download/2.3.7",
     "sha256": "89a09f8fc63db9c246f51d674ac717790246e131b8dc259c6666247082929f05",
     "Release Date": "10/15/2026",
+    "notes": ""
+}
+_DLP_VERSION = "1.0.1"
+DLP_UPDATE_INFO = {
+    "latest": _DLP_VERSION,
+    "url": f"https://eclecticelectronics.fly.dev/api/download/dlp/{_DLP_VERSION}",
+    "sha256": "ba1089e2cad7758dd1edc416190d9321f15643c2776fd99a11d3286d856612da",
+    "Release Date": "10/18/2026",
     "notes": ""
 }
 
@@ -71,10 +79,26 @@ def review():
 
 @app.route('/api/check-update/<current_version>')
 def check_update(current_version):
-    return jsonify(UPDATE_INFO)
+    return jsonify(SP_UPDATE_INFO)
+
+
+@app.route('/api/check-update/dlp/<current_version>')
+def check_update_dlp(current_version):
+    return jsonify(DLP_UPDATE_INFO)
+
+
 @app.route('/api/download/<version>')
 def download(version):
-    return send_file(f'releases/slipperypenguin-{version}.tar.gz')
+    return send_file(f'releases/SP/slipperypenguin-{version}.tar.gz')
+
+
+@app.route('/api/download/dlp/<version>')
+def download_dlp(version):
+    path = os.path.join('releases', 'DLP', f'py-dlp-{version}.tar.gz')
+    if not os.path.exists(path):
+        return jsonify({"error": f"release {version} not found"}), 404
+    return send_file(path)
+
 @app.route('/review-submit' , methods=['POST'])
 def review_submit():
     passer = []
