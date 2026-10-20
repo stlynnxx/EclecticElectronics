@@ -53,10 +53,10 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 # Update data
 SP_UPDATE_INFO = {
-    "latest": "2.3.6",
-    "url": "https://eclecticelectronics.fly.dev/api/download/2.3.7",
-    "sha256": "89a09f8fc63db9c246f51d674ac717790246e131b8dc259c6666247082929f05",
-    "Release Date": "10/15/2026",
+    "latest": "2.3.8",
+    "url": "https://eclecticelectronics.fly.dev/api/download/2.3.8",
+    "sha256": "bb25ab8462aa71954229a4daee58a2123914a6efe9ac1798e046de140b4e04ad",
+    "Release Date": "10/19/2026",
     "notes": ""
 }
 _DLP_VERSION = "1.0.1"
