@@ -55,7 +55,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 SP_UPDATE_INFO = {
     "latest": "2.4.2",
     "url": "https://eclecticelectronics.fly.dev/api/download/2.4.2",
-    "sha256": "c8312d6e9f71051319ffcb75398e81e738415c38bf8560e9adff162c81fb2b14",
+    "sha256": "3ba6c4d268fa7ff888883fdbb6a44688ed97fa8d13d8ef9774daeb78e2bf0711",
     "Release Date": "10/23/2026",
     "notes": ""
 }
