@@ -53,10 +53,10 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 # Update data
 SP_UPDATE_INFO = {
-    "latest": "2.5.1",
-    "url": "https://eclecticelectronics.fly.dev/api/download/2.5.1",
-    "sha256": "cf96a348b428280090fd786dc733c95b421f119ee9e462accca7197a7c467ada",
-    "Release Date": "11/02/2026",
+    "latest": "2.5.2",
+    "url": "https://eclecticelectronics.fly.dev/api/download/2.5.2",
+    "sha256": "65b0e138b1dc2f9e7d6069aea5d38e5db995bfd547f91a7a9a7fea6bd479b25d",
+    "Release Date": "11/03/2026",
     "notes": ""
 }
 DWNLOADERR_VERSION = "1.0.1"
