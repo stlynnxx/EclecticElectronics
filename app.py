@@ -536,7 +536,6 @@ def magic():
     if not isinstance(passer, list) or len(passer) == 0:
         passer = fallbacks
 
-    random.shuffle(passer)
     answer = random.choice(passer)
     return render_template('magicpython.html', answer=answer, question=question)
 
