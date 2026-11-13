@@ -6,7 +6,7 @@ from os.path import split
 from unittest import case
 from xml.etree.ElementTree import QName
 
-from flask import Flask, render_template, request, redirect, url_for, current_app, jsonify, send_file
+from flask import Flask, render_template, request, redirect, url_for, current_app, jsonify, send_file, abort
 from werkzeug.utils import secure_filename
 
 import random
@@ -177,111 +177,54 @@ def generator():
             '12': {}
         }
     }
-    all_nouns = {
-        'entry': {
-            '1': {},
-            '2': {},
-            '3': {},
-            '4': {},
-            '5': {},
-            '6': {},
-            '7': {},
-            '8': {},
-            '9': {},
-            '10': {},
-            '11': {},
-            '12': {}
-        }
-    }
-    all_specials = {
-        'entry': {
-            '1': {},
-            '2': {},
-            '3': {},
-            '4': {},
-            '5': {},
-            '6': {},
-            '7': {},
-            '8': {},
-            '9': {},
-            '10': {},
-            '11': {},
-            '12': {}
-        }
-    }
+    all_nouns = []
+    all_specials = []
     consonants = {
-        'entry': {
-            'UPPERS': {},
-            'LOWERS': {}
-        }
+        'entry': []
     }
     vowels = {
-        'entry': {
-            'UPPERS': {},
-            'LOWERS': {}
-        }
+        'entry': []
     }
 
     def load():
-        nonlocal wordlist
-        with open(WORDS_FILE, 'r', encoding="utf-8") as f:
-            wordlist = json.load(f)
+        nonlocal wordlist, all_nouns, all_specials
+        try:
+            with open(WORDS_FILE, 'r', encoding="utf-8") as f:
+                wordlist = json.load(f)
+        except Exception:
+            wordlist = {}
 
-        load_interface('ADJ', all_adjs, 2, 'UPPERS')
-        load_interface('NOUN', all_nouns, 2, 'UPPERS')
-        load_interface('SPECIALS', all_specials, 3, 'UPPERS')
-        load_interface('VOWELS', vowels, 3, 'UPPERS')
-        load_interface('VOWELS', vowels, 3, 'LOWERS')
-        load_interface('CONSONANTS', consonants, 3, 'UPPERS')
-        load_interface('CONSONANTS', consonants, 3, 'LOWERS')
+        all_words_adj = []
+        for i in range(1, 13):
+            words = wordlist.get('ADJ', {}).get(str(i), [])
+            if words:
+                all_adjs['entry'][str(i)] = list(words)
+                all_words_adj.extend(words)
 
+        if not all_words_adj:
+            all_words_adj = ["Attractive", "Agreeable", "Angry", "Big", "Bald", "Brave", "Cold", "Sweet"]
+        for i in range(1, 13):
+            if not all_adjs['entry'].get(str(i)):
+                all_adjs['entry'][str(i)] = all_words_adj
 
-        # adjz_one = all_adjs['entry']['ADJ']['1']
-        # print(adjz_one)
+        for words in wordlist.get('NOUN', {}).values():
+            all_nouns.extend(words)
+        if not all_nouns:
+            all_nouns.extend(["Airplane", "Bell", "Belt", "Desk", "Dog", "Cat", "Sun", "Tower"])
 
-    def get_count(part, num, arg_count, up_low):
-        part = part
-        num = num
-        arg_count = arg_count
-        if arg_count == 2:
-            count = len(wordlist[f'{part}'][f'{num}'])
-        if arg_count == 3:
-            if part == "SPECIALS":
-                up_low = "ALLOWED"
-            count = len(wordlist['SINGLES'][f'{part}'][f'{up_low}'])
-        return count
+        specials_loaded = wordlist.get('SINGLES', {}).get('SPECIALS', {}).get('ALLOWED', [])
+        if specials_loaded:
+            all_specials.extend(specials_loaded)
+        else:
+            all_specials.extend(["!","?","@","#","$", "%","^", "&","*","+"])
 
-    def load_loop(part, num, append, arg_count, up_low):
-        part = part
-        num = str(num)
-        append = append
-        arg_count = arg_count
-        up_low = up_low
-        count = get_count(part, num, arg_count, up_low)
+        v_uppers = wordlist.get('SINGLES', {}).get('VOWELS', {}).get('UPPERS', ["A","E","I","O","U"])
+        v_lowers = wordlist.get('SINGLES', {}).get('VOWELS', {}).get('LOWERS', ["a","e","i","o","u"])
+        vowels['entry'] = list(v_uppers + v_lowers)
 
-        if arg_count == 2:
-            for x in range(count):
-                for length, words in wordlist[f'{part}'][f'{num}']:
-                    append['entry'][f'{num}'] = (words)
-        if arg_count == 3:
-            for x in range(count):
-                for words in wordlist['SINGLES'][f'{part}'][f'{up_low}']:
-                    append['entry'][f'{up_low}'] = (words)
-
-    def load_interface(part_speech, append, arg_count, up_low):
-        if part_speech == "SPECIALS":
-            up_low = "ALLOWED"
-            print(f"ALLOWED check: {up_low}")
-        arg_count = arg_count
-        part_speech = part_speech
-        part_num = 1
-        up_low = up_low
-        if part_num <= 12:
-            if arg_count == 2:
-                load_loop(part_speech, f'{part_num}', append, arg_count, up_low)
-                part_num = part_num + 1
-            if arg_count == 3:
-                load_loop(part_speech, f'{part_num}', append, arg_count, up_low)
+        c_uppers = wordlist.get('SINGLES', {}).get('CONSONANTS', {}).get('UPPERS', ["B","C","D","F","G","H"])
+        c_lowers = wordlist.get('SINGLES', {}).get('CONSONANTS', {}).get('LOWERS', ["b","c","d","f","g","h"])
+        consonants['entry'] = list(c_uppers + c_lowers)
 
 
 
@@ -337,7 +280,16 @@ def generator():
 
 
     if request.method == 'POST':
-        entropy_val = int(request.form.get('entropy', 0))
+        raw_entropy = request.form.get('entropy')
+        if raw_entropy is None or raw_entropy == '':
+            entropy_val = 0
+        else:
+            try:
+                entropy_val = int(raw_entropy)
+            except (ValueError, TypeError):
+                abort(400, description='Invalid entropy value. Must be an integer between 0 and 5.')
+            if entropy_val < 0 or entropy_val > 5:
+                abort(400, description='Invalid entropy value. Must be an integer between 0 and 5.')
     else:
         entropy_val = 0
 
@@ -354,7 +306,7 @@ def generator():
     for entry in all_adjs:
         check_adj.append(entry)
         check_adj_s = len(check_adj)
-    adj_length = len(all_adjs)
+    adj_length = len(all_adjs['entry'])
     noun_length = len(all_nouns)
     print("Adj Length: ", adj_length)
     print(f"Check s size: {check_adj_s}")
