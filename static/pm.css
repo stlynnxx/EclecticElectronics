@@ -41,3 +41,31 @@
     text-align: center;
 
 }
+
+.foot-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 128px;
+    padding: 10px 20px;
+    border: black solid 1.75px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px darkmagenta;
+}
+
+.foot-main a {
+    color: black;
+    text-decoration: none;
+}
+
+.foot-main a:hover {
+    text-decoration: underline;
+}
+.foot-header {
+    display: flex;
+    flex-direction: inherit;
+    align-items: center;
+
+}
